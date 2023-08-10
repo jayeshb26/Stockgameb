@@ -11,7 +11,7 @@
     </div>
     <div class="sidebar-body">
         <ul class="nav">
-            <div class="media">
+            {{-- <div class="media">
                 <img class="d-flex align-self-start mr-3" src="{{ asset('img/user.png') }}" style="max-width:60px"
                     alt="Generic placeholder image">
                 <div class="media-body">
@@ -25,7 +25,7 @@
                         <p class="email text-primary mb-0">{{ number_format($balance->creditPoint, 2) }}</p>
                     @endif
                 </div>
-            </div>
+            </div> --}}
             <li class="nav-item nav-category"></li>
             <li class="nav-item {{ active_class(['dashboard']) }}">
                 <a href="{{ url('/dashboard') }}" class="nav-link">
