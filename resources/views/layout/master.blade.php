@@ -107,6 +107,23 @@
             if (num == 0) return "zero";
             else return convert_millions(num);
         }
+
+        $('#shown_balance_a').hide();
+        $('#shown_balance_lbl').hide();
+
+        $('#hidden_balance_a').on('click', function(){
+            $('#hidden_balance_a').hide();
+            $('#hidden_balance_lbl').hide();
+            $('#shown_balance_a').show();
+            $('#shown_balance_lbl').show();
+        });
+
+        $('#shown_balance_a').on('click', function(){
+            $('#shown_balance_a').hide();
+            $('#shown_balance_lbl').hide();
+            $('#hidden_balance_a').show();
+            $('#hidden_balance_lbl').show();
+        });
     </script>
 
     @stack('custom-scripts')

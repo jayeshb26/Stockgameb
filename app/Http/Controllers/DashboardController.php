@@ -40,7 +40,7 @@ class DashboardController extends Controller
             } else {
                 $dash['superDistributer'] = User::where('is_franchise', true)->where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->count();
                 $chart_f = array(
-                    User::where('is_franchise', true)->where('role', 'premium')->count(),
+                    // User::where('is_franchise', true)->where('role', 'premium')->count(),
                     User::where('is_franchise', true)->where('role', 'executive')->count(),
                     User::where('is_franchise', true)->where('role', 'classic')->count(),
                     User::where('is_franchise', true)->where('role', 'player')->count(),
@@ -63,6 +63,14 @@ class DashboardController extends Controller
             $dash['users'] = User::where('is_franchise', false)->where('_id', '!=', new \MongoDB\BSON\ObjectID(Session::get('id')))->where('role', '!=', "subadmin")->where('userName', '!=', "superadminA")->count();
             $dash['superDistributer'] = User::where('is_franchise', true)->where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))->count();
         }
+        $dash['distributers'] = User::where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->where('role', "executive")
+            // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
+            ->count();
+        $dash['players'] = User::where('userName', '!=', "superadminF")
+            ->where('role', '!=', "subadmin")
+            ->where('role', "player")
+            // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
+            ->count();
         return view('dashboard', ['data' => $dash, 'chart_f' => $chart_f, 'chart_a' => $chart_a, 'chart_w' => $chart_w, 'chart_p' => $chart_p]);
     }
 

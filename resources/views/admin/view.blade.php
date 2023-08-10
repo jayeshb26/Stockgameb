@@ -31,7 +31,7 @@
                         <div class="col-md-6">
                             <h6 class="card-title">Active User’s</h6>
                         </div>
-                        <div class="col-md-6 row text-right">
+                        <div class="col-md-6 row text-right" style="display: none">
                             <select id='filterText' class='col-md-6' onchange='filterText()'>
                                 <option>all</option>
                                 {{-- @foreach ($role as $value)

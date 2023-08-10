@@ -67,6 +67,22 @@ class AdminController extends Controller
             }
             $user_role = User::where('is_franchise', true)->pluck('role')->toArray();
             $user_role = array_unique($user_role);
+            // dd(request()->url(), url('users/distlist'));
+            if(request()->url() == url('users/distlist')){
+                // distributer list
+                $user = User::where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->where('role', "executive")
+                    // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
+                    ->get();
+                // distributer list
+            }
+
+            if(request()->url() == url('users/plyrlist')){
+                // player list
+                $user = User::where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->where('role', "player")
+                    // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
+                    ->get();                    
+                // player list
+            }
             return view('admin.view', ['data' => $user, 'role' => $user_role]);
         }
 

@@ -56,7 +56,7 @@
                             </div>
                         </div>
                     @else
-                        <div class="col-lg-3 col-md-4 col-sm-4 grid-margin stretch-card">
+                        {{-- <div class="col-lg-3 col-md-4 col-sm-4 grid-margin stretch-card">
                             <div class="card bg-success">
                                 <a href="{{ url('/users/Franchise') }}">
                                     <div class="card-body">
@@ -65,6 +65,46 @@
                                                 <h6 class="text-white mb-2">Franchise Users</h6>
                                                 <div>
                                                     <h3 class="text-white">{{ $data['superDistributer'] }}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-1">
+                                                <h1 class="text-white text-right mr-3"><i class="fa fa-user"></i></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div> --}}
+
+                        <div class="col-lg-3 col-md-4 col-sm-4 grid-margin stretch-card">
+                            <div class="card bg-success">
+                                <a href="{{ url('/users/distlist') }}">
+                                    <div class="card-body">
+                                        <div class=" row">
+                                            <div class="col-md-8">
+                                                <h6 class="text-white mb-2">Distributer Users</h6>
+                                                <div>
+                                                    <h3 class="text-white">{{ $data['distributers'] }}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-1">
+                                                <h1 class="text-white text-right mr-3"><i class="fa fa-user"></i></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-4 grid-margin stretch-card">
+                            <div class="card bg-success">
+                                <a href="{{ url('/users/plyrlist') }}">
+                                    <div class="card-body">
+                                        <div class=" row">
+                                            <div class="col-md-8">
+                                                <h6 class="text-white mb-2">Players</h6>
+                                                <div>
+                                                    <h3 class="text-white">{{ $data['players'] }}</h3>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 mt-1">
@@ -162,7 +202,8 @@
                         <div class="col-xl-4 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h6 class="card-title">Franchises</h6>
+                                    {{-- <h6 class="card-title">Franchises</h6> --}}
+                                    <h6 class="card-title">System User</h6>
                                     <canvas id="chartjsDoughnut"
                                         style="display: block; box-sizing: border-box; height: 150px; width: 744px;"
                                         width="744" height="372"></canvas>
@@ -215,7 +256,8 @@
         new Chart($("#chartjsDoughnut"), {
             type: "doughnut",
             data: {
-                labels: ["Premiums", "Executives", "Classics", "Players"],
+                // labels: ["Premiums", "Executives", "Classics", "Players"],
+                labels: ["Distributers", "Agents", "Players"],//"Premiums" has been removed
                 datasets: [{
                     label: "Population (millions)",
                     backgroundColor: ["#7ee5e5", "#f77eb9", "#4d8af0", "#ffc107"],
