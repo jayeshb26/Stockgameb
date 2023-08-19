@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link href="{{ url('css/history.css') }}" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="assetss/img/favicon.ico" />
-    <title>Fundeal GAME | {{ $data['game'] }}</title>
+    <title>StockSkill GAME | {{ $data['game'] }}</title>
 </head>
 <script>
     function mobRoulette36TimerWindow(gameName, groupId) {
