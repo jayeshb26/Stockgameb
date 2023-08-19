@@ -14,6 +14,8 @@ use App\Winnings;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Session;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class AdminController extends Controller
 {
@@ -136,14 +138,33 @@ class AdminController extends Controller
             'userName' => 'required|unique:users,userName',
             'role' => 'required',
             'password' => 'required|min:6',
+            'profile_pic' => 'required|image|mimes:jpeg,png,jpg',
+            'adharcard' => 'required|image|mimes:jpeg,png,jpg',
+            'pancard' => 'required|image|mimes:jpeg,png,jpg',
+            // |max:2048
         ]);
 
-        // $request->validate([
-        //     'commissionPercentage' => 'required|numeric|between:0,' . $ref_user->commissionPercentage,
-        // ]);
-        // echo "<pre>";
-        // print_r($request->toArray());
-        // die;
+        $path = storage_path();
+        !is_dir($path) && mkdir($path, 0777, true);
+
+        $profile_pic = null;
+        if($profileFile = $request->file('profile_pic')) {
+            $fileData = $this->uploads($profileFile,$path);
+            $profile_pic = $fileData['fileName'];
+        }
+
+        $adharcard = null;
+        if($adharcardFile = $request->file('adharcard')) {
+            $fileData = $this->uploads($adharcardFile,$path);
+            $adharcard = $fileData['fileName'];
+        }
+
+        $pancard = null;
+        if($pancardFile = $request->file('pancard')) {
+            $fileData = $this->uploads($pancardFile,$path);
+            $pancard = $fileData['fileName'];
+        }
+
 
         $referral = "";
         $role = "";
@@ -238,6 +259,9 @@ class AdminController extends Controller
         $user->is_franchise = ($request->is_franchise == "true") ? true : false;
         $user->isLogin = false;
         $user->referralId = $referral;
+        $user->profile_pic = $profile_pic;
+        $user->adharcard = $adharcard;
+        $user->pancard = $pancard;
         $user->save();
 
         if (Session::get('is_f') == "true") {
@@ -281,9 +305,32 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // echo "<pre>";
-        // print_r($request->toArray());
-        // die();
+        $request->validate([
+            'profile_pic' => 'image|mimes:jpeg,png,jpg',
+            'adharcard' => 'image|mimes:jpeg,png,jpg',
+            'pancard' => 'image|mimes:jpeg,png,jpg',
+        ]);
+        $path = storage_path();
+        !is_dir($path) && mkdir($path, 0777, true);
+
+        $profile_pic = null;
+        if($profileFile = $request->file('profile_pic')) {
+            $fileData = $this->uploads($profileFile,$path);
+            $profile_pic = $fileData['fileName'];
+        }
+
+        $adharcard = null;
+        if($adharcardFile = $request->file('adharcard')) {
+            $fileData = $this->uploads($adharcardFile,$path);
+            $adharcard = $fileData['fileName'];
+        }
+
+        $pancard = null;
+        if($pancardFile = $request->file('pancard')) {
+            $fileData = $this->uploads($pancardFile,$path);
+            $pancard = $fileData['fileName'];
+        }
+
         $referral = "";
         $role = "";
         if (Session::get('role') == "Admin") {
@@ -357,8 +404,6 @@ class AdminController extends Controller
             }
         }
 
-        // echo $referral;
-        // echo $role;
         $refer = User::where('_id', new \MongoDB\BSON\ObjectID($referral))->first();
         if ($refer['role'] == Session::get('role') || Session::get('role') == "Admin") {
             $referral = new \MongoDB\BSON\ObjectID($referral);
@@ -385,9 +430,26 @@ class AdminController extends Controller
             $user->commissionPercentage = $commissionPercentage;
             $user->isLogin = false;
             $user->referralId = $referral;
-            // echo "<pre>";
-            // print_r($user->toArray());
-            // die();
+
+            if($profile_pic){
+                if(Storage::disk('public')->exists($user->profile_pic)){
+                    Storage::disk('public')->delete($user->profile_pic);
+                }
+                $user->profile_pic = $profile_pic;
+            }
+            if($adharcard){
+                if(Storage::disk('public')->exists($user->adharcard)){
+                    Storage::disk('public')->delete($user->adharcard);
+                }
+                $user->adharcard = $adharcard;
+            }
+            if($pancard){
+                if(Storage::disk('public')->exists($user->pancard)){
+                    Storage::disk('public')->delete($user->pancard);
+                }
+                $user->pancard = $pancard;
+            }
+            
             $user->save();
             if (Session::get('is_f') == "true") {
                 return redirect('/users/Franchise');
@@ -431,6 +493,38 @@ class AdminController extends Controller
         }
 
         return redirect()->back();
+    }
+
+    public function uploads($file, $path)
+    {
+        if($file) {
+            $fileName   = time() . $file->getClientOriginalName();
+            Storage::disk('public')->put($fileName, File::get($file));
+            $file_name  = $file->getClientOriginalName();
+            $file_type  = $file->getClientOriginalExtension();
+            $filePath   = $path . $fileName;
+
+            return $file = [
+                'fileName' => $fileName,
+                'fileType' => $file_type,
+                'filePath' => $filePath,
+                'fileSize' => $this->fileSize($file)
+            ];
+        }
+    }
+
+    public function fileSize($file, $precision = 2)
+    {   
+        $size = $file->getSize();
+
+        if ( $size > 0 ) {
+            $size = (int) $size;
+            $base = log($size) / log(1024);
+            $suffixes = array(' bytes', ' KB', ' MB', ' GB', ' TB');
+            return round(pow(1024, $base - floor($base)), $precision) . $suffixes[floor($base)];
+        }
+
+        return $size;
     }
 
     public function winningPercent()

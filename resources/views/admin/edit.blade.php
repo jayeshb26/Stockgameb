@@ -38,7 +38,7 @@
                             $role = 'admin';
                         }
                     @endphp
-                    <form method="post" action="{{ url($role . '/' . $edata['_id']) }}">
+                    <form method="post" action="{{ url($role . '/' . $edata['_id']) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         {{-- @if (Session::has('error'))
@@ -309,6 +309,73 @@
                                     id="exampleInputUsername1" value="{{ $edata['commissionPercentage'] }}"
                                     name="commissionPercentage" autocomplete="off" placeholder="Enter CommissionPercentage">
                                 @error('commissionPercentage')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        @if($edata['profile_pic'])
+                            <div class="form-group d-flex">
+                                <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Current Profile Pic</label>
+                                <div class="col-sm-6">
+                                    <img src="{{asset('storage/'.$edata['profile_pic'])}}" alt="Italian Trulli" height="150px" width="150px">
+                                </div>
+                            </div>
+                        @endif
+
+                        <div class="form-group d-flex">
+                            
+                            <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Profile Pic</label>
+                            <div class="col-sm-6">
+                                <input type="file" class="form-control ui-autocomplete-input @error('profile_pic') is-invalid @enderror"
+                                    id="inputProfilePic" value="{{ Old('profile_pic') }}"
+                                    name="profile_pic" autocomplete="off" placeholder="Enter Commission %">
+                                @error('profile_pic')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        @if($edata['pancard'])
+                            <div class="form-group d-flex">
+                                <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Current Pancard</label>
+                                <div class="col-sm-6">
+                                    <img src="{{asset('storage/'.$edata['pancard'])}}" alt="Italian Trulli" height="150px" width="150px">
+                                </div>
+                            </div>
+                        @endif
+                        <div class="form-group d-flex">
+                            <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Pancard Image</label>
+                            <div class="col-sm-6">
+                                <input type="file" class="form-control ui-autocomplete-input @error('pancard') is-invalid @enderror"
+                                    id="inputPancard" value="{{ Old('pancard') }}"
+                                    name="pancard" autocomplete="off" placeholder="Enter Commission %">
+                                @error('pancard')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        @if($edata['pancard'])
+                            <div class="form-group d-flex">
+                                <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Current Adhaar card</label>
+                                <div class="col-sm-6">
+                                    <img src="{{asset('storage/'.$edata['adharcard'])}}" alt="Italian Trulli" height="150px" width="150px">
+                                </div>
+                            </div>
+                        @endif
+                        <div class="form-group d-flex">
+                            <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Adhaar card Image</label>
+                            <div class="col-sm-6">
+                                <input type="file" class="form-control ui-autocomplete-input @error('adharcard') is-invalid @enderror"
+                                    id="inputAdharcard" value="{{ Old('adharcard') }}"
+                                    name="adharcard" autocomplete="off" placeholder="Enter Commission %">
+                                @error('adharcard')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
