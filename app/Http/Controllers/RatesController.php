@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use App\Stock;
+use App\Rate;
 use Session;
 
-class StocksController extends Controller
+class RatesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class StocksController extends Controller
      */
     public function index()
     {
-        $stocks = Stock::get();
-        return view('stocks.index', ['data' => $stocks]);
+        $rates = Rate::get();
+        return view('rates.index', ['data' => $rates]);
     }
 
     /**
@@ -65,28 +65,24 @@ class StocksController extends Controller
      */
     public function edit($id)
     {
-        $stock = Stock::findOrFail($id);
-        return view('stocks.create', ['stock' => $stock]);
+        $rate = Rate::findOrFail($id);
+        return view('rates.create', ['rate' => $rate]);
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'symbol' => 'required',
-            'name' => 'required',
-            'market' => 'required',
+            'position' => 'required',
+            'value' => 'required'
         ]);
         
-        $update = Stock::where('_id', $id)->update([
-            'name' => $request->name,
-            'symbol' => $request->symbol,
-            'market' => $request->market,
-            'status' => (int) $request->status
-            // 'updatedAt' => $request->updatedAt
+        $update = Rate::where('_id', $id)->update([
+            'position' => $request->position,
+            'value' => $request->value
         ]);
 
-        session()->flash('success', 'Stock updated successfully....');
-        return redirect('/stocks');
+        session()->flash('success', 'Rates updated successfully....');
+        return redirect('/rates');
     }
 
     /**

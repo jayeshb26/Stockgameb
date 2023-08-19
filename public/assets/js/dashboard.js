@@ -4,7 +4,7 @@ $(function() {
   var gridLineColor = 'rgba(77, 138, 240, .1)';
 
   var colors = {
-    primary:         "#727cf5",
+    primary:         "#09c35a",
     secondary:       "#7987a1",
     success:         "#42b72a",
     info:            "#68afff",
@@ -185,7 +185,7 @@ $(function() {
   if($('#flotChart1').length) {
     $.plot('#flotChart1', [{
       data: flotChart1Data,
-      color: '#727cf5'
+      color: '#09c35a'
       }], {
       series: {
         shadowSize: 0,
@@ -250,7 +250,7 @@ $(function() {
       markers: {
         size: 0
       },
-      colors: ["#727cf5"],
+      colors: ["#09c35a"],
       tooltip: {
         fixed: {
           enabled: !1
@@ -289,7 +289,7 @@ $(function() {
           columnWidth: "60%"
         }
       },
-      colors: ["#727cf5"],
+      colors: ["#09c35a"],
       series: [{
         data: [36, 77, 52, 90, 74, 35, 55, 23, 47, 10, 63]
       }],
@@ -342,7 +342,7 @@ $(function() {
       markers: {
         size: 0
       },
-      colors: ["#727cf5"],
+      colors: ["#09c35a"],
       tooltip: {
         fixed: {
           enabled: !1

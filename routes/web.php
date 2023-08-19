@@ -36,7 +36,8 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::resources([
         'admin' => 'AdminController',
         'subAdmin' => 'subAdminController',
-        'stocks' => 'StocksController'
+        'stocks' => 'StocksController',
+        'rates' => 'RatesController'
     ]);
     
 

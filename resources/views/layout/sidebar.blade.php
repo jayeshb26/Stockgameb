@@ -1,7 +1,7 @@
 <nav class="sidebar">
     <div class="sidebar-header">
         <a href="{{ url('/dashboard') }}" class="sidebar-brand" style="font-size:20px">
-            fun<span>Deal</span>
+            stock<span>Skill</span>
         </a>
         <div class="sidebar-toggler not-active">
             <span></span>
@@ -106,6 +106,12 @@
                         <span class="link-title">View Stocks List</span>
                     </a>
                 </li>
+                <li class="nav-item {{ active_class(['stocks/*']) }}">
+                    <a href="{{ url('/rates') }}" class="nav-link">
+                        <i class="link-icon" data-feather="user"></i>
+                        <span class="link-title">View Rates List</span>
+                    </a>
+                </li>
             @endif
             <li class="nav-item {{ active_class(['transfer']) }}">
                 <a href="{{ url('/transfer') }}" class="nav-link">
@@ -180,7 +186,7 @@
                     </li>
                 @endif
             @endif
-            <li class="nav-item {{ active_class(['transactions']) }}">
+            {{-- <li class="nav-item {{ active_class(['transactions']) }}">
                 <a href="{{ url('/transactions') }}" class="nav-link">
                     <i class="link-icon fa fa-money"></i>
                     <span class="link-title">Transaction Report</span>
@@ -209,7 +215,7 @@
                     <i class="link-icon fa fa-money"></i>
                     <span class="link-title">Out Points</span>
                 </a>
-            </li>
+            </li> --}}
             {{-- @if (Session::get('role') == 'Admin' || Session::get('role') == 'agent' || Session::get('role') == 'premium' || Session::get('role') == 'executive' || Session::get('role') == 'classic')
                 <li class="nav-item {{ active_class(['cmbreport']) }}">
                     <a href="{{ url('/cmbreport') }}" class="nav-link">
@@ -221,7 +227,7 @@
             @if (Session::get('role') == 'Admin')
                 @if (array_key_exists('winningPercent', Session::get('permissions')))
                     @if (Session::get('role') == 'Admin')
-                        <li class="nav-item {{ active_class(['winningPercent']) }}">
+                        {{-- <li class="nav-item {{ active_class(['winningPercent']) }}">
                             <a href="{{ url('/winningPercent') }}" class="nav-link">
                                 <i class="link-icon fa fa-trophy"></i>
                                 <span class="link-title">Winning %</span>
@@ -232,16 +238,16 @@
                                 <i class="link-icon fa fa-money"></i>
                                 <span class="link-title">Admin Balance</span>
                             </a>
-                        </li>
+                        </li> --}}
                     @endif
                 @endif
                 @if (array_key_exists('winbyadmin', Session::get('permissions')))
-                    <li class="nav-item {{ active_class(['announcement']) }}">
+                    {{-- <li class="nav-item {{ active_class(['announcement']) }}">
                         <a href="{{ url('/announcement') }}" class="nav-link">
                             <i class="link-icon fa fa-stop"></i>
                             <span class="link-title">Announcement</span>
                         </a>
-                    </li>
+                    </li> --}}
                 @endif
             @endif
         </ul>
