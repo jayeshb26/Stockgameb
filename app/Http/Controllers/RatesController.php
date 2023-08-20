@@ -27,7 +27,7 @@ class RatesController extends Controller
      */
     public function create()
     {
-        return view('stocks.create');
+        return view('rates.create');
     }
 
     /**
@@ -38,23 +38,17 @@ class RatesController extends Controller
      */
     public function store(Request $request)
     {
-        
         $request->validate([
-            'symbol' => 'required',
-            'name' => 'required|unique:stocks,name',
-            'market' => 'required',
+            'position' => 'required|unique:rates,position',
+            'value' => 'required'
         ]);
-        // $referral = new \MongoDB\BSON\ObjectID(Session::get('id'));
-        $stock = new Stock();
-        $stock->name = $request->name;
-        $stock->symbol =  $request->symbol;
-        $stock->market = $request->market;
-        $stock->status = 1;
-        // $stock->createdAt = date('n/j/Y, h:i:s A');
-        // $stock->updatedAt = date('n/j/Y, h:i:s A');
-        $stock->save();
-        session()->flash('success', 'New stock created successfully....');
-        return redirect('/stocks');
+
+        $rate = new Rate();
+        $rate->position = $request->position;
+        $rate->value =  $request->value;
+        $rate->save();
+        session()->flash('success', 'New rate created successfully....');
+        return redirect('/rates');
     }
 
     /**

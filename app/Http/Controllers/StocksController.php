@@ -38,18 +38,22 @@ class StocksController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'symbol' => 'required',
             'name' => 'required|unique:stocks,name',
             'market' => 'required',
         ]);
         // $referral = new \MongoDB\BSON\ObjectID(Session::get('id'));
+        $lastStock = Stock::orderBy('number','desc')->first();
+        $newNmber = $lastStock->number + 1;
+        
         $stock = new Stock();
         $stock->name = $request->name;
         $stock->symbol =  $request->symbol;
         $stock->market = $request->market;
         $stock->status = 1;
+        $stock->number = $newNmber;
         // $stock->createdAt = date('n/j/Y, h:i:s A');
         // $stock->updatedAt = date('n/j/Y, h:i:s A');
         $stock->save();
@@ -100,5 +104,20 @@ class StocksController extends Controller
         $update = Stock::where('_id', $id)->delete();
         session()->flash('success', 'Stock deleted successfully....');
         return redirect('/stocks');
+    }
+
+    public function changeStockStatus(Request $request){
+        $stockNumers = [];
+        foreach ($request->stock_numbers as $key => $value) {
+            $stockNumers[] = (int) $value;
+        }
+        // $stocks = Stock::whereIn('number', $stockNumers)->get([]);
+        $res = false;
+        if($request->status == 'active'){
+            $res = Stock::whereIn('number', $stockNumers)->update(['stocks' => 1]);
+        }else{
+            $res = Stock::whereIn('number', $stockNumers)->update(['stocks' => 1]);
+        }
+        return response()->json(true);
     }
 }

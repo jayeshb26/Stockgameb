@@ -28,10 +28,16 @@
                 <div class="card-body">
 
                     <div class="col-md-12 row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <h6 class="card-title">Stocks</h6>
                         </div>
-                        <div class="col-md-6 row text-right">
+                        <div class="col-md-2 row">
+                            <a href="javascript:void(0);" class="btn btn-primary" id="active_stock_btn" style="display: none">Active</a>
+                        </div>
+                        <div class="col-md-2  row">
+                            <a href="javascript:void(0);" class="btn btn-secondary" id="inactive_stock_btn" style="display: none">Inactive</a>
+                        </div>
+                        <div class="col-md-4 row text-right">
                             {{-- <select id='filterText' class='col-md-6 mr-5' onchange='filterText()'>
                                 <option value="all">all</option>
                                 @foreach ($data as $value)
@@ -39,17 +45,22 @@
                                 @endforeach
                             </select> --}}
                             
-                            {{-- <a href="{{ url('/stocks/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
+                            <a href="{{ url('/stocks/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
                                 Add Stock
-                            </a> --}}
+                            </a>
                         </div>
 
                     </div>
+                                        
                     {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
                     <div class="table-responsive">
                         <table id="dataTableExample" class="table table-bordered">
                             <thead>
                                 <tr>
+                                    <td class="" style="display: none">
+                                        <input type="checkbox" id="stock_checkbox">
+                                        Select All
+                                    </td>
                                     <th>SL.No</th>
                                     <th>Name</th>
                                     <th>Symbol</th>
@@ -65,7 +76,12 @@
                                 @endphp
                                 @foreach ($data as $key => $value)
                                     <tr role="row" class="odd content">
-                                        <td class="">{{$value['number'] }}</td>
+                                        <td class="" style="display: none">
+                                            <input type="checkbox" class="row_stock_checkbox" value="{{$value['number']}}">
+                                        </td>
+                                        <td class="">
+                                            {{$value['number'] }}
+                                        </td>
                                         <td>{{ $value['name'] }}</td>
                                         <td>{{ $value['symbol'] }}</td>
                                         <td>{{ $value['status'] == 1 ? "Active" : "Inactive" }}</td>
@@ -176,5 +192,68 @@
                 }
             })
         });
+
+        // row_stock_checkbox 
+        
+
+        $("input:checkbox#stock_checkbox").click(function() {
+            if(!$(this).is(":checked")){
+                $('.row_stock_checkbox').prop('checked', false);
+                $('#inactive_stock_btn').hide();
+                $('#active_stock_btn').hide();
+                // alert('you are unchecked ' + $(this).val());
+            }else{
+                $('.row_stock_checkbox').prop('checked', true);
+                $('#inactive_stock_btn').show();
+                $('#active_stock_btn').show();
+            }
+        }); 
+
+        $('#active_stock_btn').on('click', function(e){
+            event.preventDefault();
+            updateStockStatus('active');
+        });
+
+        $('#inactive_stock_btn').on('click', function(e){
+            event.preventDefault();
+            updateStockStatus('inactive');
+        });
+
+        // $("input:checkbox.row_stock_checkbox:checked").
+
+        function updateStockStatus(status){
+            var token = "{{csrf_token()}}";
+            let stockNUmbers = [];
+            $("input:checkbox.row_stock_checkbox:checked").each(function(){
+                stockNUmbers.push($(this).val());
+            });
+            
+            let url = "{{url('change/stock/status')}}";
+            // $.ajaxSetup({
+            //     headers: {
+            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            //     }
+            // });
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: {
+                    stock_numbers: stockNUmbers,
+                    status: status,
+                    _token: token
+                },
+                success: function(res) {
+                    console.log('ajax response'+res);
+                    // window.location.reload();
+                }
+            });
+            // swalWithBootstrapButtons.fire(
+            //     'Transfer!',
+            //     'Point Transfer SuccessFully..',
+            //     'success'
+            // )
+            
+            // console.log(status, stockNUmbers);
+        }
     </script>
 @endpush

@@ -39,9 +39,9 @@
                                 @endforeach
                             </select> --}}
                             
-                            {{-- <a href="{{ url('/stocks/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
-                                Add Stock
-                            </a> --}}
+                            <a href="{{ url('/rates/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
+                                Add Rate
+                            </a>
                         </div>
 
                     </div>

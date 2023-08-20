@@ -163,4 +163,5 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::post('/search_transfer', 'AdminController@search_transfer');
     Route::get('/success/{id}', 'AdminController@success');
     Route::get('/reject/{id}', 'AdminController@reject');
+    Route::post('/change/stock/status', 'StocksController@changeStockStatus');    
 });
