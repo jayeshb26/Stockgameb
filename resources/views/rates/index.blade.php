@@ -69,9 +69,9 @@
                                                     class="btn btn-outline-info" title="Edit Rate"><i
                                                         class="mdi mdi-pencil-box" style="font-size:20px;"></i></a>
                                                 @if (Session::get('role') == 'Admin')
-                                                    {{-- <a href="{{ url('stocks/delete/' . $value['_id']) }}" class="btn btn-outline-danger delete-confirm" title="Delete">
+                                                    <a href="{{ url('rates/delete/' . $value['_id']) }}" class="btn btn-outline-danger delete-confirm" title="Delete">
                                                         <i class="mdi mdi-delete" style="font-size:20px;"></i>
-                                                    </a> --}}
+                                                    </a>
                                                 @endif
                                             </div>
                                             {{-- href="{{ url('users/delete/'.$value['_id'])}}" --}}

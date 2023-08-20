@@ -42,8 +42,7 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     
 
     Route::get('stocks/delete/{id}', 'StocksController@destroy');
-    // Route::get('stocks/create', 'StocksController@create');
-    // Route::post('stocks/save', 'StocksController@save');
+    Route::get('rates/delete/{id}', 'RatesController@destroy');
 
     Route::get('/point_requests_create', 'AdminController@point_requests_create');
     Route::post('/point_request_store', 'AdminController@point_request_store');

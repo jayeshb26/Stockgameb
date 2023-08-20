@@ -87,8 +87,8 @@ class RatesController extends Controller
      */
     public function destroy($id)
     {
-        $update = Stock::where('_id', $id)->delete();
-        session()->flash('success', 'Stock deleted successfully....');
-        return redirect('/stocks');
+        $update = Rate::where('_id', $id)->delete();
+        session()->flash('success', 'Rate deleted successfully....');
+        return redirect('/rates');
     }
 }
