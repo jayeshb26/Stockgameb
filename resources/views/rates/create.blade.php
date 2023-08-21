@@ -10,7 +10,7 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h6>@isset($rate) Edit @else Add @endisset Stock </h6>
+                    <h6>@isset($rate) Edit @else Add @endisset Rate </h6>
                     <div class="row text-right">
                         <a href="{{url('rates')}}" class="btn btn-success">
                             <i class="fa fa-arrow-left mr-2"></i>

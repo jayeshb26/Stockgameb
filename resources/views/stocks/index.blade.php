@@ -57,10 +57,10 @@
                         <table id="dataTableExample" class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <td class="" style="display: none">
+                                    <th class="">
                                         <input type="checkbox" id="stock_checkbox">
-                                        Select All
-                                    </td>
+                                        All
+                                    </th>
                                     <th>SL.No</th>
                                     <th>Name</th>
                                     <th>Symbol</th>
@@ -76,7 +76,7 @@
                                 @endphp
                                 @foreach ($data as $key => $value)
                                     <tr role="row" class="odd content">
-                                        <td class="" style="display: none">
+                                        <td class="">
                                             <input type="checkbox" class="row_stock_checkbox" value="{{$value['number']}}">
                                         </td>
                                         <td class="">
@@ -193,15 +193,30 @@
             })
         });
 
-        // row_stock_checkbox 
-        
+        $('input:checkbox.row_stock_checkbox').click(function() {
+            let count = $("input[class='row_stock_checkbox']:checked").length;
+            if(count > 0){
+                $('#inactive_stock_btn').show();
+                $('#active_stock_btn').show();                
+            }else{
+                $('#inactive_stock_btn').hide();
+                $('#active_stock_btn').hide();
+            }
+
+            let unchecked = $("input[class='row_stock_checkbox']").not(':checked').length;
+            if(unchecked < 1){
+                $('#stock_checkbox').prop('checked', true);
+            }else{
+                $('#stock_checkbox').prop('checked', false);
+            }
+        });
 
         $("input:checkbox#stock_checkbox").click(function() {
-            if(!$(this).is(":checked")){
+            let count = $("input[class='row_stock_checkbox']:checked").length;
+            if(count > 0){
                 $('.row_stock_checkbox').prop('checked', false);
                 $('#inactive_stock_btn').hide();
                 $('#active_stock_btn').hide();
-                // alert('you are unchecked ' + $(this).val());
             }else{
                 $('.row_stock_checkbox').prop('checked', true);
                 $('#inactive_stock_btn').show();
@@ -219,21 +234,21 @@
             updateStockStatus('inactive');
         });
 
-        // $("input:checkbox.row_stock_checkbox:checked").
+        const swalWithBootstrapButtons = Swal.mixin({
+            // customClass: {
+            //     confirmButton: 'btn btn-success',
+            //     cancelButton: 'btn btn-danger'
+            // },
+            // buttons: false
+        });
 
         function updateStockStatus(status){
             var token = "{{csrf_token()}}";
             let stockNUmbers = [];
+            let url = "{{url('change/stock/status')}}";
             $("input:checkbox.row_stock_checkbox:checked").each(function(){
                 stockNUmbers.push($(this).val());
             });
-            
-            let url = "{{url('change/stock/status')}}";
-            // $.ajaxSetup({
-            //     headers: {
-            //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            //     }
-            // });
             $.ajax({
                 url: url,
                 type: 'POST',
@@ -243,17 +258,16 @@
                     _token: token
                 },
                 success: function(res) {
-                    console.log('ajax response'+res);
-                    // window.location.reload();
+                    swalWithBootstrapButtons.fire(
+                        'Stock!',
+                        'Stock status changed successFully..',
+                        'success'
+                    )
+                    setInterval(() => {
+                        window.location.reload();
+                    }, 2000);
                 }
             });
-            // swalWithBootstrapButtons.fire(
-            //     'Transfer!',
-            //     'Point Transfer SuccessFully..',
-            //     'success'
-            // )
-            
-            // console.log(status, stockNUmbers);
         }
     </script>
 @endpush

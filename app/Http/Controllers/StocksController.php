@@ -114,9 +114,9 @@ class StocksController extends Controller
         // $stocks = Stock::whereIn('number', $stockNumers)->get([]);
         $res = false;
         if($request->status == 'active'){
-            $res = Stock::whereIn('number', $stockNumers)->update(['stocks' => 1]);
+            $res = Stock::whereIn('number', $stockNumers)->update(['status' => 1]);
         }else{
-            $res = Stock::whereIn('number', $stockNumers)->update(['stocks' => 1]);
+            $res = Stock::whereIn('number', $stockNumers)->update(['status' => 0]);
         }
         return response()->json(true);
     }
