@@ -69,6 +69,7 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::get('/users/Franchise', 'AdminController@user_Franchise');
     Route::get('/users/distlist', 'AdminController@user_Franchise');
     Route::get('/users/plyrlist', 'AdminController@user_Franchise');
+    Route::get('/users/agentlist', 'AdminController@user_Franchise');
     
     Route::get('/notification', 'AdminController@alert');
 

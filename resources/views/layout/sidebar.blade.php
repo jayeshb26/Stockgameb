@@ -48,7 +48,7 @@
 
             @if (Session::get('role') == 'Admin' || Session::get('role') == 'subadmin' || Session::get('role') == 'agent' || Session::get('role') == 'premium' || Session::get('role') == 'executive' || Session::get('role') == 'classic' || Session::get('role') == 'subadmin')
                 @if (Session::get('is_f') == 'true')
-                    <li class="nav-item {{ active_class(['Franchise/']) }}">
+                    <li class="nav-item {{ active_class(['Franchise/add_player','Franchise/add_distributer', 'Franchise/add_agent']) }}">
                         @if (Session::get('role') == 'Admin' || Session::get('role') == 'subadmin')
                             {{-- <a href="{{ url('/Franchise/add_premium') }}" class="nav-link"> --}}
                             <a href="{{ url('/Franchise/add_distributer') }}" class="nav-link">
@@ -84,10 +84,28 @@
             @endif
             @if (Session::get('role') == 'Admin' || Session::get('role') == 'agent' || Session::get('role') == 'premium' || Session::get('role') == 'executive' || Session::get('role') == 'classic' || Session::get('role') == 'subadmin')
                 @if (Session::get('is_f') == 'true')
-                    <li class="nav-item {{ active_class(['users/Franchise']) }}">
+                    {{-- <li class="nav-item {{ active_class(['users/Franchise']) }}">
                         <a href="{{ url('/users/Franchise') }}" class="nav-link">
                             <i class="link-icon" data-feather="user"></i>
                             <span class="link-title">View Users</span>
+                        </a>
+                    </li> --}}
+                    <li class="nav-item {{ active_class(['users/distlist']) }}">
+                        <a href="{{ url('/users/distlist') }}" class="nav-link">
+                            <i class="link-icon" data-feather="user"></i>
+                            <span class="link-title">View Distributers</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ active_class(['users/agentlist']) }}">
+                        <a href="{{ url('/users/agentlist') }}" class="nav-link">
+                            <i class="link-icon" data-feather="user"></i>
+                            <span class="link-title">View Agents</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {{ active_class(['users/plyrlist']) }}">
+                        <a href="{{ url('/users/plyrlist') }}" class="nav-link">
+                            <i class="link-icon" data-feather="user"></i>
+                            <span class="link-title">View Players</span>
                         </a>
                     </li>
                 @elseif(Session::get('is_f') == 'false')
@@ -100,15 +118,15 @@
                 @endif
             @endif
             @if (Session::get('role') == 'Admin')
-                <li class="nav-item {{ active_class(['stocks/*']) }}">
+                <li class="nav-item {{ active_class(['stocks']) }}">
                     <a href="{{ url('/stocks') }}" class="nav-link">
-                        <i class="link-icon" data-feather="user"></i>
+                        <i class="link-icon" data-feather="activity"></i>
                         <span class="link-title">View Stocks List</span>
                     </a>
                 </li>
-                <li class="nav-item {{ active_class(['stocks/*']) }}">
+                <li class="nav-item {{ active_class(['rates']) }}">
                     <a href="{{ url('/rates') }}" class="nav-link">
-                        <i class="link-icon" data-feather="user"></i>
+                        <i class="link-icon" data-feather="dollar-sign"></i>
                         <span class="link-title">View Rates List</span>
                     </a>
                 </li>
@@ -141,10 +159,10 @@
                 </a>
             </li>
             @if (Session::get('role') == 'Admin' || Session::get('role') == 'agent' || Session::get('role') == 'premium' || Session::get('role') == 'executive' || Session::get('role') == 'classic')
-                <li class="nav-item {{ active_class(['gamedraw']) }}">
+                <li class="nav-item {{ active_class(['gamedraw/1']) }}">
                     <a href="{{ url('/gamedraw/1') }}" class="nav-link">
                         <i class="link-icon fa fa-history"></i>
-                        <span class="link-title">Game Draw</span>
+                        <span class="link-title">Draw List</span>
                     </a>
                 </li>
             @endif
@@ -172,7 +190,7 @@
                                     class="nav-link">
                         @endif
                         <i class="link-icon fa fa-pie-chart"></i>
-                        <span class="link-title">Turnover Franchise Report</span>
+                        <span class="link-title">Turnover Report</span>
                         </a>
                     </li>
                 @endif

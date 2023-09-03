@@ -2702,7 +2702,7 @@ pre code {
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-right: -0.75rem;
+    /* margin-right: -0.75rem; */
     margin-left: -0.75rem;
 }
 
@@ -10969,7 +10969,7 @@ input[type="button"].btn-block {
     flex-direction: column;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #A0C3D2;
+    background-color: #fff;
     background-clip: border-box;
     border: 1px solid #f2f4f9;
     border-radius: 0.25rem;
@@ -26062,7 +26062,7 @@ address p {
     width: calc(100% - 240px);
     height: 60px;
     background: #ffffff;
-    border-bottom: 1px solid #f2f4f9;
+    border-bottom: 1px solid #0b7c3c;
     display: flex;
     align-items: center;
     padding: 0;
@@ -28332,8 +28332,8 @@ address p {
 
 .sidebar-dark .sidebar .sidebar-header {
     background: #000;
-    border-bottom: 1px solid #344258;
-    border-right: 1px solid #344258;
+    border-bottom: 1px solid #0b7c3c;
+    border-right: 1px solid #0b7c3c;
 }
 
 .sidebar-dark .sidebar .sidebar-header .sidebar-brand {
@@ -28346,7 +28346,7 @@ address p {
 
 .sidebar-dark .sidebar .sidebar-body {
     background: #000;
-    border-right: 1px solid #344258;
+    border-right: 1px solid #0b7c3c;
 }
 
 .sidebar-dark .sidebar .sidebar-body .nav .nav-item.nav-category {
@@ -28583,7 +28583,7 @@ address p {
 }
 
 .sidebar-dark.rtl .main-wrapper .sidebar .sidebar-header {
-    border-left: 1px solid #344258;
+    border-left: 1px solid #0b7c3c;
 }
 
 .rtl .main-wrapper .sidebar .sidebar-body {
@@ -43854,7 +43854,7 @@ address p {
 }
 
 .card .card-body {
-    padding: 1.5rem 1.5rem;
+    padding: 0.5rem 0.5rem;
 }
 
 .card .card-body + .card-body {

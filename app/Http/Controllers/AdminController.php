@@ -69,29 +69,30 @@ class AdminController extends Controller
             }
             $user_role = User::where('is_franchise', true)->pluck('role')->toArray();
             $user_role = array_unique($user_role);
-            // dd(request()->url(), url('users/distlist'));
+            
+            // distributer list
             if(request()->url() == url('users/distlist')){
-                // distributer list
-                $user = User::where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->where('role', "executive")
-                    // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
+                $user = User::where('role', "executive")
+                    // where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->
                     ->get();
-                // distributer list
             }
+            // distributer list
 
+            // player list
             if(request()->url() == url('users/plyrlist')){
-                // player list
-                $user = User::where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")->where('role', "player")
+                $user = User::where('userName', '!=', "superadminF")->where('role', '!=', "subadmin")
+                    ->where('role', "player")->get();
                     // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
-                    ->get();                    
-                // player list
+                    
+            }
+            // player list
+
+            // agent list
+            if(request()->url() == url('users/agentlist')){
+                $user = User::where('role', "classic")->get();
             }
             return view('admin.view', ['data' => $user, 'role' => $user_role]);
         }
-
-        // echo "<pre>";
-        // print_r($user->toArray());
-        // die;
-
     }
 
     /**

@@ -107,9 +107,9 @@ class CommanController extends Controller
     {
         $users = User::where('role', 'retailer')->select('userName')->where('is_franchise', (Session::get('is_f') == "true") ? true : false)->get();
 
-
         if (Session::get('role') == "Admin" || Session::get('role') == "subadmin") {
-            $player = User::where('is_franchise', (Session::get('is_f') == "true") ? true : false)->get();
+            $player = User::get();
+                // ->where('is_franchise', (Session::get('is_f') == "true") ? true : false)
             $pla = [];
             foreach ($player as $player_user) {
                 $pla[] = new \MongoDB\BSON\ObjectID($player_user['_id']);
@@ -124,7 +124,7 @@ class CommanController extends Controller
                 }
                 $playPoints->appends(['game' => $_GET['game']]);
             } else {
-                $playPoints = Bets::whereIn('playerId', $pla)->orderBy('createdAt', 'DESC')->where('game', 'rouletteTimer60')->paginate(10);
+                $playPoints = Bets::whereIn('playerId', $pla)->orderBy('createdAt', 'DESC')->where('game', 'stockskill')->paginate(10);
             }
             // if (isset($_GET['game'])) {
             //     if ($_GET['game'] == 1) {
@@ -256,7 +256,9 @@ class CommanController extends Controller
     public function playerHistory($id)
     {
         $users = User::where('role', 'retailer')->select('userName')->get();
-        $playPoint = Bets::where('playerId', new \MongoDB\BSON\ObjectID($id))->orderBy('createdAt', 'DESC')->paginate(10);
+        $playPoint = Bets::where('playerId', new \MongoDB\BSON\ObjectID($id))
+                    ->where('game', "stockskill")
+                    ->orderBy('createdAt', 'DESC')->paginate(10);
         return view('history', ['data' => $playPoint, 'users' => $users]);
     }
 

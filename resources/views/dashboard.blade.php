@@ -24,9 +24,9 @@
                                     <div class="col-md-8">
                                         <h6 class="text-white mb-2">Generate Point Balance</h6>
                                         <div>
-                                            <h3 class="text-white">
+                                            <h5 class="text-white">
                                                 {{ moneyFormatIndia(Session::get('creditPoint')) }}
-                                            </h3>
+                                            </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +82,7 @@
                                     <div class="card-body">
                                         <div class=" row">
                                             <div class="col-md-8">
-                                                <h6 class="text-white mb-2">Distributer Users</h6>
+                                                <h6 class="text-white mb-2">Distributers</h6>
                                                 <div>
                                                     <h3 class="text-white">{{ $data['distributers'] }}</h3>
                                                 </div>
@@ -115,9 +115,29 @@
                                 </a>
                             </div>
                         </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-4 grid-margin stretch-card">
+                            <div class="card bg-success">
+                                <a href="{{ url('/users/plyrlist') }}">
+                                    <div class="card-body">
+                                        <div class=" row">
+                                            <div class="col-md-8">
+                                                <h6 class="text-white mb-2">Agents</h6>
+                                                <div>
+                                                    <h3 class="text-white">{{ $data['classic'] }}</h3>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 mt-1">
+                                                <h1 class="text-white text-right mr-3"><i class="fa fa-user"></i></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     @endif
                 @endif
-                <div class="col-md-3 grid-margin stretch-card">
+                <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-danger">
                         <a href="{{ url('/blockedPlayers') }}">
                             <div class="card-body">
@@ -126,14 +146,14 @@
                                         <h6 class="text-white mb-2">Blocked Users</h6>
                                     </div>
                                     <div class="col-md-4 mt-1">
-                                        <h1 class="text-white text-right mr-3"><i class="fa fa-user-times"></i></h2>
+                                        <h4 class="text-white text-right mr-3"><i class="fa fa-user-times"></i></h4>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+                <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-secondary">
                         <a href="{{ url('/transfer') }}">
                             <div class="card-body">
@@ -142,14 +162,14 @@
                                         <h6 class="text-white mb-2">Transfer Point</h6>
                                     </div>
                                     <div class="col-md-4 mt-1">
-                                        <h1 class="text-white text-right mr-3"><i class="fa fa-exchange"></i></h2>
+                                        <h4 class="text-white text-right mr-3"><i class="fa fa-exchange"></i></h4>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+                <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-warning">
                         <a href="{{ url('/history') }}">
                             <div class="card-body">
@@ -158,30 +178,39 @@
                                         <h6 class="text-white mb-2">Player History</h6>
                                     </div>
                                     <div class="col-md-4 mt-1">
-                                        <h1 class="text-white text-right mr-3"><i class="fa fa-dashboard"></i></h2>
+                                        <h4 class="text-white text-right mr-3"><i class="fa fa-dashboard"></i></h4>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+                <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-success">
-                        <a href="{{ url('/Tnover?type=7&from=' . date('Y-m-d') . '&to=' . date('Y-m-d')) }}">
+                        @php 
+                        $turnUrl = '';
+                            if (Session::get('role') == 'Admin'){
+                                $turnUrl = url('/Tnover?role=franchise&type=7&from=' . date('Y-m-d') . '&to=' . date('Y-m-d'));
+                            }else{
+                                $turnUrl = url('/Tnover?role=' . Session::get('role') . '&type=7&from=' . date('Y-m-d') . '&to=' . date('Y-m-d'));
+                            }
+                        @endphp
+                        
+                        <a href="{{$turnUrl}}">
                             <div class="card-body">
                                 <div class=" row">
                                     <div class="col-md-8">
-                                        <h6 class="text-white mb-2">TurnOver Result</h6>
+                                        <h6 class="text-white mb-2">Turnover Report</h6>
                                     </div>
                                     <div class="col-md-4 mt-1">
-                                        <h1 class="text-white text-right mr-3"><i class="fa fa-pie-chart"></i></h2>
+                                        <h4 class="text-white text-right mr-3"><i class="fa fa-pie-chart"></i></h4>
                                     </div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col-md-3 grid-margin stretch-card">
+                <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-danger">
                         <a href="{{ url('/transactions') }}">
                             <div class="card-body">
@@ -190,7 +219,23 @@
                                         <h6 class="text-white mb-2">Transaction Report</h6>
                                     </div>
                                     <div class="col-md-4 mt-1">
-                                        <h1 class="text-white text-right mr-3"><i class="fa fa-bar-chart"></i></h2>
+                                        <h4 class="text-white text-right mr-3"><i class="fa fa-bar-chart"></i></h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2 grid-margin stretch-card">
+                    <div class="card bg-primary">
+                        <a href="{{ url('/stocks') }}">
+                            <div class="card-body">
+                                <div class=" row">
+                                    <div class="col-md-8">
+                                        <h6 class="text-white mb-2">Stocks List</h6>
+                                    </div>
+                                    <div class="col-md-4 mt-1">
+                                        <h4 class="text-white text-right mr-3"><i class="fa fa-bar-chart"></i></h4>
                                     </div>
                                 </div>
                             </div>
@@ -199,7 +244,7 @@
                 </div>
                 @if (Session::get('role') == 'Admin')
                     @if (Session::get('is_f') == 'true')
-                        <div class="col-xl-4 grid-margin stretch-card">
+                        <div class="col-xl-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     {{-- <h6 class="card-title">Franchises</h6> --}}
@@ -211,7 +256,7 @@
                             </div>
                         </div>
                     @elseif (Session::get('is_f') == 'false')
-                        <div class="col-xl-4 grid-margin stretch-card">
+                        <div class="col-xl-6 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
                                     <h6 class="card-title">Agents</h6>
@@ -222,10 +267,10 @@
                             </div>
                         </div>
                     @endif
-                    <div class="col-xl-4 grid-margin stretch-card">
+                    <div class="col-xl-12 grid-margin stretch-card">
                         <div class="card">
                             <div class="card-body">
-                                <h6 class="card-title">Win Points & End Points Game wise</h6>
+                                <h6 class="card-title"></h6>
                                 <canvas id="chartjsGroupedBar"
                                     style="display: block; box-sizing: border-box; height: 150px; width: 744px;" width="744"
                                     height="372"></canvas>
@@ -279,7 +324,7 @@
         new Chart($("#chartjsGroupedBar"), {
             type: "bar",
             data: {
-                labels: ["Game40", "Game60", "Game Manule"],
+                labels: ["Stock Skill"],
                 datasets: [{
                         label: "Win Points",
                         backgroundColor: "#f77eb9",

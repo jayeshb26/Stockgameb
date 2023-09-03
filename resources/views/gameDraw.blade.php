@@ -11,14 +11,14 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-8 offset-md-2 grid-margin stretch-card">
+        <div class="col-md-12 grid-margin stretch-card">
             <div class="card panel-primary">
                 <div class="card-header bg-primary">
                     <div class="col-md-12 d-flex">
-                        <span class="col-md-6 text-white font-weight-bold" style="font-size:16px;">Draw Details -
+                        <span class="col-md-6 text-white font-weight-bold" style="font-size:16px;">Order Details -
                             {{ $game }}</span>
                         <div class="col-md-6 text-right">
-                            <div class="dropdown pull-right">
+                            {{-- <div class="dropdown pull-right">
                                 <button class="btn btn-outline-success text-white dropdown-toggle" type="button"
                                     id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">Draw Details</button>
@@ -27,7 +27,7 @@
                                     <a class="dropdown-item" href="{{ url('gamedraw/2') }}">RouletteTimer40</a>
                                     <a class="dropdown-item" href="{{ url('gamedraw/3') }}">Roulette</a>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
@@ -39,22 +39,27 @@
                                 <thead>
                                     <tr>
                                         <td>Sl no</td>
-                                        <td>Draw</td>
+                                        <td>Position</td>
+                                        <td>Name</td>
+                                        <td>Symbol</td>
                                         <td>Time</td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @php $no = 1; @endphp
                                     @foreach ($data as $key => $bets)
+                                    {{-- @dd($bets['result']['name']); --}}
                                         <tr>
                                             <td><?= $data->firstItem() + $key ?></td>
+                                            <td>{{ $bets['result']['number'] }}</td>
                                             @if ($game == 'Andar Bahar')
                                                 <td><img src="{{ asset('assets/images/card/' . $bets['result'] . '.png') }}"
                                                         style="border-radius: 0px; width: 5%;"></td>
                                             @else
-                                                <td>{{ $bets['result'] }}</td>
+                                                <td>{{ $bets['result']['name'] }}</td>
                                             @endif
-                                            <td>{{ date('d-m-Y h:i:s A', strtotime(date($bets['createdAt']))) }}</td>
+                                            <td>{{ $bets['result']['symbol'] }}</td>
+                                            <td>{{$bets['createDate']}} </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -48,14 +48,16 @@ class DashboardController extends Controller
                 $chart_f = implode(', ', array_values($chart_f));
             }
             $chart_w = array(
-                Bets::where('game', 'rouletteTimer40')->sum('won'),
-                Bets::where('game', 'rouletteTimer60')->sum('won'),
-                Bets::where('game', 'roulette')->sum('won'),
+                Bets::where('game', 'stockskill')->sum('won')
+                // Bets::where('game', 'rouletteTimer40')->sum('won'),
+                // Bets::where('game', 'rouletteTimer60')->sum('won'),
+                // Bets::where('game', 'roulette')->sum('won'),
             );
             $chart_p = array(
-                Bets::where('game', 'rouletteTimer40')->sum('bet'),
-                Bets::where('game', 'rouletteTimer60')->sum('bet'),
-                Bets::where('game', 'roulette')->sum('bet'),
+                Bets::where('game', 'stockskill')->sum('bet'),
+                // Bets::where('game', 'rouletteTimer40')->sum('bet'),
+                // Bets::where('game', 'rouletteTimer60')->sum('bet'),
+                // Bets::where('game', 'roulette')->sum('bet'),
             );
             $chart_w = implode(', ', array_values($chart_w));
             $chart_p = implode(', ', array_values($chart_p));
@@ -71,6 +73,10 @@ class DashboardController extends Controller
             ->where('role', "player")
             // ->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))
             ->count();
+        $dash['classic'] = User::where('userName', '!=', "superadminF")
+        ->where('role', '!=', "subadmin")
+        ->where('role', "classic")
+        ->count();
         return view('dashboard', ['data' => $dash, 'chart_f' => $chart_f, 'chart_a' => $chart_a, 'chart_w' => $chart_w, 'chart_p' => $chart_p]);
     }
 

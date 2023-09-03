@@ -16,13 +16,13 @@
 @section('content')
     <div class="page-content d-flex align-items-center justify-content-center">
         <div class="row w-100 mx-0 auth-page">
-            <div class="col-md-8 col-xl-6 mx-auto">
-                <div class="card">
+            <div class="col-md-6 col-xl-4 mx-auto">
+                <div class="card" style="border: 2px solid #09c35a">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="auth-form-wrapper px-5 py-5">
-                                <a href="#" class="noble-ui-logo d-block mb-2 text-center">funDeal</a>
-                                <h5 class="text-muted font-weight-normal mb-4 text-center">Welcome back! Log in to your
+                                <a href="#" class="noble-ui-logo d-block mb-2 text-center">StockSkill</a>
+                                <h5 class="text-muted font-weight-normal text-center">Welcome back! Log in to your
                                     account.</h5>
                                 @if (Session::has('msg'))
                                     <div class="alert alert-danger" role="alert">

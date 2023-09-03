@@ -89,7 +89,7 @@
                 </div>
                 <div class="card-body">
                     <div class="breadcrumb bg-light" id="live2">
-                        <div class="col-sm-4 text-center">
+                        {{-- <div class="col-sm-4 text-center">
                             Total Profit RouletteTimer40<br>
                             <span>{{ moneyFormatIndia($total['rouletteTimer40']) ? moneyFormatIndia($total['rouletteTimer40']) : moneyFormatIndia(0) }}</span>
                         </div>
@@ -100,6 +100,10 @@
                         <div class="col-sm-4 text-center">
                             Total Profit Roulette<br>
                             <span>{{ moneyFormatIndia($total['roulette']) ? moneyFormatIndia($total['roulette']) : moneyFormatIndia(0) }}</span>
+                        </div> --}}
+                        <div class="col-sm-4 text-center">
+                            Total Profit StockSkill<br>
+                            <span>{{ moneyFormatIndia($total['stockskill']) ? moneyFormatIndia($total['stockskill']) : moneyFormatIndia(0) }}</span>
                         </div>
                     </div>
                 </div>

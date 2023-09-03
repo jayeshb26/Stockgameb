@@ -20,17 +20,21 @@ class GameController extends Controller
         // roulette
         // funTarget
         // tripleChance
-
-        if ($id == 1) {
-            $bets = Winresults::where('gameName', "rouletteTimer60")->orderBy('createdAt', 'DESC')->paginate(10);
-            $game = "RouletteTimer60";
-        } elseif ($id == 2) {
-            $bets = Winresults::where('gameName', "rouletteTimer40")->orderBy('createdAt', 'DESC')->paginate(10);
-            $game = "RouletteTimer40";
-        } elseif ($id == 3) {
-            $bets = Winresults::where('gameName', "roulette")->orderBy('createdAt', 'DESC')->paginate(10);
-            $game = "Roulette";
-        }
+        $bets = Winresults::where('gameName', "stockskill")
+            ->orderBy('createdAt', 'DESC')
+            ->paginate(10);
+        // $bets = Winresults::where('gameName', "rouletteTimer60")->orderBy('createdAt', 'DESC')->paginate(10);
+        $game = "Stockskill";
+        // if ($id == 1) {
+        //     $bets = Winresults::where('gameName', "rouletteTimer60")->orderBy('createdAt', 'DESC')->paginate(10);
+        //     $game = "RouletteTimer60";
+        // } elseif ($id == 2) {
+        //     $bets = Winresults::where('gameName', "rouletteTimer40")->orderBy('createdAt', 'DESC')->paginate(10);
+        //     $game = "RouletteTimer40";
+        // } elseif ($id == 3) {
+        //     $bets = Winresults::where('gameName', "roulette")->orderBy('createdAt', 'DESC')->paginate(10);
+        //     $game = "Roulette";
+        // }
         return view('gameDraw', ['data' => $bets, 'game' => $game]);
     }
 
@@ -60,9 +64,10 @@ class GameController extends Controller
                 $admin = User::where('_id', new \MongoDB\BSON\ObjectID(Session::get('id')))->get();
                 if (count($agent) == 0) {
                     $game = array();
-                    $game['rouletteTimer40'] = 0;
-                    $game['rouletteTimer60'] = 0;
-                    $game['roulette'] = 0;
+                    // $game['rouletteTimer40'] = 0;
+                    // $game['rouletteTimer60'] = 0;
+                    // $game['roulette'] = 0;
+                    $game['stockskill'] = 0;
                     return view('gameProfit', ['data' => $admin,  'total' => $game]);
                 } else {
                     foreach ($agent as $super) {
@@ -72,9 +77,10 @@ class GameController extends Controller
                     if (count($premium) == 0) {
 
                         $game = array();
-                        $game['rouletteTimer40'] = 0;
-                        $game['rouletteTimer60'] = 0;
-                        $game['roulette'] = 0;
+                        // $game['rouletteTimer40'] = 0;
+                        // $game['rouletteTimer60'] = 0;
+                        // $game['roulette'] = 0;
+                        $game['stockskill'] = 0;
                         return view('gameProfit', ['data' => $admin,  'total' => $game]);
                     } else {
                         foreach ($premium as $pre_user) {
@@ -84,9 +90,10 @@ class GameController extends Controller
                         if (count($executive) == 0) {
 
                             $game = array();
-                            $game['rouletteTimer40'] = 0;
-                            $game['rouletteTimer60'] = 0;
-                            $game['roulette'] = 0;
+                            // $game['rouletteTimer40'] = 0;
+                            // $game['rouletteTimer60'] = 0;
+                            // $game['roulette'] = 0;
+                            $game['stockskill'] = 0;
                             return view('gameProfit', ['data' => $admin,  'total' => $game]);
                         } else {
                             foreach ($executive as $exe_user) {
@@ -96,9 +103,10 @@ class GameController extends Controller
                             if (count($classic) == 0) {
 
                                 $game = array();
-                                $game['rouletteTimer40'] = 0;
-                                $game['rouletteTimer60'] = 0;
-                                $game['roulette'] = 0;
+                                // $game['rouletteTimer40'] = 0;
+                                // $game['rouletteTimer60'] = 0;
+                                // $game['roulette'] = 0;
+                                $game['stockskill'] = 0;
                                 return view('gameProfit', ['data' => $admin,  'total' => $game]);
                             } else {
                                 foreach ($classic as $cal_user) {
@@ -111,9 +119,10 @@ class GameController extends Controller
                                 if (count($players) == 0) {
 
                                     $game = array();
-                                    $game['rouletteTimer40'] = 0;
-                                    $game['rouletteTimer60'] = 0;
-                                    $game['roulette'] = 0;
+                                    // $game['rouletteTimer40'] = 0;
+                                    // $game['rouletteTimer60'] = 0;
+                                    // $game['roulette'] = 0;
+                                    $game['stockskill'] = 0;
                                     return view('gameProfit', ['data' => $admin,  'total' => $game]);
                                 } else {
                                     if ($type == 1 || $type == 2 || $type == 3 || $type == 4 || $type == 5 || $type == 8) {
@@ -142,9 +151,10 @@ class GameController extends Controller
                                     // die;
                                     $game = array();
 
-                                    $game['rouletteTimer40'] = 0;
-                                    $game['rouletteTimer60'] = 0;
-                                    $game['roulette'] = 0;
+                                    // $game['rouletteTimer40'] = 0;
+                                    // $game['rouletteTimer60'] = 0;
+                                    // $game['roulette'] = 0;
+                                    $game['stockskill'] = 0;
 
                                     // echo "<pre>";
                                     // print_r($game);
@@ -189,9 +199,10 @@ class GameController extends Controller
                 $admin = User::where('_id', new \MongoDB\BSON\ObjectID(Session::get('id')))->get();
                 if (count($premium) == 0) {
                     $game = array();
-                    $game['rouletteTimer40'] = 0;
-                    $game['rouletteTimer60'] = 0;
-                    $game['roulette'] = 0;
+                    // $game['rouletteTimer40'] = 0;
+                    // $game['rouletteTimer60'] = 0;
+                    // $game['roulette'] = 0;
+                    $game['stockskill'] = 0;
                     return view('gameProfit', ['data' => $admin,  'total' => $game]);
                 } else {
                     foreach ($premium as $pre_user) {
@@ -201,9 +212,10 @@ class GameController extends Controller
                     if (count($executive) == 0) {
 
                         $game = array();
-                        $game['rouletteTimer40'] = 0;
-                        $game['rouletteTimer60'] = 0;
-                        $game['roulette'] = 0;
+                        // $game['rouletteTimer40'] = 0;
+                        // $game['rouletteTimer60'] = 0;
+                        // $game['roulette'] = 0;
+                        $game['stockskill'] = 0;
                         return view('gameProfit', ['data' => $admin,  'total' => $game]);
                     } else {
                         foreach ($executive as $exe_user) {
@@ -213,9 +225,10 @@ class GameController extends Controller
                         if (count($classic) == 0) {
 
                             $game = array();
-                            $game['rouletteTimer40'] = 0;
-                            $game['rouletteTimer60'] = 0;
-                            $game['roulette'] = 0;
+                            // $game['rouletteTimer40'] = 0;
+                            // $game['rouletteTimer60'] = 0;
+                            // $game['roulette'] = 0;
+                            $game['stockskill'] = 0;
                             return view('gameProfit', ['data' => $admin,  'total' => $game]);
                         } else {
                             foreach ($classic as $cal_user) {
@@ -228,9 +241,10 @@ class GameController extends Controller
                             if (count($players) == 0) {
 
                                 $game = array();
-                                $game['rouletteTimer40'] = 0;
-                                $game['rouletteTimer60'] = 0;
-                                $game['roulette'] = 0;
+                                // $game['rouletteTimer40'] = 0;
+                                // $game['rouletteTimer60'] = 0;
+                                // $game['roulette'] = 0;
+                                $game['stockskill'] = 0;
                                 return view('gameProfit', ['data' => $admin,  'total' => $game]);
                             } else {
                                 if ($type == 1 || $type == 2 || $type == 3 || $type == 4 || $type == 5 || $type == 8) {
@@ -251,7 +265,7 @@ class GameController extends Controller
                                     $playPoints = Bets::whereIn('playerId', $players)
                                         ->where('DrDate', $to)->get()->groupBy(function ($val) {
                                             return $val->game;
-                                        });;
+                                        });
                                 }
 
                                 // echo "<pre>";
@@ -259,9 +273,10 @@ class GameController extends Controller
                                 // die;
                                 $game = array();
 
-                                $game['rouletteTimer40'] = 0;
-                                $game['rouletteTimer60'] = 0;
-                                $game['roulette'] = 0;
+                                // $game['rouletteTimer40'] = 0;
+                                // $game['rouletteTimer60'] = 0;
+                                // $game['roulette'] = 0;
+                                $game['stockskill'] = 0;
 
                                 // echo "<pre>";
                                 // print_r($game);

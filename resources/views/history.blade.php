@@ -20,7 +20,7 @@
     @elseif(Session::has('success'))
         <div class="alert alert-success" role="alert">{{ Session::get('success') }}</div>
     @endif
-    <div class="row">
+    {{-- <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
@@ -52,7 +52,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="row">
@@ -62,8 +62,9 @@
                     <div class="d-flex justify-content-between">
                         <h6 class="card-title">Player History</h6>
                         <div class="row text-right">
-                            <a href="javascript:history.back()" class="btn btn-success"><i
-                                    class="fa fa-arrow-left mr-2"></i>Back</a>
+                            <a href="javascript:history.back()" class="btn btn-success">
+                                <i class="fa fa-arrow-left mr-2"></i>Back
+                            </a>
                         </div>
                     </div>
                     {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
@@ -78,8 +79,8 @@
                                     <th>Bet</th>
                                     <th>Won</th>
                                     <th>End Point</th>
-                                    <th>Date</th>
                                     <th>Game</th>
+                                    <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -89,16 +90,17 @@
                                 @foreach ($data as $key => $value)
                                     <tr role="row">
                                         <td class=""><?= $data->firstItem() + $key ?></td>
-                                        <td><a href="{{ url('historyDetail/' . $value['_id']) }}"
-                                                target="_blank">{{ substr($value['_id'], -7) }}</a></td>
+                                        <td>{{ substr($value['_id'], -7) }}</td>
+                                        {{-- <td><a href="{{ url('historyDetail/' . $value['_id']) }}"
+                                                target="_blank">{{ substr($value['_id'], -7) }}</a></td> --}}
                                         <td>{{ $value['userName'] }}</td>
                                         <td>{{ moneyFormatIndia($value['startPoint']) }}</td>
                                         <td>{{ moneyFormatIndia($value['bet']) }}</td>
                                         <td>{{ moneyFormatIndia($value['won']) }}</td>
                                         <td>{{ moneyFormatIndia($value['startPoint'] - $value['bet'] + $value['won']) }}
                                         </td>
-                                        <td>{{ date('d-m-Y h:i:s A', strtotime($value['createdAt'])) }}</td>
                                         <td>{{ ucfirst($value['game']) }}</td>
+                                        <td>{{ date('d-m-Y h:i:s A', strtotime($value['createdAt'])) }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

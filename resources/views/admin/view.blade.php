@@ -47,7 +47,7 @@
                                 <tr>
                                     <th>SL.No</th>
                                     <th>Username</th>
-                                    <th>Role</th>
+                                    {{-- <th>Role</th> --}}
                                     <th>Refferal</th>
                                     <th>Name</th>
                                     @if (Session::get('role') == 'Admin' || Session::get('role') == 'classic')
@@ -74,8 +74,8 @@
                                                         class="mdi mdi-eye"></i></a>
                                             @endif
                                         </td>
-                                        <td>{{ Request::segment(2) == 'Franchise' ? 'f_' . $value['role'] : $value['role'] }}
-                                        </td>
+                                        {{-- <td>{{ Request::segment(2) == 'Franchise' ? 'f_' . $value['role'] : $value['role'] }}
+                                        </td> --}}
                                         <td>{{ $value->refer->userName ?? '--' }}</td>
                                         <td>{{ $value['name'] ?? '--' }}</td>
                                         @if (Session::get('role') == 'Admin' || Session::get('role') == 'classic')

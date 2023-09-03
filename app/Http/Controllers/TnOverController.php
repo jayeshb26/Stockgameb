@@ -32,7 +32,7 @@ class TnOverController extends Controller
         $tY = date('Y', strtotime($_GET['to']));
 
         if (Session::get('role') == "Admin" || Session::get('role') == "subadmin") {
-            if ($_GET['role'] == "agent") {
+            if (isset($_GET['role']) && $_GET['role'] == "agent") {
                 $agent = User::where('role', 'agent')->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))->get();
                 // echo "<pre>";
                 // print_r($superdistributer->toArray());die;
@@ -150,7 +150,7 @@ class TnOverController extends Controller
                         }
                     }
                 }
-            } elseif ($_GET['role'] == "franchise") {
+            } elseif (isset($_GET['role']) && $_GET['role'] == "franchise") {
                 $premium = User::where('role', 'premium')->where('referralId', new \MongoDB\BSON\ObjectID(Session::get('id')))->get();
                 // echo "<pre>";
                 // print_r($superdistributer->toArray());die;
