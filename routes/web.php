@@ -17,11 +17,11 @@ Auth::routes();
 
 // Route::get('/User', 'demoController@index');
 
-Route::view('auth.login', '/');
+// Route::view('auth.login', '/');
 
-// Route::get('/', function () {
-//     return view('auth.login');
-// });
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 Route::post('/login_custom', 'Auth\LoginController@Login_custom');
 
