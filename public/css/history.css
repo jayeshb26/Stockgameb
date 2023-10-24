@@ -1,0 +1,1376 @@
+@charset "utf-8";
+* { text-align:left; margin:0; padding:0 }
+a assets/images { text-align:center; border-style:none }
+body { background-color:#FFF }
+a:hover { text-decoration:underline }
+a:visited, a:active, a:link { text-decoration:none }
+#Login-Wrapper { width: 400px; margin-right: auto; margin-left: auto; margin-top: 100px; }
+#wrapper { width: 100%; margin-right: auto; margin-left: auto; }
+.Login-Logo { float: left; width: 400px; height: 52px; text-align: center; padding-top: 10px; padding-bottom: 10px; }
+.LoginWrap { float: left; width: 398px; border: 1px solid #c9edff; background-color: #FFFFFF; }
+.Login-bg { background-image: url(../assets/images/allbox-bg.png); background-repeat: repeat-x; float: left; width: 396px; border: 1px solid #FFFFFF; }
+.Hdr-Login { float: left; width: 386px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #017ab3; margin: 0px; padding: 5px; }
+.ShdrUnPwd { float: left; width: 386px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #666666; text-decoration: none; padding-top: 5px; padding-right: 5px; padding-bottom: 0px; padding-left: 5px; }
+.LogTxt { float: left; width: 386px; padding: 5px; }
+.welcm-wrap { width:700px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #017AB3; text-align: center; padding: 10px; }
+.TextField { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #017AB3; text-decoration: none; border: 1px solid #CCCCCC; padding: 5px; background-color: #FFFFFF; }
+.TextField { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px }
+.TextField4 { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 200px; }
+.TextFieldSmall { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px;/*	width: 20px;*/
+}
+.srchField { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 240px; }
+.Textselct { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 210px; }
+.Dobselct { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 70px; }
+.button { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; background-color: #017AB3; text-align: center; margin: 0px; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; cursor: pointer; background-image: url(../admin-profile-update-admin-sucs.html); }
+.LogBtn { float: left; width: 240px; padding: 5px; }
+.Fpwd { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #017AB3; padding-top: 20px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; }
+.Fpwd a:link { color: #017AB3; text-decoration: none; }
+.Fpwd a:hover { color: #017AB3; text-decoration: underline; }
+.Fpwd a:visited { color: #017AB3; }
+ 
+.HearderWrap { float:left; width:100%; height:43px; padding-bottom: 14px; }
+.Logo { float:left; height:43px; width:200px; margin:0; padding-top: 0; padding-right: 10px; padding-bottom: 0; padding-left: 0; }
+.Header-infoWrap { float:left; width:auto; clear:none; margin:0; padding:0 }
+.Info-left { float:left; height:42px; width:10px; background-image:url(../assets/images/top-infobg-left.png); background-repeat:no-repeat }
+.Info-mid { float:left; height:42px; background-image:url(../assets/images/top-infobg-mid.png); background-repeat:repeat-x }
+.Info-right { float:left; height:42px; width:10px; background-image:url(../assets/images/top-infobg-right.png); background-repeat:no-repeat }
+.WelcomeTxt { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700; color:#333; text-decoration:none; float:left; width:auto; height:29px; text-align:left; white-space:nowrap; padding-top:13px; padding-right:10px }
+.CashGameTxt { font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:400; color:#017ab3; text-decoration:none; text-align:center; height:32px; padding-top:8px; width:auto; padding-right:50px; padding-left:100px; float:left }
+.Line { float:left; height:32px; background-color:#999; width:1px; margin-top:5px }
+.UsrOnlineTxt { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:400; color:#017ab3; text-decoration:none; text-align:center; height:32px; padding-top:8px; padding-right:100px; padding-left:50px }
+.BtnLogout { float:left; height:32px; padding-top:10px }
+.ContentWrap { float:left; width:auto }
+.MainMenu { float:left; height:33px; width:200px }
+.glossymenu { width:199px; float:left; margin:0; padding:0; border-bottom:1px solid #dedede; border-right:1px solid #dedede }
+.glossymenu a.menuitem { background:#000 url(../assets/images/glossyback.gif) repeat-x bottom left; color:#017ab3; display:block; position:relative; width:auto; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700; height:auto; padding:4px 0 4px 10px }
+.glossymenu a.menuitem:visited, .glossymenu .menuitem:active { color:#017ab3 }
+.glossymenu a.menuitem .statusicon { position:absolute; top:5px; right:5px; border:none }
+.glossymenu a.menuitem:hover { background-image:url(../assets/images/glossyback2.gif) }
+.glossymenu div.submenu { background-color:#efefef }
+.glossymenu div.submenu ul { list-style-type:none; margin:0; padding:0; }
+.glossymenu div.submenu ul li { margin-left:20px; border-bottom:1px solid #FFF }
+.glossymenu div.submenu ul li a { display:block; color:#333; text-decoration:none; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-style:normal; font-weight:400; padding:2px 0 2px 10px }
+.glossymenu div.submenu ul li a:hover { background:#FFF; color:#017ab3 }
+.RightWrap { float:left; width:auto; height:50px; padding-left:10px; clear: right; }
+.RightWrap1 { float:left; width:736px; height:50px; padding-left:10px }
+.RightInBg1 { float:left; width:735px; border:1px solid #c9edff }
+.RightInSubBg1 { float:left; width:713px; background-image:url(../assets/images/allbox-bg.png); background-repeat:repeat-x; border:1px solid #FFF; padding:10px }
+.RightInSubBg2 { float:left; width:900px; background-image:url(../assets/images/allbox-bg.png); background-repeat:repeat-x; border:1px solid #FFF; padding:10px }
+.TopLine1 { float:left; width:713px; padding-top:10px; clear:both; border-top:1px solid #bbe8ff }
+.SeachResultWrap1 { float:left; width:713px; clear:both; padding-top:2px }
+.UserSeachWrap1 { float:left; width:713px; clear:both; padding-top:10px }
+.UserSeachWrap2 { float:left; width:750px; clear:both; padding-top:10px }
+.UsrSrchmainwrap { float:left; width:713px; clear:both; padding-top:10px }
+.tableWrap1 { clear:both; float:left; width:709px; border:1px solid #dff4ff; padding:1px }
+.tableWrapls { clear:both; float:left; width:950px; border:1px solid #dff4ff; padding:1px }
+.addadminWrap1 { clear:both; float:left; width:709px; padding:1px; }
+.addadminWrap2 { clear:both; float:left; width:709px; padding:1px; height:300px; }
+.RightInBg { float:left; width:auto; border:1px solid #c9edff }
+.RightInBgas { float:left; width:auto; border:1px solid #c9edff; height:auto; }
+.RightInSubBg { float:left;  background-image:url(../assets/images/allbox-bg.png); background-repeat:repeat-x; border:1px solid #FFF; padding:10px }
+.PageHdr { font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:700; color:#017ab3; text-decoration:none; float:left; width:auto; white-space:nowrap; clear:both; padding-bottom:5px;}
+.TopLine { float:left; width:100%; padding-top:10px; clear:both; border-top:1px solid #bbe8ff }
+.SearchWrap { float:left; width:auto; border:1px solid #c9edff; margin-bottom:10px }
+.SearchInWrap { background-image:url(../assets/images/allbox-bg.png); background-repeat:repeat-x; float:left; width:auto; border:1px solid #FFF }
+.HdrSearch { font-family:Arial, Helvetica, sans-serif; font-size:14px; color:#017ab3; font-weight:700; text-decoration:none; float:left; width:auto; padding-top:5px; padding-bottom:5px; padding-left:5px; clear:both }
+.SearchFrtoWrap { float:left; padding-left:5px; padding-bottom:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#666; text-decoration:none; padding-top:5px; clear:both }
+.UsrSrcFrtWrap { float:left; padding-left:5px; padding-bottom:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#666; text-decoration:none; padding-top:5px; clear:both }
+.DisTopWrap { clear:both; float:left; width:auto; background-color:#e5f6ff }
+.DisTopCnt { font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:400; color:#666; text-decoration:none; white-space:nowrap; float:left; clear:right; width:178px; padding:5px 10px; border-right:1px solid #c9edff }
+.SeachResultWrap { float:right; width:100%; clear:both; padding-top:10px }
+.SeachResultWrap2 { text-align:left;  float:right; width:100%; clear:both; padding-top:10px }
+.DisBotWrap { clear:both; float:left; width:auto; background-color:#f7fcff }
+.searchFrto { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#017ab3; text-decoration:none; white-space:nowrap }
+.tableWrap, .DisplayWrap {  width:auto; border:1px solid #dff4ff; padding:1px; clear: both;}
+.tableWrap1 { float:left; width:100%; border:1px solid #dff4ff; padding:1px; clear: both;}
+.TblHdrWrap { 
+    /*background-image:url(../assets/images/table-hdrbg.png);*/
+             background-repeat:repeat-x; float:left; width:100%; height:39px; clear:both; background-color: #a5054e; }
+.Hdr1line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; text-decoration:none; height:29px; width:105px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.HdrSline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:60px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.Hdr4line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:180px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.Hdr2line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:105px; text-align:center; white-space:nowrap; padding:5px; border-right:1px solid #ddf4ff }
+.Hdr1Edt-Del { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; width:60px; text-align:center; border-right:1px solid #ddf4ff; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; }
+.HdrID { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:80px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.Hdr3line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:180px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.Hdrconttxt { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; width:200px; text-align:center; padding:5px; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.STblHdrWrap { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color: #f5eaee; }
+.STblHdrWrap2 { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#fff }
+.STblHdrWrap3 { background-repeat:repeat-x; float:left; width:100%; clear:both;     background-color: #f5eaee; }
+.STblHdrWrap4 {float:left, font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; background-color:#fff; text-align:center;}
+.STblHdraddadmin { float:left; width:100%; clear:both }
+.SHdr1line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:105px; text-align:center; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SHdr1line a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.SHdr1line a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.SHdr1line a:visited { color:#FF3300; font-weight:bold; }
+.SRHdr1line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:105px; text-align:right; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SRHdr1line a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.SRHdr1line a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.SRHdr1line a:visited { color:#FF3300; font-weight:bold; }
+.SHdrBline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:180px; text-align:center; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SHdrCline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:105px; text-align:right; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SHdrSline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:60px; text-align:right; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SHdr2line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:105px; text-align:center; white-space:nowrap; padding:5px; border-right:1px solid #ddf4ff; height: 30px; }
+.STblHdrWrapno { background-repeat:repeat-x; width:auto; clear:both; background-color:#effaff }
+.SHdr2lineno { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:auto; text-align:center; white-space:nowrap; padding:5px; border-right:1px solid #ddf4ff; height: 30px; }
+.SHdr3line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:180px; text-align:center; white-space:nowrap; border-right:1px solid #ddf4ff; height: 20px; padding-top: 15px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; }
+.SHdr4line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#666; text-decoration:none; width:105px; text-align:left; height: 14px; padding-top: 11px; padding-right: 5px; padding-bottom: 11px; padding-left: 15px; }
+/************************** class for editor *****/
+
+.txtEditor { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:520px; text-align:center; white-space:nowrap; padding:5px }
+.SHdred-del { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:60px; text-align:center; border-right:1px solid #ddf4ff; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; }
+.SHdred-bal { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:60px; text-align:right; border-right:1px solid #ddf4ff; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; }
+.SHdrconttxt { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:200px; text-align:center; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.Hdrlang { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:400px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.Hdrlangdesc { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:200px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.SHdrlang { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:400px; text-align:center; white-space:nowrap; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SHdrlang a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.SHdrlang a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.SHdrlang a:visited { color:#FF3300; font-weight:bold; }
+.addbtn { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:220px; text-align:left; white-space:nowrap; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 11px; }
+.SHdrIDSL { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:80px; text-align:center; border-right:1px solid #ddf4ff; padding:5px; word_wrap:break-word; }
+.Hdr-Login { float:left; width:386px; font-family:Arial, Helvetica, sans-serif; font-size:18px; font-weight:700; color:#017ab3; margin:0; padding:5px }
+.ShdrUnPwd { float:left; width:386px; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700; color:#666; text-decoration:none; padding:5px 5px 0 }
+.LogTxt { float:left; width:386px; padding:5px }
+.TextField { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px }
+.button { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:700; color:#FFF; text-decoration:none; background-color:#017AB3; text-align:center; cursor:pointer; border-width:0; margin:0; padding:5px 10px }
+.LogBtn { float:left; width:240px; padding:5px }
+.Fpwd { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:400; color:#017AB3; padding:20px 5px 5px }
+.Fpwd a:link { color:#017AB3; text-decoration:none }
+.Fpwd a:hover { color:#017AB3; text-decoration:underline }
+.Fpwd a:visited { color:#017AB3 }
+.graph { height:80px; width:auto }
+.DisTopCnt1 { font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:400; color:#666; text-decoration:none; white-space:nowrap; float:left; clear:right; width:100px; padding:5px 10px; border-right:1px solid #c9edff }
+.LeftWrap, .MenuWrap { float:left;  }
+.MenuWrap { float:left; width:200px; }
+.searchresin { width:100%; float: left; }
+.paymode { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#017ab3; text-decoration:none; white-space:nowrap; padding-left: 20px; }
+.page-wrap { float:left; padding-left:5px; padding-bottom:10px; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#666; text-decoration:none; padding-top:5px; clear:both; width: auto; }
+.exptmsgbox { background-color: #EFFAFF; border: 1px dotted #ddf4ff; width: auto; }
+.tblutextnor { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; background-color: #EBFDDF; padding-right: 5px; padding-left: 5px; height: 20px; }
+.textnor { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #017ab3; }
+.textnor a:active { color: #017ab3; text-decoration: none; }
+.textnor a:link { color: #017ab3; text-decoration: none; }
+.textnor a:hover { color: #000000; text-decoration: underline; }
+.textnor a:visited { color: #017ab3; text-decoration: none; }
+.Vback { float:right; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#017AB3; padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 5px; }
+.Vback a:link { color:#017AB3; text-decoration:none }
+.Vback a:hover { color:#017AB3; text-decoration:underline }
+.Vback a:visited { color:#017AB3 }
+.Vback1 { float:right; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#FF3300; padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 5px; }
+.Vback1 a:link { color:#FF3300; text-decoration:none }
+.Vback1 a:hover { color:#FF3300; text-decoration:underline }
+.Vback1 a:visited { color:#FF3300 }
+.Vback2 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#FF3300; padding-top: 5px; padding-right: 0px; padding-bottom: 0px; padding-left: 5px; }
+.Vback2 a:link { color:#FF3300; text-decoration:none }
+.Vback2 a:hover { color:#FF3300; text-decoration:underline }
+.Vback2 a:visited { color:#FF3300 }
+.vbacksucs_box { width:68%; clear:both; background:url(../assets/images/valid.png) no-repeat left #edfce9; border:1px #cceac4 dotted; background-position:15px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #0e4354; font-weight: 400; margin-top: 0; margin-right: 0; margin-bottom: 2px; margin-left: 0; padding-top: 12px; padding-right: 20%; padding-bottom: 10px; padding-left: 10%; }
+.vbacksucs_box a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.vbacksucs_box a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.vbacksucs_box a:visited { color:#FF3300; font-weight:bold; }
+.vbackerr_box { width:68%; clear:both; background-image: url(../assets/images/error.png); border:1px dotted #eac7c7; background-position:15px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #0e4354; font-weight: 400; margin-top: 0; margin-right: 0; margin-bottom: 2px; margin-left: 0; padding-top: 12px; padding-right: 20%; padding-bottom: 10px; padding-left: 10%; background-color: #fce9e9; background-repeat: no-repeat; }
+.vbackerr_box a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.vbackerr_box a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.vbackerr_box a:visited { color:#FF3300; font-weight:bold; }
+.view-link-wrap { width:100%; clear:both; background-position:15px 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #0e4354; font-weight: 400; height: 20px; margin: 0; padding: 0px; }
+/* Button Small Script */	
+	
+.button { border: none; background: url('../assets/images/btnsmall-nor.png') no-repeat top left; width: 58px; height: 27px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; text-align: center; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; cursor: pointer; }
+.button:hover { border: none; background: url('../assets/images/btnsmall-over.png') no-repeat top left; padding: 2px 0px; width: 58px; height: 27px; }
+.SHdred-pic { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:60px; text-align:center; border-right:1px solid #ddf4ff; height: 30px; padding: 5px; }
+/* Button Small Script */
+
+/* Button Medium Script */	
+	
+.buttonNor { border: none; background: url('../assets/images/btnmed-nor.png') no-repeat top left; width: 99px; height: 27px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; text-align: center; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; cursor: pointer; }
+.buttonNor:hover { border: none; background: url('../assets/images/btnmed-over.png') no-repeat top left; padding: 2px 0px; width: 99px; height: 27px; }
+/* Button Medium Script */
+
+/* Button Big Script */
+	
+	
+.buttonBig { border: none; background: url('../assets/images/btnbig-nor.png') no-repeat top left; width: 119px; height: 27px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; text-align: center; padding-top: 2px; padding-right: 0px; padding-bottom: 2px; padding-left: 0px; cursor: pointer; }
+.buttonBig:hover { border: none; background: url('../assets/images/btnbig-over.png') no-repeat top left; padding: 2px 0px; width: 119px; height: 27px; }
+/* Button Big Script */
+
+/*--------------*/
+div.pagination { font-family:Arial, Helvetica, sans-serif; width:838px; clear:both; padding:20px 0 10px 0; margin:0px; text-align:center; float:left; clear:both; font-size:11px; }
+div.pagination a { padding: 2px 5px 2px 5px; margin-right: 2px; border: 1px solid #848484; text-decoration: none; color: #000; }
+div.pagination a:hover, div.pagination a:active { border:1px solid #ff0000; color: #fff; background-color: #cc0000; }
+div.pagination span.current { padding: 2px 5px 2px 5px; margin-right: 2px; border: 1px solid #ff0000; font-weight: bold; background-color: #cc0000; color: #FFF; }
+div.pagination span.disabled { padding: 2px 5px 2px 5px; margin-right: 2px; border: 1px solid #f3f3f3; color: #ccc; }
+.question { position: absolute; display: inline; text-align: center; width: 174px; height: 78px; font-size: 13px; line-height: 1.5em; background: url('../assets/images/bubble.png') left top no-repeat; padding: 10px 0 0 0; margin-left: -7em; margin-top: -6em; opacity: 0; color:#000000; }
+.yes { margin-top: .5em; margin-right: .5em; cursor: pointer; display: inline-block; width: 63px; height: 21px; color: #434d17; background: url('../assets/images/buttony.png') left top no-repeat; text-align:center; }
+.cancel { margin-top: .5em; margin-right: .5em; cursor: pointer; display: inline-block; width: 63px; height: 21px; color: #fff; background: url('../assets/images/buttonn.png') left top no-repeat; text-align:center; }
+.errormsg { font-family: Arial, Helvetica, sans-serif; font-size:11px; font-weight: normal; color: #FF0000; font-weight:bold; }
+ /* Button Big Script */
+
+/*Modified on 14-02-2011*/
+
+.SHdr5line {
+float:left;
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:400;
+color:#333;
+text-decoration:none;
+width:auto;
+text-align:left;
+white-space:nowrap;
+padding:5px;
+}
+/*Modified on 14-02-2011*/
+
+/*Added on 14-02-2011*/
+
+.optionBox { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 212px; }
+/* New Table Class Added on 14-02-2011*/
+.NTblHdrWrap { /*background-image:url(../assets/images/table-hdrbg.png);*/ background-repeat:repeat-x; border-right-width: 1px; border-right-style: solid; border-right-color: #a5054e; }
+.NTblHdrTxt { text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; padding-top: 5px; padding-right: 0px; _padding-right: 10px; padding-bottom: 5px; padding-left: 10px; width: 100%; }
+.NSTblHdrWrap { background-repeat:repeat-x; background-color:#D2F0FF; border-right-width: 1px; border-right-style: solid; border-right-color: #71D0FF; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; text-align: center; }
+.NSTblHdrTxt { text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; width: 100%; }
+.SHdr4linelable { font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#666; text-decoration:none; width:105px; text-align:left; }
+.TextFieldtextarea { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 450px; }
+/*  Added on Feb 23 */
+
+.UDHdr { float: left; width: 690px; background-image: url(../assets/images/table-hdrbg-small.png); background-repeat: repeat-x; height: 18px; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; clear: both; }
+.UDLHdr { float: left; width: 930px; background-image: url(../assets/images/table-hdrbg-small.png); background-repeat: repeat-x; height: 18px; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; clear: both; }
+.UDTitle { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; padding-top: 2px; }
+.UDedit { float: right; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #66FFFF; padding-top: 2px; }
+.UDedit a:link { color: #66FFFF; text-decoration: none; }
+.UDedit a:visited { color: #66FFFF; text-decoration: none; }
+.UDedit a:hover { color: #FFFFFF; text-decoration: undeerline; }
+.UDedit a:active { color: #66FFFF; text-decoration: none; }
+.UDSubBg { float: left; width: 690px; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; background-color: #D2F0FF; clear: both; }
+.UDLSubBg { float: left; width: 930px; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; background-color: #D2F0FF; clear: both; }
+.UDLeftWrap { float: left; width: 345px; padding-top: 5px; padding-bottom: 5px; }
+.UDRightWrap { float: left; width: 345px; padding-top: 5px; padding-bottom: 5px; }
+.UDFieldtitle { float: left; width: 345px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.UDFieldtitleSlt { float: left; width: 545px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.UDFieldTxtFld { float: left; width: 345px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #017AB3; text-decoration: none; padding-bottom: 3px; }
+.UDFieldTxtFld a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.UDFieldTxtFld a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.UDFieldTxtFld a:visited { color:#FF3300; font-weight:bold; }
+.UDCommonWrap { float: left; width: 690px; }
+.UDSubHead { font-family: Arial, Helvetica, sans-serif; float: left; width: 690px; font-size: 12px; font-weight: bold; color: #015883; text-decoration: none; text-align: center; padding-top: 3px; padding-right: 0px; padding-bottom: 3px; padding-left: 0px; background-color: #71D0FF; }
+.UDSmallLeftWrap { float: left; width: 230px; padding-top: 5px; padding-bottom: 5px; }
+.UDSmallMidWrap { float: left; width: 230px; padding-top: 5px; padding-bottom: 5px; }
+.UDSmallRightWrap { float: left; width: 230px; padding-top: 5px; padding-bottom: 5px; }
+.UDSmallFieldtitle { float: left; width: 230px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.UDSmallFieldTxtFld { float: left; width: 230px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #017AB3; text-decoration: none; padding-bottom: 3px; }
+.SubHead { float: left; width: 470px; padding-bottom: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #017AB3; text-decoration: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; margin-bottom: 10px; }
+.Break { float: left; width: 470px; height: 3px; }
+.UDTxtField { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:3px; width: 200px; }
+.UDSaveBtn { float: left; width: 690px; padding-top: 10px; }
+.UDTitle2 { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; padding-top: 2px; padding-left: 50px; }
+.UDTabs { float: left; width: 710px; clear: both; padding-top: 10px; padding-right: 0px; padding-bottom: 10px; padding-left: 0px; margin-top: 10px; }
+.UDHdrWrap { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color: #666666; }
+.UDID { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; width:80px; text-align:center; padding:5px; border-right-width: 1px; border-right-style: solid; border-right-color: #999999; }
+.UDIDBig { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; width:109px; text-align:center; padding:5px; border-right-width: 1px; border-right-style: solid; border-right-color: #999999; }
+.UDSID { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#000000; text-decoration:none; width:80px; text-align:center; padding:5px; border-right-width: 1px; border-right-style: solid; border-right-color: #999999; }
+.UDSIDBig { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:normal; color:#000000; text-decoration:none; width:109px; text-align:center; padding:5px; border-right-width: 1px; border-right-style: solid; border-right-color: #999999; }
+.UDSHdrWrap { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#E6E6E6; }
+.UDSHdrWrap2 { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#FFFFFF; }
+.UDtableWrap { padding:1px; float: left; width: auto; border-top-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: #CCCCCC; border-bottom-color: #CCCCCC; border-left-color: #CCCCCC; }
+.UDTabHdrTXT { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #0089CE; float: left; width: 690px; margin-top: 10px; }
+.HdrEmail { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:150px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.SHdrEmail { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:150px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+/*Added on 23-02-2011  5:30PM*/
+.SRHSubBg { float: left; width: 690px; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; clear: both; }
+.HdrTime { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:120px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.SHdrTime { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:120px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+.HdrEmail a:link, .HdrID a:link, .HdrTime a:link { color:#FFF; text-decoration:none; }
+.HdrEmail a:visited, .HdrID a:visited, .HdrTime a:visited { color:#FFF; text-decoration:none; }
+.HdrEmail a:hover, .HdrID a:hover, .HdrTime a:hover { color:#FFF; text-decoration:underline; }
+.HdrEmail a:active, .HdrID a:active, .HdrTime a:active { color:#FFF; text-decoration:none; }
+.HdrGlvl { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:80px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.SHdrGlvl { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:80px; text-align:center; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.Hdr1Edt-DelN { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; width:60px; text-align:center; border-right:1px solid #ddf4ff; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; height:29px; }
+/*Added on 17-03-2011  11:30AM*/
+.HdrRoomdesc { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:150px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.SHdrRoomdesc { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:150px; text-align:center; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.textshow { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:bold; color:#000099; }
+#avatar_div { /*visibility:hidden;    */
+}
+/* Added on 23-03-2011 */
+	.UDAvtWrap { float: left; width: 690px; padding-top: 0px; padding-bottom: 5px; }
+.UDAvrtitle { float: left; width: 690px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.UDAvrTxtFld { float: left; width: 275px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #017AB3; text-decoration: none; padding-bottom: 3px; }
+.UDAvrBrowseField { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:3px; width: 200px; margin: 0px; }
+#divinputfile { height:26px; width:265px; margin:0px; background-image: url(../assets/images/btn-browse.gif); background-repeat: no-repeat; background-position: 100% 1px; }
+#divinputfile #filepc { opacity: 0.0; -moz-opacity: 0.0; filter: alpha(opacity=00); font-size:18px; }
+#fakeinputfile { margin-top:-28px; }
+#fakeinputfile #fakefilepc { width:200px; height:22px; font-size:12px; font-family:Arial, Helvetica, sans-serif; color: #017AB3; text-decoration: none; border: 1px solid #CCC; background-color: none; }
+.UDavrCnfWrap { float: left; width: 345px; margin: 0px; padding: 0px; }
+.UDCnfTxt { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #017AB3; text-decoration: none; padding-top: 10px; float: left; width: auto; }
+.UDIcon { float: left; height: 26px; width: 24px; padding-left: 10px; }
+.UDAvrHdtxt { float: left; width: 690px; padding-top: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #017AB3; text-decoration: none; }
+.AvrsubWrap { float:left; width:710px; clear:both }
+.AvrsubLtext { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#666; text-decoration:none; width:130px; text-align:left; height: 14px; padding-top: 11px; padding-right: 5px; padding-bottom: 11px; padding-left: 15px; }
+.AvrsubRtext { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:220px; text-align:left; white-space:nowrap; padding:5px; }
+.AvrsubRDesc { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:500px; text-align:left; white-space:nowrap; padding:5px; }
+.AvrDescTxt { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:3px; }
+.AvrWHTxtfld { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:3px; }
+.AvrWHWrap { float:left; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#017AB3; text-decoration:none; width:auto; text-align:left; white-space:nowrap; padding:5px; font-weight: bold; }
+.AvrDetWrap { float: left; width: 470px; padding: 5px; margin: 15px; border: 1px solid #CCCCCC; }
+.Avrassets/Imageswrap { float: left; width: 220px; padding-right: 15px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.AvrWHWrap02 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#017AB3; text-decoration:none; width:auto; text-align:left; white-space:nowrap; font-weight: bold; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 0px; }
+/* Added on 22-04-2011 */
+
+.AvrsubRrb { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:500px; text-align:left; white-space:nowrap; padding:5px; }
+.TextselctNo { font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 100px; }
+.Avrrbwrap { float: left; width: 460px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.AvrrbWrap02 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; text-decoration:none; width:auto; text-align:left; white-space:nowrap; font-weight: normal; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 0px; }
+input.search { background:url(../assets/images/search.png) left no-repeat; padding: 1px 4px 1px 25px; color:#3D3D3D; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 240px; }
+.mandatory { color:#FF0000; font-size:12px; font-weight:400; }
+/* New Table Class Added on 14-02-2011*/
+.NTblHdrWrap { /*background-image:url(../assets/images/table-hdrbg.png);*/ background-color: #002ee6;background-repeat:repeat-x; border-right-width: 1px; border-right-style: solid; border-right-color: #fff; }
+.NSTblHdrWrap { background-repeat:repeat-x; background-color: #f5eaee; border-right-width: 1px; border-right-style: solid; border-right-color: #A8E2FF; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; text-align: center; word-wrap: break-word; }
+.NSTblHdrTxt { text-align: left; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; padding-top: 5px; padding-right: 10px; padding-bottom: 5px; padding-left: 10px; width: 100%; }
+.NSTb2HdrWrap { background-color: #e6ebff; background-repeat:repeat-x; border-right-width: 1px; border-right-style: solid; border-right-color: #fff; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; text-align: center; word-wrap: break-word; }
+/* Added on 31-08-2011*/
+.UsrName { float: left; clear: both; width: 600px; padding-bottom: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; }
+.SrcDetwrap { float: left; clear: both; width: 700px; }
+.SrcDetwrap1 { float: left; clear: both; width: 900px; }
+.SrcItem { float: left; width: 150px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #666666; text-decoration: none; }
+.TextFieldItem { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 112px; }
+.TextFieldItem1 { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 115px; }
+
+.Scroptbox { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 120px; }
+/* Added on 08-09-2011*/
+
+
+	.HdrTxNo{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; text-decoration:none; height:29px; width:100px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+	
+	.SHdrTxNo{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px;  color:#333; text-decoration:none; width:100px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+	
+	.HdrIDSmall { float:left;	font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:64px; text-align:center; padding:5px; border-right:1px solid #ddf4ff;}
+	
+	.SHdrIDSmall{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:64px; text-align:center; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; padding: 5px; height: 100%; min-height: 100%; }
+
+
+
+.SHdr5line{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:auto; text-align:left; white-space:wrap; padding:5px;}
+.SHdr6line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#666; text-decoration:none; width:150px; text-align:left; height: 14px; padding-top: 11px; padding-right: 5px; padding-bottom: 11px; padding-left: 15px; }
+.SHdr7line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:230px; text-align:center; white-space:nowrap; border-right:1px solid #ddf4ff; height: auto; padding-top: 15px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; }
+.SHdr8line{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:220px; height: 100px; text-align:left; white-space:nowrap; padding:5px;}
+.Hdr7line { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:50px; width:230px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.Textdisp { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; background-color:#FFF; padding:5px;  text-align:center; }
+.HdrTxDate{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:120px; text-align:center; padding:5px;  solid #ddf4ff }
+.SHdrTxDate{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px;  color:#333; text-decoration:none; width:120px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word;  }
+.SHdrTname { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:180px; text-align:center; white-space:nowrap; border-right:1px solid #ddf4ff; height: 20px; padding: 5px; }
+
+.UDpopupWrap{ float:left;width:100%;}
+.UDpopBg{     
+/*  background-color: #D2F0FF; */
+    clear: both;
+    float: left;
+    padding: 5px 0 0 10px;
+    width: 95%;}
+	.UDpopLeftWrap
+	{
+	float: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 220px;
+	}
+	.UDpopupform
+	{
+	float: right;
+    margin-top: 30px;
+    width: 410px;
+	}
+	.UDpopupform input
+	{
+	margin-right:10px;
+	}
+	.UDpop3LeftWrap
+	{
+	float: left;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    width: 290px;
+	}
+	.wdt_form
+	{
+	    clear: both;
+    float: left;
+    margin-top: 10px;
+	 width: 390px;
+	}
+	.wdt_form input
+	{
+	  margin-left: 5px;
+	}
+	.payr_form
+	{
+	float:right;
+	clear:both;
+	margin: 10px;
+	} 
+	.payr_form input
+	{
+	float:left;
+	margin-left: 10px;
+	}
+	.Avrpoptxt
+	{
+	float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 14px;
+    padding: 11px 5px 5px 1px;
+    text-align: left;
+    text-decoration: none;
+    width: 50px;
+	}
+	.AvrsubRDet{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:bold; color:#017AB3; text-decoration:none; width:500px; text-align:left; height: 14px; padding-top: 11px; padding-right: 5px; padding-bottom: 11px; padding-left: 0px; }
+
+.TransDetWrap { float: left; width: 670px; padding: 5px; margin: 15px; border: 1px solid #CCCCCC; }
+
+.Transsubdetwrap { float: left; width: 160px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; height: 50px; }
+
+.TransHdr { float: left; width: 660px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; background-color: #017AB3; padding: 5px; margin-bottom: 5px; }
+
+.TransTxtField{ font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:3px; width: 120px; }
+
+.BtnWrap { float: left; width: 670px; padding-top: 0px; }
+
+.HdrSNo { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:40px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.HdrDate { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:90px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+.SHdrSno { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:40px; text-align:center; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; padding: 
+5px; height: auto; }
+
+.SHdrDate { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:90px; text-align:center; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; padding: 5px; height: auto; }
+.HdrKey { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:235px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+
+.SHdrKey { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:235px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+.module1 {
+	width:900px;
+	background-image:url(../assets/images/rounded.gif);
+	padding-left:30px;
+	color:#333;	
+}
+.module1_bottom {
+	width:930px;
+	height:20px;
+	background-image:url(../assets/images/stats_bottom.png);
+	background-position:bottom;
+}
+.module1 a {
+	color: #354C82;
+	font-style:italic;
+	text-decoration:none;
+}
+.module1_row {
+	float:left;
+	color: #017AB3;
+	font-size:28px;
+	text-align:left;
+	margin-right:20px;
+	border-right:1px solid #BABABA;
+	padding-right:22px;
+	margin-top:15px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	height:65px;
+}
+.module1_row2 {
+	float:left;
+	color: #017AB3;
+	font-size:28px;
+	text-align:left;
+	margin-top:15px;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	height:65px;
+}
+.clear {
+	clear:both;
+}
+
+.title {
+	border-bottom:1px solid #017AB3;
+	font-size:20px;
+	width:930px;
+	text-align:left;
+	color: #017AB3;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+
+.module_left_title {
+	height:22px;
+	border-bottom:1px solid #017AB3;
+	font-size:18px;
+	width:450px;
+	text-align:left;
+	font-family:Georgia, "Times New Roman", Times, serif;
+}
+.glossymenu div.submenu ul li.active { color:#FFFFFF; font-weight: bold; background-color: #7ED5FE; }
+
+.SHdr1Rline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:105px; text-align:right; border-right:1px solid #ddf4ff; padding:5px; word-wrap:break-word; }
+.SHdr1Rline a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.SHdr1Rline a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.SHdr1Rline a:visited { color:#FF3300; font-weight:bold; }
+.Stransline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px;  text-align:center; padding:5px;  }
+.HdrMTline { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:105px; text-align:right; padding:5px; border-right:1px solid #ddf4ff }
+
+.PartUsrName { float: left; clear: both; width: 400px; padding-bottom: 10px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; }
+.UsrSrchmainwrapAgt { float:left; width:1000px; clear:both; padding-top:10px }
+
+
+/* LUCKY CASINO Added on 12-04-2012 */
+
+	.Agent_Hdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:105px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+        .Agent_HdrPO { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:60px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+        .Agent_HdrL { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:125px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+	.Agent_RHdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:105px; text-align:right; padding:5px; border-right:1px solid #ddf4ff }
+	.Agent_Hdr_Med { float:left; font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:105px; text-align:center; padding:5px; border-right:1px solid #ddf4ff }
+
+.Agent_SHdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:105px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+.Agent_SHdrPO { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:60px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+.Agent_SHdrL { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:125px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+
+.Agent_RSHdr { float:left; text-align:right;  font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:105px;  padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+
+.Agent_SHdr_med { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:75px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+
+.Agent_SHdr02 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:105px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+
+.Agent_SHdr02_med { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:75px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; }
+
+.Agent_total_Wrap { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#666666; margin-top: 5px; }
+
+.Agent_TotalShdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:105px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+.Agent_TotalRShdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:105px; text-align:right; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+.Dummygap { float:left; width:713px; clear:both; margin-top: 20px; }
+
+.Game_Hdr_Wrap { background-image:url(../assets/images/game_hdr_small.png); background-repeat:repeat-x; float:left; width:100%; height:28px; clear:both }
+
+.GameSHdrWrap { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#E2E2E2; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; }
+
+.GameSHdrWrap02 { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#FFFFFF; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; }
+
+.Game_SHdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:105px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; }
+.Game_RSHdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:105px; text-align:right; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; }
+
+.AgentSHdrWrap02 { background-repeat:repeat-x; float:left; width:100%; clear:both; background-color:#fff; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; }
+
+.Agent_Game_Det_wrap { background-color: #e6ebff; float: left; width: 100%; }
+
+.Agent_game_Left { padding: 10px; float: left; width: 200px; }
+
+.Agent_game_Left01 { padding: 10px; float: left; width: 260px; }
+
+.Agent_game_Left02 { padding: 10px; float: left; width: 300px; }
+
+.Agent_game_tit_wrap { float: left; width: 240px; }
+
+.Agent_game_tit_wrap01 { float: left; width: 243px; }
+
+.Agent_game_tit_wrap02 { float: left; width: 263px; }
+
+.Agent_game_name { float: left; width: 90px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #333333; text-decoration: none; padding-bottom: 3px; }
+.Agent_game_name1 { float: left; width: 110px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #333333; text-decoration: none; padding-bottom: 3px; }
+.Agent_game_name2 { float: left; width: 117px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #333333; text-decoration: none; padding-bottom: 3px; }
+.Agent_game_val { float: left; width: 100px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333; text-decoration: none; }
+.Agent_game_val2 { float: left; width: 220px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333; text-decoration: none; }
+.Agent_game_val1 { float: left; width: 75px; padding-right: 3px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333; text-decoration: none; }
+.Agent_game_val3 { float: left; width: 122px; padding-right: 5px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333; text-decoration: none; }
+.agentpanel_head { float:left; height:43px; width:200px; margin:0; padding-top: 0; padding-right: 10px; padding-bottom: 0; padding-left: 0;}
+.agentpanel_head01 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; color:#017AB3; width:190px; margin:0; padding-top: 10px; padding-right: 10px; padding-bottom: 0px; padding-left: 10px;}
+.agentpanel_head02 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:normal; color:#666666; width:190px; margin:0; padding-top: 0; padding-right: 10px; padding-bottom: 0; padding-left: 10px;}
+.UDSaveBtn02 { float: left; width: 300px; padding-top: 15px; }
+
+/* ROULETTE BET POSITION - Added on 11-05-2012 */
+
+
+#Roulette_Wrap { float: left; height: 391px; width: 900px; background-image: url(../assets/images/rouette-bet.jpg); background-repeat: no-repeat; margin: 10px;}
+
+#Roulette_Neighbour_Wrap { float: left; height: 391px; width: 900px; background-image: url(../assets/images/Neighbour_Bet.png); background-repeat: no-repeat; margin: 12px 10px 10px 10px; width:95%; height:30%;}
+
+.Roulette_Wrap_win { float: left;  margin: 10px; top:200px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; padding: 1px; border: 1px solid #333333; text-align: center;}
+
+.spotStraightUp0 { position:absolute; top:280px; display: block; z-index: 5; left: 45px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotStraightUp1 { position:absolute; top:358px; display: block; z-index: 5; left: 111px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp2 { position:absolute; top:270px; display: block; z-index: 5; left: 109px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp3 { position:absolute; top:185px; display: block; z-index: 5; left: 109px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp4 { position:absolute; top:358px; display: block; z-index: 5; left: 173px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp5 { position:absolute; top:270px; display: block; z-index: 5; left: 173px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp6 { position:absolute; top:185px; display: block; z-index: 5; left: 173px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp7 { position:absolute; top:358px; display: block; z-index: 5; left: 234px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp8 { position:absolute; top:270px; display: block; z-index: 5; left: 235px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp9 { position:absolute; top:185px; display: block; z-index: 5; left: 236px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp10 { position:absolute; top:358px; display: block; z-index: 5; left: 296px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp11 { position:absolute; top:270px; display: block; z-index: 5; left: 295px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp12 { position:absolute; top:185px; display: block; z-index: 5; left: 297px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp13 { position:absolute; top:358px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp14 { position:absolute; top:270px; display: block; z-index: 5; left: 360px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp15 { position:absolute; top:185px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp16 { position:absolute; top:358px; display: block; z-index: 5; left: 421px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp17 { position:absolute; top:270px; display: block; z-index: 5; left: 420px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp18 { position:absolute; top:185px; display: block; z-index: 5; left: 421px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp19 { position:absolute; top:358px; display: block; z-index: 5; left: 482px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp20 { position:absolute; top:270px; display: block; z-index: 5; left: 482px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp21 { position:absolute; top:185px; display: block; z-index: 5; left: 484px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp22 { position:absolute; top:358px; display: block; z-index: 5; left: 543px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp23 { position:absolute; top:270px; display: block; z-index: 5; left: 544px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp24 { position:absolute; top:185px; display: block; z-index: 5; left: 546px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp25 { position:absolute; top:358px; display: block; z-index: 5; left: 610px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp26 { position:absolute; top:270px; display: block; z-index: 5; left: 607px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp27 { position:absolute; top:185px; display: block; z-index: 5; left: 607px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp28 { position:absolute; top:358px; display: block; z-index: 5; left: 671px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp29 { position:absolute; top:270px; display: block; z-index: 5; left: 671px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp30 { position:absolute; top:185px; display: block; z-index: 5; left: 670px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp31 { position:absolute; top:358px; display: block; z-index: 5; left: 731px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp32 { position:absolute; top:270px; display: block; z-index: 5; left: 731px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp33 { position:absolute; top:185px; display: block; z-index: 5; left: 733px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp34 { position:absolute; top:358px; display: block; z-index: 5; left: 795px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp35 { position:absolute; top:270px; display: block; z-index: 5; left: 795px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStraightUp36 { position:absolute; top:185px; display: block; z-index: 5; left: 796px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotColumn1 { position:absolute; top:361px; display: block; z-index: 5; left: 859px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotColumn2 { position:absolute; top:274px; display: block; z-index: 5; left: 858px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotColumn3 { position:absolute; top:187px; display: block; z-index: 5; left: 856px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot1-12 { position:absolute; top:419px; display: block; z-index: 5; left: 245px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot13-24 { position:absolute; top:419px; display: block; z-index: 5; left: 495px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot25-36 { position:absolute; top:419px; display: block; z-index: 5; left: 745px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotLow1 { position:absolute; top:467px; display: block; z-index: 5; left: 103px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotEven { position:absolute; top:467px; display: block; z-index: 5; left: 224px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotRed { position:absolute; top:467px; display: block; z-index: 5; left: 392px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotBlack { position:absolute; top:467px; display: block; z-index: 5; left: 516px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotOdd { position:absolute; top:467px; display: block; z-index: 5; left: 609px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotHigh19 { position:absolute; top:467px; display: block; z-index: 5; left: 722px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+/* corner */
+.spotBasker0_1_2_3 { position:absolute; top:381px; display: block; z-index: 5; left: 78px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet1_2_3 { position:absolute; top:381px; display: block; z-index: 5; left: 109px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine1_2_3_4_5_6 { position:absolute; top:381px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotStreet4_5_6 { position:absolute; top:381px; display: block; z-index: 5; left: 171px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine4_5_6_7_8_9 { position:absolute; top:381px; display: block; z-index: 5; left: 202px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet7_8_9 { position:absolute; top:381px; display: block; z-index: 5; left: 233px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSixLine7_8_9_10_11_12 { position:absolute; top:381px; display: block; z-index: 5; left: 265px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet10_11_12 { position:absolute; top:381px; display: block; z-index: 5; left: 296px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine10_11_12_13_14_15 { position:absolute; top:381px; display: block; z-index: 5; left: 327px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotStreet13_14_15 { position:absolute; top:381px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine13_14_15_16_17_18 { position:absolute; top:381px; display: block; z-index: 5; left: 389px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet16_17_18 { position:absolute; top:381px; display: block; z-index: 5; left: 420px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSixLine16_17_18_19_20_21 { position:absolute; top:381px; display: block; z-index: 5; left: 451px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet19_20_21 { position:absolute; top:381px; display: block; z-index: 5; left: 482px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine19_20_21_22_23_24 { position:absolute; top:381px; display: block; z-index: 5; left: 512px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotStreet22_23_24 { position:absolute; top:381px; display: block; z-index: 5; left: 543px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine22_23_24_25_26_27 { position:absolute; top:381px; display: block; z-index: 5; left: 574px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet25_26_27 { position:absolute; top:381px; display: block; z-index: 5; left: 608px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSixLine25_26_27_28_29_30 { position:absolute; top:381px; display: block; z-index: 5; left: 641px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet28_29_30 { position:absolute; top:381px; display: block; z-index: 5; left: 673px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine28_29_30_31_32_33 { position:absolute; top:381px; display: block; z-index: 5; left: 705px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotStreet31_32_33 { position:absolute; top:381px; display: block; z-index: 5; left: 736px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSixLine31_32_33_34_35_36 { position:absolute; top:381px; display: block; z-index: 5; left: 767px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotStreet34_35_36 { position:absolute; top:381px; display: block; z-index: 5; left: 798px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+
+.spotTiro0_2_3 { position:absolute; top:208px; display: block; z-index: 5; left: 78px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit2_3 { position:absolute; top:208px; display: block; z-index: 5; left: 109px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner2_3_5_6 { position:absolute; top:208px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSplit5_6 { position:absolute; top:208px; display: block; z-index: 5; left: 171px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner5_6_8_9 { position:absolute; top:208px; display: block; z-index: 5; left: 202px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit8_9 { position:absolute; top:208px; display: block; z-index: 5; left: 233px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spoCorner8_9_11_12 { position:absolute; top:208px; display: block; z-index: 5; left: 265px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit11_12 { position:absolute; top:208px; display: block; z-index: 5; left: 296px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner11_12_14_15 { position:absolute; top:208px; display: block; z-index: 5; left: 327px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotSplit14_15 { position:absolute; top:208px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner14_15_17_18 { position:absolute; top:208px; display: block; z-index: 5; left: 389px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit17_18 { position:absolute; top:208px; display: block; z-index: 5; left: 420px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotCorner17_18_20_21 { position:absolute; top:208px; display: block; z-index: 5; left: 451px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit20_21 { position:absolute; top:208px; display: block; z-index: 5; left: 482px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner20_21_23_24 { position:absolute; top:208px; display: block; z-index: 5; left: 512px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSplit23_24 { position:absolute; top:208px; display: block; z-index: 5; left: 543px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner23_24_26_27 { position:absolute; top:208px; display: block; z-index: 5; left: 574px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit26_27 { position:absolute; top:208px; display: block; z-index: 5; left: 608px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotCorner26_27_29_30 { position:absolute; top:208px; display: block; z-index: 5; left: 643px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit29_30 { position:absolute; top:208px; display: block; z-index: 5; left: 674px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner29_30_32_33 { position:absolute; top:208px; display: block; z-index: 5; left: 705px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotSplit32_33 { position:absolute; top:208px; display: block; z-index: 5; left: 736px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner32_33_35_36 { position:absolute; top:208px; display: block; z-index: 5; left: 767px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit35_36 { position:absolute; top:208px; display: block; z-index: 5; left: 798px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+
+
+
+
+.spotTiro0_1_2 { position:absolute; top:294px; display: block; z-index: 5; left: 78px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit1_2 { position:absolute; top:294px; display: block; z-index: 5; left: 109px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner1_2_4_5 { position:absolute; top:294px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSplit4_5 { position:absolute; top:294px; display: block; z-index: 5; left: 171px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner4_5_7_8 { position:absolute; top:294px; display: block; z-index: 5; left: 202px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit7_8 { position:absolute; top:294px; display: block; z-index: 5; left: 233px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotCorner7_8_10_11 { position:absolute; top:294px; display: block; z-index: 5; left: 265px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit10_11 { position:absolute; top:294px; display: block; z-index: 5; left: 296px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner10_11_13_14 { position:absolute; top:294px; display: block; z-index: 5; left: 327px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotSplit13_14 { position:absolute; top:294px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner13_14_16_17 { position:absolute; top:294px; display: block; z-index: 5; left: 389px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit16_17 { position:absolute; top:294px; display: block; z-index: 5; left: 420px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotCorner16_17_19_20 { position:absolute; top:294px; display: block; z-index: 5; left: 451px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit19_20 { position:absolute; top:294px; display: block; z-index: 5; left: 482px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner19_20_22_23 { position:absolute; top:294px; display: block; z-index: 5; left: 512px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotSplit22_23 { position:absolute; top:294px; display: block; z-index: 5; left: 543px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner22_23_25_26 { position:absolute; top:294px; display: block; z-index: 5; left: 574px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit25_26 { position:absolute; top:294px; display: block; z-index: 5; left: 608px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotCorner25_26_28_29 { position:absolute; top:294px; display: block; z-index: 5; left: 643px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit28_29 { position:absolute; top:294px; display: block; z-index: 5; left: 674px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner28_29_31_32 { position:absolute; top:294px; display: block; z-index: 5; left: 705px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotSplit31_32 { position:absolute; top:294px; display: block; z-index: 5; left: 736px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotCorner31_32_34_35 { position:absolute; top:294px; display: block; z-index: 5; left: 767px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit34_35 { position:absolute; top:294px; display: block; z-index: 5; left: 798px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spotSplit0_3 { position:absolute; /*top:173px;*/ top: 165px; display: block; z-index: 5; left: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit3_6 { position:absolute; top:165px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit6_9 { position:absolute; top:165px; display: block; z-index: 5; left: 198px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit9_12 { position:absolute; top:165px; display: block; z-index: 5; left: 265px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit12_15 { position:absolute; top:165px; display: block; z-index: 5; left: 325px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit15_18 { position:absolute; top:165px; display: block; z-index: 5; left: 387px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit18_21 { position:absolute; top:165px; display: block; z-index: 5; left: 449px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit21_24 { position:absolute; top:165px; display: block; z-index: 5; left: 513px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit24_27 { position:absolute; top:165px; display: block; z-index: 5; left: 574px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit27_30 { position:absolute; top:165px; display: block; z-index: 5; left: 636px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit30_33 { position:absolute; top:165px; display: block; z-index: 5; left: 700px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit33_36 { position:absolute; top:165px; display: block; z-index: 5; left: 763px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+
+.spotSplit0_2 { position:absolute; top:250px; display: block; z-index: 5; left: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit2_5 { position:absolute; top:250px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit5_8 { position:absolute; top:250px; display: block; z-index: 5; left: 201px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit8_11 { position:absolute; top:250px; display: block; z-index: 5; left: 263px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit11_14 { position:absolute; top:250px; display: block; z-index: 5; left: 327px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit14_17 { position:absolute; top:250px; display: block; z-index: 5; left: 387px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit17_20 { position:absolute; /*top:261px;*/ top: 252px; display: block; z-index: 5; left: 449px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit20_23 { position:absolute; top:250px; display: block; z-index: 5; left: 513px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit23_26 { position:absolute; top:250px; display: block; z-index: 5; left: 574px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit26_29 { position:absolute; top:250px; display: block; z-index: 5; left: 636px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit29_32 { position:absolute; top:250px; display: block; z-index: 5; left: 700px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit32_35 { position:absolute; top:250px; display: block; z-index: 5; left: 763px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+
+.spotSplit0_1 { position:absolute; top:338px; display: block; z-index: 5; left: 80px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit1_4 { position:absolute; top:338px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit4_7 { position:absolute; top:338px; display: block; z-index: 5; left: 201px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit7_10 { position:absolute; top:338px; display: block; z-index: 5; left: 265px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit10_13 { position:absolute; top:338px; display: block; z-index: 5; left: 325px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit13_16 { position:absolute; top:338px; display: block; z-index: 5; left: 387px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit16_19 { position:absolute; /*top:346px;*/ top: 338px; display: block; z-index: 5; left: 449px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit19_22 { position:absolute; /*top:346px;*/ top: 338px; display: block; z-index: 5; left: 513px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit22_25 { position:absolute; top:338px; display: block; z-index: 5; left: 574px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit25_28 { position:absolute; top:338px; display: block; z-index: 5; left: 636px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit28_31 { position:absolute; top:338px; display: block; z-index: 5; left: 700px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotSplit31_34 { position:absolute; top:338px; display: block; z-index: 5; left: 763px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotw0 { position:absolute; top:230px; display: block; z-index: 5; left: 47px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotw1 { position:absolute; top:317px; display: block; z-index: 5; left: 113px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw2 { position:absolute; top:230px; display: block; z-index: 5; left: 113px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw3 { position:absolute; top:145px; display: block; z-index: 5; left: 113px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw4 { position:absolute; top:317px; display: block; z-index: 5; left: 177px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw5 { position:absolute; top:230px; display: block; z-index: 5; left: 177px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw6 { position:absolute; top:145px; display: block; z-index: 5; left: 177px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw7 { position:absolute; top:317px; display: block; z-index: 5; left: 240px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw8 { position:absolute; top:230px; display: block; z-index: 5; left: 240px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw9 { position:absolute; top:145px; display: block; z-index: 5; left: 240px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw10 { position:absolute; top:317px; display: block; z-index: 5; left: 301px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw11 { position:absolute; top:230px; display: block; z-index: 5; left: 301px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw12 { position:absolute; top:145px; display: block; z-index: 5; left: 301px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw13 { position:absolute; top:317px; display: block; z-index: 5; left: 362px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw14 { position:absolute; top:230px; display: block; z-index: 5; left: 362px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw15 { position:absolute; top:145px; display: block; z-index: 5; left: 362px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw16 { position:absolute; top:317px; display: block; z-index: 5; left: 425px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw17 { position:absolute; top:230px; display: block; z-index: 5; left: 425px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw18 { position:absolute; top:145px; display: block; z-index: 5; left: 425px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw19 { position:absolute; top:317px; display: block; z-index: 5; left: 488px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw20 { position:absolute; top:230px; display: block; z-index: 5; left: 488px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw21 { position:absolute; top:145px; display: block; z-index: 5; left: 488px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw22 { position:absolute; top:317px; display: block; z-index: 5; left: 550px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw23 { position:absolute; top:230px; display: block; z-index: 5; left: 550px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw24 { position:absolute; top:145px; display: block; z-index: 5; left: 550px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw25 { position:absolute; top:317px; display: block; z-index: 5; left: 611px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw26 { position:absolute; top:230px; display: block; z-index: 5; left: 611px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw27 { position:absolute; top:145px; display: block; z-index: 5; left: 611px; color:#FFFFFF; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw28 { position:absolute; top:317px; display: block; z-index: 5; left: 674px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw29 { position:absolute; top:230px; display: block; z-index: 5; left: 674px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw30 { position:absolute; top:145px; display: block; z-index: 5; left: 674px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw31 { position:absolute; top:317px; display: block; z-index: 5; left: 737px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw32 { position:absolute; top:230px; display: block; z-index: 5; left: 737px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw33 { position:absolute; top:145px; display: block; z-index: 5; left: 737px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw34 { position:absolute; top:317px; display: block; z-index: 5; left: 800px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw35 { position:absolute; top:230px; display: block; z-index: 5; left: 800px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spotw36 { position:absolute; top:145px; display: block; z-index: 5; left: 800px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.TopLine2 { float:left; width:697px; padding-top:10px; clear:both; border-top:1px solid #bbe8ff }
+.Agent_total_Wrap1 { background-repeat:repeat-x; float:left; width:697px; clear:both; background-color:#666666; margin-top: 5px; }
+.Agent_total_Wrap2 { background-repeat:repeat-x; float:left; width:928px; clear:both; background-color:#666666; margin-top: 5px; }
+
+.spot_Tiers { position:absolute; top:638px; display: block; z-index: 5; left: 185px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_Orphelins { position:absolute; top:638px; display: block; z-index: 5; left: 400px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_Voisinsdu { position:absolute; top:638px; display: block; z-index: 5; left: 590px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_Zerospiel { position:absolute; top:638px; display: block; z-index: 5; left: 785px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot_nb0 { position:absolute; top:688px; display: block; z-index: 5; left: 865px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb1 { position:absolute; top:571px; display: block; z-index: 5; left: 259px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb2 { position:absolute; top:702px; display: block; z-index: 5; left: 557px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb3 { position:absolute; top:566px; display: block; z-index: 5; left: 895px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb4 { position:absolute; top:702px; display: block; z-index: 5; left: 655px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb5 { position:absolute; top:576px; display: block; z-index: 5; left: 63px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb6 { position:absolute; top:702px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb7 { position:absolute; top:571px; display: block; z-index: 5; left: 655px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb8 { position:absolute; top:692px; display: block; z-index: 5; left: 52px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb9 { position:absolute; top:571px; display: block; z-index: 5; left: 457px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb10 { position:absolute; top:610px; display: block; z-index: 5; left: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb11 { position:absolute; top:702px; display: block; z-index: 5; left: 160px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb12 { position:absolute; top:571px; display: block; z-index: 5; left: 757px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb13 { position:absolute; top:702px; display: block; z-index: 5; left: 259px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb14 { position:absolute; top:571px; display: block; z-index: 5; left: 358px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb15 { position:absolute; top:702px; display: block; z-index: 5; left: 757px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb16 { position:absolute; top:571px; display: block; z-index: 5; left: 160px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb17 { position:absolute; top:702px; display: block; z-index: 5; left: 457px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb18 { position:absolute; top:571px; display: block; z-index: 5; left: 557px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb19 { position:absolute; top:702px; display: block; z-index: 5; left: 705px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb20 { position:absolute; top:571px; display: block; z-index: 5; left: 308px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb21 { position:absolute; top:702px; display: block; z-index: 5; left: 606px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb22 { position:absolute; top:571px; display: block; z-index: 5; left: 507px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb23 { position:absolute; top:658px; display: block; z-index: 5; left: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb24 { position:absolute; top:571px; display: block; z-index: 5; left: 111px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb25 { position:absolute; top:702px; display: block; z-index: 5; left: 507px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb26 { position:absolute; top:636px; display: block; z-index: 5; left: 898px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb27 { position:absolute; top:702px; display: block; z-index: 5; left: 308px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb28 { position:absolute; top:571px; display: block; z-index: 5; left: 705px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb29 { position:absolute; top:571px; display: block; z-index: 5; left: 606px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb30 { position:absolute; top:702px; display: block; z-index: 5; left: 108px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb31 { position:absolute; top:571px; display: block; z-index: 5; left: 409px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb32 { position:absolute; top:702px; display: block; z-index: 5; left: 812px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb33 { position:absolute; top:571px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb34 { position:absolute; top:702px; display: block; z-index: 5; left: 409px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb35 { position:absolute; top:571px; display: block; z-index: 5; left: 806px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot_nb36 { position:absolute; top:702px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 0px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+/* Turn Over grid view Added on 12/2/2014 */
+
+.Turnover_User_total_Wrap1 { background-repeat:repeat-x; float:left; width:952px; clear:both; background-color:#666666; margin-top: 5px; }
+.Turnover_User_TotalShdr { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:245px; text-align:center; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+.Turnover_User_TotalPlay { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:202px; text-align:right; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+.Turnover_User_TotalWin { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:239px; text-align:right; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+.Turnover_User_Margin { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:175px; text-align:right; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+.Turnover_User_TotalNet { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#FFFFFF; text-decoration:none; width:222px; text-align:right; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; font-weight: bold; }
+
+/* Roulette 12 Added on 04-07-2012 */
+
+#Roulette12_Wrap { float: left; height: 316px; width: 722px; background-image: url(../assets/images/roulettebet12.jpg); background-repeat: no-repeat; margin: 10px; }
+
+.spot12_0_1_2_3 { position:absolute; top:136px; display: block; z-index: 5; left: 71px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_1_2_3 { position:absolute; top:337px; display: block; z-index: 5; left: 140px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_4_5_6 { position:absolute; top:337px; display: block; z-index: 5; left: 288px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_7_8_9 { position:absolute; top:337px; display: block; z-index: 5; left: 434px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_10_11_12 { position:absolute; top:337px; display: block; z-index: 5; left: 582px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+
+.spot12_2_3 { position:absolute; top:200px; display: block; z-index: 5; left: 142px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_5_6 { position:absolute; top:200px; display: block; z-index: 5; left: 288px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_8_9 { position:absolute; top:200px; display: block; z-index: 5; left: 434px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_11_12 { position:absolute; top:200px; display: block; z-index: 5; left: 582px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+
+.spot12_1_2 { position:absolute; top:265px; display: block; z-index: 5; left: 142px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_4_5 { position:absolute; top:265px; display: block; z-index: 5; left: 288px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_7_8 { position:absolute; top:265px; display: block; z-index: 5; left: 434px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_10_11 { position:absolute; top:265px; display: block; z-index: 5; left: 582px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_0_3 { position:absolute; top:165px; display: block; z-index: 5; left: 71px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_0_2_3 { position:absolute; top:200px; display: block; z-index: 5; left: 71px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_0_2 { position:absolute; top:232px; display: block; z-index: 5; left: 71px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_0_1_2 { position:absolute; top:265px; display: block; z-index: 5; left: 71px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_0_1 { position:absolute; top:300px; display: block; z-index: 5; left: 71px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_3_6 { position:absolute; top:165px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_2_3_5_6 { position:absolute; top:200px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_2_5 { position:absolute; top:232px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_1_2_4_5 { position:absolute; top:265px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_1_4 { position:absolute; top:300px; display: block; z-index: 5; left: 210px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_6_9 { position:absolute; top:165px; display: block; z-index: 5; left: 360px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_5_6_8_9 { position:absolute; top:200px; display: block; z-index: 5; left: 360px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_5_8 { position:absolute; top:232px; display: block; z-index: 5; left: 360px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_4_5_7_8 { position:absolute; top:265px; display: block; z-index: 5; left: 360px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_4_7 { position:absolute; top:300px; display: block; z-index: 5; left: 360px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_9_12 { position:absolute; top:165px; display: block; z-index: 5; left: 508px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_8_9_11_12 { position:absolute; top:200px; display: block; z-index: 5; left: 508px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_8_11 { position:absolute; top:232px; display: block; z-index: 5; left: 508px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_7_8_10_11 { position:absolute; top:265px; display: block; z-index: 5; left: 508px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_7_10 { position:absolute; top:300px; display: block; z-index: 5; left: 508px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_3 { position:absolute; top:165px; display: block; z-index: 5; left: 110px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_2 { position:absolute; top:232px; display: block; z-index: 5; left: 110px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_1 { position:absolute; top:300px; display: block; z-index: 5; left: 110px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_6 { position:absolute; top:165px; display: block; z-index: 5; left: 260px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_5 { position:absolute; top:232px; display: block; z-index: 5; left: 260px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_4 { position:absolute; top:300px; display: block; z-index: 5; left: 260px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_9 { position:absolute; top:165px; display: block; z-index: 5; left: 412px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_8 { position:absolute; top:232px; display: block; z-index: 5; left: 412px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_7 { position:absolute; top:300px; display: block; z-index: 5; left: 412px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_12 { position:absolute; top:165px; display: block; z-index: 5; left: 555px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_11 { position:absolute; top:232px; display: block; z-index: 5; left: 555px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_10 { position:absolute; top:300px; display: block; z-index: 5; left: 555px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_c3 { position:absolute; top:145px; display: block; z-index: 5; left: 680px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_c2 { position:absolute; top:212px; display: block; z-index: 5; left: 680px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_c1 { position:absolute; top:280px; display: block; z-index: 5; left: 680px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_s1 { position:absolute; top:357px; display: block; z-index: 5; left: 123px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_s2 { position:absolute; top:357px; display: block; z-index: 5; left: 310px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_s3 { position:absolute; top:357px; display: block; z-index: 5; left: 500px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_Even { position:absolute; top:395px; display: block; z-index: 5; left: 100px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_Red { position:absolute; top:395px; display: block; z-index: 5; left: 245px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_Black { position:absolute; top:395px; display: block; z-index: 5; left: 385px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot12_Odd { position:absolute; top:395px; display: block; z-index: 5; left: 535px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_0 { position:absolute; top:210px; display: block; z-index: 5; left: 35px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot12_Win00 { position:absolute; top:259px; display: block; z-index: 5; left: 32px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win01 { position:absolute; top:311px; display: block; z-index: 5; left: 169px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win02 { position:absolute; top:245px; display: block; z-index: 5; left: 169px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win03 { position:absolute; top:175px; display: block; z-index: 5; left: 169px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+
+.spot12_Win04 { position:absolute; top:311px; display: block; z-index: 5; left: 320px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win05 { position:absolute; top:245px; display: block; z-index: 5; left: 320px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win06 { position:absolute; top:175px; display: block; z-index: 5; left: 320px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+
+.spot12_Win07 { position:absolute; top:311px; display: block; z-index: 5; left: 470px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win08 { position:absolute; top:245px; display: block; z-index: 5; left: 470px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win09 { position:absolute; top:175px; display: block; z-index: 5; left: 470px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+
+.spot12_Win10 { position:absolute; top:311px; display: block; z-index: 5; left: 610px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win11 { position:absolute; top:245px; display: block; z-index: 5; left: 610px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+.spot12_Win12 { position:absolute; top:175px; display: block; z-index: 5; left: 610px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; background-color: #0033CC; padding: 3px; border: 1px solid #333333; text-align: center; margin: 1px; color: #FFFFFF; }
+
+
+/* Triple Dice Added on 04-07-2012 */
+
+.TriDWrap { float: left; width: 600px; padding: 10px; }
+
+.TriDResWrap { float: left; width: 598px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; border-right-width: 1px; border-left-width: 1px; border-right-style: solid; border-left-style: solid; border-right-color: #CCCCCC; border-left-color: #CCCCCC; }
+
+.TriDResHdr { text-align: center; float: left; width: 588px;     background-color: #960263; padding: 5px; background-repeat: repeat-x; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #FFFFFF; text-decoration: none; }
+
+.TriDDicePos { padding: 5px; float: left; width: 588px; }
+
+.TriDDiceassets/images { float: left; height: 50px; width: 50px; margin-right: 50px; margin-left: 50px; }
+
+.TriDDiceVal { float: left; height: 45px; width: 50px; margin-right: 20px; margin-left: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 36px; font-weight: bold; color: #000000; text-decoration: none; text-align: center; padding-top: 5px; background-color: #f5eaee; }
+
+.TriDResTableWrap { float: left; width: 598px; margin-top: 10px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: #CCCCCC; border-bottom-color: #CCCCCC; border-left-color: #CCCCCC; }
+
+.TriDTblResHdr { float: left; width: 588px;    background-color: #960263; padding: 5px; background-repeat: repeat-x; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #FFFFFF; text-decoration: none; }
+.TriDHdrPlay { float: left; width: 420px; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; }
+.TriDHdrWin { float: left; width: 157px; padding-left: 10px; }
+
+.TriDSTblResHdr { float: left; width: 588px; background-repeat: repeat-x; text-decoration: none; padding-top: 0px; padding-right: 5px; padding-left: 5px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; }
+.TriDSHdrPlay { float: left; width: 420px; border-right-width: 1px; border-right-style: solid; border-right-color: #CCCCCC; padding-bottom: 5px; }
+.TriDSHdrWin { float: left; width: 156px; padding-left: 10px; padding-bottom: 5px; border-left-width: 1px; border-left-style: solid; border-left-color: #CCCCCC; }
+
+.TriDValWrap { float: left; width: 55px; margin-right: 5px; margin-bottom: 0px; margin-top: 5px; }
+
+.TriDvalHdr { float: left; width: 45px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; background-color: #960263; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px; }
+
+.TriDvalSHdr { float: left; width: 45px; text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000;     background-color: #f5eaee; padding-top: 2px; padding-right: 5px; padding-bottom: 2px; padding-left: 5px; }
+
+.TriDSHdrPlayFill { float: left; width: 420px; padding-bottom: 5px; }
+
+.TriDTotals { float: left; width: 100px; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #000000; padding-top: 5px; }
+
+.TriDSTblResHdrTot { float: left; width: 588px; background-repeat: repeat-x; text-decoration: none; padding-top: 0px; padding-right: 5px; padding-left: 5px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; background-color: #f5eaee; }
+
+/* Bingo Times Added on 05-07-2012 */
+
+.BtimeWrap { float: left; width: 730px; padding: 10px; }
+
+.TicketWrap { float: left; width: 320px; }
+
+.BinTicWrap { float: left; margin-right: 6px; margin-bottom: 6px; background-color: #a5054e; width: 140px; padding: 6px; }
+
+.BinTckNo { padding: 5px; float: left; font-size: 12px; font-weight: bold; color: #000000; text-decoration: none; background-color: #FFFFFF; font-family: Arial, Helvetica, sans-serif; margin-right: 2px; margin-bottom: 4px; margin-left: 2px; width:14px; }
+
+.BinTckWinNo { padding: 5px; float: left; font-size: 12px; font-weight: bold; color: #000000; text-decoration: none; background-color: #FFCC00; font-family: Arial, Helvetica, sans-serif; margin-right: 2px; margin-bottom: 4px; margin-left: 2px; width:14px; }
+
+.BinTckSysWinNo { padding: 5px; float: left; font-size: 12px; font-weight: bold; color: #000000; text-decoration: none; background-color: #33CC00;  font-family: Arial, Helvetica, sans-serif; margin-right: 2px; margin-bottom: 4px; margin-left: 2px; width:14px; }
+
+.BinWinAmtWrap { float: left; width: 140px; margin-top: 5px; }
+
+.BinBet { padding: 5px; float: left; width: 130px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold;     color: fff;
+    background-color: #a5054e; text-align: center; }
+
+.BinWin { padding: 5px; float: left; width: 130px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000; background-color: #FFFFFF; text-align: center; }
+
+.BinResWrap { float: left; width: 410px; }
+
+.ResultHdr { text-align: center; float: left; width: 390px;     background-color: #a5054e; padding: 5px; background-repeat: repeat-x; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: bold; color: #FFFFFF; text-decoration: none; }
+
+.ResultShdr { float: left; width: 388px; padding: 5px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-right-color: #CCCCCC; border-bottom-color: #CCCCCC; border-left-color: #CCCCCC; }
+
+.ResDisplay { float: left; height: 40px; width: 40px; padding: 6px; font-family: Arial, Helvetica, sans-serif; font-size: 34px; font-weight: bold;     background-color: #a5054e;
+    border: 1px solid #a5054e; margin-right: 5px; margin-bottom: 5px; text-align: center; }
+
+.ResDisSpl { float: left; height: 40px; width: 40px; padding: 6px; font-family: Arial, Helvetica, sans-serif; font-size: 34px; font-weight: bold; background-color: #FF6600; border: 1px solid #FF0000; margin-right: 0px; margin-bottom: 5px; margin-left: 35px; text-align: center; }
+
+.ResultWrap { float: left; width: 400px; }
+.ResultWrap02 { float: left; width: 400px; margin-top: 10px; }
+
+.ResLeft { float: left; width: 190px; padding-right: 4px; text-align: right; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000; text-decoration: none; }
+.ResRight { float: left; width: 189px; padding-left: 4px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #000000; text-decoration: none; }
+
+.ResLRWrap { float: left; width: 388px; padding-top: 5px; padding-bottom: 5px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #CCCCCC; }
+.SHdr1line12 { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#333; text-decoration:none; width:123px; text-align:left; padding:5px; word-wrap:break-word; background-color: #D2F0FF; }
+.SHdr1line12 a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.SHdr1line12 a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.SHdr1line12 a:visited { color:#FF3300; font-weight:bold; }
+.SHdr1line13 { float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#008000; text-decoration:none; width:123px; text-align:left; padding:2px; word-wrap:break-word; background-color: #D2F0FF; }
+.SHdr1line13 a:link { color:#FF3300; text-decoration:none; font-weight:bold; }
+.SHdr1line13 a:hover { color:#FF3300; text-decoration:underline; font-weight:bold; }
+.SHdr1line13 a:visited { color:#FF3300; font-weight:bold; }
+
+.Hdr1line12 { font-family:Arial, Helvetica, sans-serif; font-size:11px; font-weight:700; color:#FFF; text-decoration:none; height:29px; width:105px; text-align:left; padding:5px; }
+.Agent_create_wrap { float: left; width: 400px; background-color: #E6F7FF; }
+
+.Agent_hdrt { float: left; width: 380px; padding: 10px; background-image: url(../assets/images/table-hdrbg.png); background-repeat: repeat-x; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: none; text-align: center; }
+
+.Agent_txtField { padding: 10px; float: left; width: 380px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.agentrole {font-family:Arial, Helvetica, sans-serif; font-size:12px;}
+.agentsubroles{ padding-top:10px;padding-left: 65px; }
+/* Added on 30-7-2012 */
+.SelectFieldPageno { font-family:Arial, Helvetica, sans-serif; font-size:12px; font-weight:400; color:#017AB3; text-decoration:none; border:1px solid #CCC; background-color:#FFF; padding:5px; width: 85px; }
+.SrcDetwrap2 { float: left; clear: both; width: 905px; }
+.UsrSrchmainwrap2 { float:left; width:893px; clear:both; padding-top:10px }
+.SrcItemWinPts { float: left; width: 150px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #666666; text-decoration: none; padding-top: 10px; }
+
+.ledgerWrap { float:left; width:100%; height:1100px; padding-top:10px; clear:both; border-top:1px solid #bbe8ff }
+.UDFieldtitleJB { float: left; width: 363px; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: normal; color: #000000; text-decoration: none; }
+.SHdrIDSmallC{ float:left; font-family:Arial, Helvetica, sans-serif; font-size:12px; color:#333; text-decoration:none; width:64px; text-align:center; word-wrap: break-word; border-right-width: 1px; border-right-style: solid; border-right-color: #9DDFFF; padding: 5px; }
+.bjwrap { float: left; width: auto; padding: 10px; }
+
+.DealerWrap { float: left; width: 800px; }
+
+.dealderHdrWrap { float: left; width: 800px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #017ab3; padding-bottom: 5px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #EEEEEE; margin-bottom: 10px; }
+
+.dealer_card { float: left; height: 84px; width: 62px; margin-right: 10px; }
+
+.dealcardwrap { float: left; width: 800px; margin-bottom: 20px; }
+
+.seatNo { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #003366; text-decoration: none; background-color: #BBE3FF; white-space: nowrap; padding: 5px; }
+
+.usrcarddiswrap { float: left; width: 800px; margin-top: 10px; margin-bottom: 10px; }
+
+.userinwrap { padding: 5px; float: left; background-color: #F9F9F9; border-radius:5px; -moz-border-radius:5px; border: 1px solid #E5E5E5; margin-right: 5px; width: 204px; }
+
+.usercards { float: left; height: 84px; width: 62px; margin: 3px; }
+
+.userinval { float: left; background-color: #CEF3FF; border-radius:5px; -moz-border-radius:5px; border: 1px solid #E5E5E5; margin-right: 5px; width: 100px; padding-top: 7px; padding-right: 5px; padding-bottom: 7px; padding-left: 5px; }
+
+.usercardtot { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; text-align: center; color: #333333; text-decoration: none; width: 204px; clear: right; }
+
+.userpoint { padding: 5px; float: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: normal; color: #000000; text-decoration: none; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #FFFFFF; width: 90px; }
+
+.winNo { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #003366; text-decoration: none; background-color: #5BFFD7; white-space: nowrap; padding: 5px; }
+
+.dealinwrap { float: left; width: 206px; }
+
+.delearcardtot { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; text-align: center; color: #333333; text-decoration: none; width: 206px; clear: right; margin-top: 3px; }
+
+.dealer_cardR { float: left; height: 84px; width: 62px;}
+
+/* Live Users added on 23-05-2013 */
+
+.Chart { float: left; clear: both; }
+
+.onlineGameUser { float: left; font-size: 12px; font-weight: bold; font-family: Arial, Helvetica, sans-serif; color: #333333; clear: both; }
+
+.gameUser { padding: 5px; float: left; margin-top: 5px; clear: both;  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333; text-decoration: none; max-width:925px; }
+
+.WebLiveUsrWrap { float: left; width: 925px; clear: both; }
+
+
+.WebUsr { float: left; width: 450px; margin-right: 25px; }
+.MobUsr { float: left; width: 450px; }
+.tableStyle {font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333;}
+
+.countWrap { float: left; width: 100%; }
+
+.Timer { float: right; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #333333; }
+
+/* Triple Chance Added on 30-06-2013 */
+.TCwrap { float: left; width: 1025px; padding: 10px; }
+
+.TC_gameID { float: left; width: 100%; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #017ab3; padding-bottom: 5px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: #EEEEEE; margin-bottom: 10px; }
+
+.TC_DoublesWrap { float: left; width: 500px; background-color: #f5eaee; padding: 5px; border: 1px solid #a5054e; margin-bottom: 10px; }
+
+.TC_NumberWrap { float: left; height: 40px; width: 40px; padding: 2px; background-color: #FFFFFF; border: 1px solid #CCCCCC; margin: 2px; }
+
+.TC_Number { float: left; width: 40px; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: bold; color: #333333; text-align: center; }
+
+.TC_BetAmount { float: left; width: 36px; padding: 2px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #000000; text-decoration: none; text-align: center; background-color: #FFFF00; }
+
+.TC_Win_NumberWrap { float: left; height: 40px; width: 40px; padding: 2px; background-color: #00CC33; border: 1px solid #CCCCCC; margin: 2px; }
+
+.TC_Left_Wrap { float: left; width: 512px; }
+
+.TC_doubleHdr { padding: 5px; float: left; width: 502px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #FFFFFF; background-color: #a5054e; }
+
+.TC_MidWrap { float: left; width: 502px; margin-right: 5px; margin-left: 5px; }
+
+.TC_Flash_Display { float: left; height: 502px; width: 502px; margin-bottom: 10px; background-color: #CCCCCC; }
+
+.TC_infoWrap { float: left; width: 1023px; margin-bottom: 10px; }
+
+.TC_infoWinBet { float: left; width: 150px; }
+
+.BetColor { float: left; height: 25px; width: 25px; background-color: #FFFF00; margin-right: 10px; }
+
+.BetColor1 { float: left; height: 25px; width: 25px; background-color: #00FFFF; margin-right: 10px; }
+
+.WinColor { float: left; height: 25px; width: 25px; background-color: #00CC33; margin-right: 10px; }
+
+.infoTxt { float: left; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #333333; text-decoration: none; margin-top: 10px; }
+
+/* Added on 27-09-13 */
+
+.spota0_2 {
+	position:absolute;
+	top:275px;
+	display: block;
+	z-index: 5;
+	left: 85px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spota0_1_2 { position:absolute; top:300px; display: block; z-index: 5; left: 87px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spota0_1 {
+	position:absolute;
+	top:341px;
+	display: block;
+	z-index: 5;
+	left: 88px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spota0 {
+	position:absolute;
+	top:285px;
+	display: block;
+	z-index: 5;
+	left: 53px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+.spot00_3 { position:absolute; top:168px; display: block; z-index: 5; left: 89px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.spot00_2_3 { position:absolute; top:210px; display: block; z-index: 5; left: 85px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FF99; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spot00_2 {
+	position:absolute;
+	top:230px;
+	display: block;
+	z-index: 5;
+	left: 85px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spot00_2_0 {
+	position:absolute;
+	top:260px;
+	display: block;
+	z-index: 5;
+	left: 85px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spot0_1_2_3_00 {
+	position:absolute;
+	top:390px;
+	display: block;
+	z-index: 5;
+	left: 86px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spot00 {
+	position:absolute;
+	top:180px;
+	display: block;
+	z-index: 5;
+	left: 53px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spot0_00 {
+	position:absolute;
+	top:265px;
+	display: block;
+	z-index: 5;
+	left: 53px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: #00FF99;
+	padding: 1px;
+	border: 1px solid #333333;
+	text-align: center;
+	margin: 1px;
+}
+
+.spotaw0 { position:absolute; top:310px; display: block; z-index: 5; left: 45px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.spotaw00 { position:absolute; top:240px; display: block; z-index: 5; left: 45px; color:#FFFFFF; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #3300FF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+#VIP-Roulette_Wrap { float: left; height: 391px; width: 900px; background-image: url(../assets/images/VIP-rouette-bet.jpg); background-repeat: no-repeat; margin: 10px; }
+
+
+/* Added on Jan 10 2014 */
+
+
+.Luck_SuiteBet_heart { position:absolute; top:290px; display: block; z-index: 5; left: 195px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_SuiteBet_spade { position:absolute; top:290px; display: block; z-index: 5; left: 340px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_SuiteBet_diamond { position:absolute; top:290px; display: block; z-index: 5; left: 487px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_SuiteBet_club { position:absolute; top:290px; display: block; z-index: 5; left: 627px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StreetBet_11 { position:absolute; top:420px; display: block; z-index: 5; left: 47px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StreetBet_12 { position:absolute; top:557px; display: block; z-index: 5; left: 47px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StreetBet_13 { position:absolute; top:692px; display: block; z-index: 5; left: 47px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightBet_heart_11 { position:absolute; top:420px; display: block; z-index: 5; left: 195px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_heart_12 { position:absolute; top:557px; display: block; z-index: 5; left: 195px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_heart_13 { position:absolute; top:692px; display: block; z-index: 5; left: 195px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightBet_spade_11 { position:absolute; top:420px; display: block; z-index: 5; left: 340px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_spade_12 { position:absolute; top:557px; display: block; z-index: 5; left: 340px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_spade_13 { position:absolute; top:692px; display: block; z-index: 5; left: 340px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightBet_diamond_11{ position:absolute; top:420px; display: block; z-index: 5; left: 487px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_diamond_12{ position:absolute; top:557px; display: block; z-index: 5; left: 487px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_diamond_13{ position:absolute; top:692px; display: block; z-index: 5; left: 487px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightBet_club_11 { position:absolute; top:420px; display: block; z-index: 5; left: 627px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_club_12 { position:absolute; top:557px; display: block; z-index: 5; left: 627px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightBet_club_13 { position:absolute; top:692px; display: block; z-index: 5; left: 627px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00FFFF; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_SuiteWin_heart { position:absolute; top:290px; display: block; z-index: 5; left: 268px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_SuiteWin_spade { position:absolute; top:290px; display: block; z-index: 5; left: 415px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_SuiteWin_diamond { position:absolute; top:290px; display: block; z-index: 5; left: 554px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_SuiteWin_club { position:absolute; top:290px; display: block; z-index: 5; left: 702px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StreetWin_11 { position:absolute; top:420px; display: block; z-index: 5; left: 130px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StreetWin_12 { position:absolute; top:557px; display: block; z-index: 5; left: 130px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StreetWin_13 { position:absolute; top:692px; display: block; z-index: 5; left: 130px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightWin_heart_11 { position:absolute; top:420px; display: block; z-index: 5; left: 268px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_heart_12 { position:absolute; top:557px; display: block; z-index: 5; left: 268px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_heart_13 { position:absolute; top:692px; display: block; z-index: 5; left: 268px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightWin_spade_11 { position:absolute; top:420px; display: block; z-index: 5; left: 415px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_spade_12 { position:absolute; top:557px; display: block; z-index: 5; left: 415px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_spade_13 { position:absolute; top:692px; display: block; z-index: 5; left: 415px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightWin_diamond_11{ position:absolute; top:420px; display: block; z-index: 5; left: 554px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_diamond_12 { position:absolute; top:557px; display: block; z-index: 5; left: 554px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_diamond_13 { position:absolute; top:692px; display: block; z-index: 5; left: 554px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+.Luck_StraightWin_club_11 { position:absolute; top:420px; display: block; z-index: 5; left: 702px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_club_12 { position:absolute; top:557px; display: block; z-index: 5; left: 702px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+.Luck_StraightWin_club_13 { position:absolute; top:692px; display: block; z-index: 5; left: 702px; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; background-color: #00CC33; padding: 1px; border: 1px solid #333333; text-align: center; margin: 1px; }
+
+/* end of Jan 10 2014 */
