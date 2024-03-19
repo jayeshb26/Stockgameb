@@ -142,7 +142,19 @@ class LoginController extends Controller
                         Session::put('transactionPin', $users['transactionPin']);
                         Session::put('permissions', $users['permissions']);
                         return redirect()->intended('/dashboard');
-                    } else {
+                    }elseif ($users['role'] == "player") {
+                        Session::put('username', $users['userName']);
+                        Session::put('name', $users['name']);
+                        Session::put('creditPoint', $users['creditPoint']);
+                        Session::put('role', $users['role']);
+                        Session::put('is_f', ($user['is_franchise'] == false) ? "false" : "true");
+                        Session::put('referralId', $users['referralId']);
+                        Session::put('id', $users['_id']);
+                        Session::put('transactionPin', $users['transactionPin']);
+                        Session::put('permissions', $users['permissions']);
+                        return redirect()->intended('/dashboard');
+                    }
+                     else {
                         session()->flash('msg', 'You not Login in to This Panel');
                         return redirect()->route('login');
                     }

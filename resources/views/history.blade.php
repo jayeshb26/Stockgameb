@@ -60,7 +60,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
-                        <h6 class="card-title">Player History</h6>
+                        <h6 class="card-title">Centers History</h6>
                         <div class="row text-right">
                             <a href="javascript:history.back()" class="btn btn-success">
                                 <i class="fa fa-arrow-left mr-2"></i>Back
@@ -116,7 +116,7 @@
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-header">
-                    <h6>Date Vise Player History Data</h6>
+                    <h6>Date Vise Centers History Data</h6>
                 </div>
                 <div class="card-body">
                     <form id="myFormID" name="myform">

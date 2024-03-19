@@ -18,7 +18,7 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Blocked Players</h6>
+        <h6 class="card-title">Blocked Centers</h6>
         {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
         <div class="table-responsive">
           <table id="dataTableExample" class="table table-bordered">
@@ -96,7 +96,7 @@
         },
         buttonsStyling: false,
       })
-      swalWithBootstrapButtons.fire({ 
+      swalWithBootstrapButtons.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
         icon: 'warning',

@@ -40,7 +40,7 @@
   <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h6 class="card-title">Online Players</h6>
+        <h6 class="card-title">Online Centers</h6>
         <div class="table-responsive">
             <table id="dataTableExample" class="table table-bordered">
               <thead>
@@ -81,7 +81,7 @@
                               </td>
                           </tr>
                 @endforeach
-              </tbody>  
+              </tbody>
             </table>
         </div>
       </div>

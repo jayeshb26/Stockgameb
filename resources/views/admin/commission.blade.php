@@ -53,7 +53,7 @@
                                         <th>{{ $key + 1 }}</th>
                                         <th>{{ $userData['name'] }}</th>
                                         @if ($userData['role'] == 'retailer')
-                                            <th>Player</th>
+                                            <th>Centers</th>
                                         @elseif($userData['role'] == 'super_distributor')
                                             <th>Super Distributor</th>
                                         @elseif($userData['role'] == 'distributor')

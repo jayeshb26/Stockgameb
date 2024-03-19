@@ -41,9 +41,10 @@
                     </a>
                 </li>
             @endif
+            @if(Session::get('role') != 'player')
 
             <li class="nav-item nav-category">Management</li>
-
+            @endif
 
 
             @if (Session::get('role') == 'Admin' ||
@@ -52,7 +53,9 @@
                     Session::get('role') == 'premium' ||
                     Session::get('role') == 'executive' ||
                     Session::get('role') == 'classic' ||
-                    Session::get('role') == 'subadmin')
+                    Session::get('role') == 'subadmin'||
+                    Session::get('role') != 'player'
+                    )
                 @if (Session::get('is_f') == 'true')
                     <li
                         class="nav-item {{ active_class(['Franchise/add_player', 'Franchise/add_distributer', 'Franchise/add_agent']) }}">
@@ -117,7 +120,7 @@
                     <li class="nav-item {{ active_class(['users/plyrlist']) }}">
                         <a href="{{ url('/users/plyrlist') }}" class="nav-link">
                             <i class="link-icon" data-feather="user"></i>
-                            <span class="link-title">View Players</span>
+                            <span class="link-title">View Centers</span>
                         </a>
                     </li>
                 @elseif(Session::get('is_f') == 'false')
@@ -149,6 +152,8 @@
                     </a>
                 </li>
             @endif
+            @if(Session::get('role') != 'player')
+
             <li class="nav-item {{ active_class(['transfer']) }}">
                 <a href="{{ url('/transfer') }}" class="nav-link">
                     <i class="link-icon fa fa-exchange"></i>
@@ -169,11 +174,12 @@
                 </a>
             </li>
 
+            @endif
             <li class="nav-item nav-category">Reports</li>
             <li class="nav-item {{ active_class(['history']) }}">
                 <a href="{{ url('/history') }}" class="nav-link">
                     <i class="link-icon fa fa-history"></i>
-                    <span class="link-title">Players History</span>
+                    <span class="link-title">Center History</span>
                 </a>
             </li>
             @if (Session::get('role') == 'Admin' ||
@@ -224,13 +230,13 @@
                 <li class="nav-item {{ active_class(['playerReport']) }}">
                     <a href="{{ url('/playerReport') }}" class="nav-link">
                         <i class="link-icon fa fa-pie-chart"></i>
-                        <span class="link-title">Players Report</span>
+                        <span class="link-title">Center Report</span>
                     </a>
                 </li>
                 <li class="nav-item {{ active_class(['playerwReport']) }}">
                     <a href="{{ url('/playerwReport') }}" class="nav-link">
                         <i class="link-icon fa fa-pie-chart"></i>
-                        <span class="link-title">Players Weekly Report</span>
+                        <span class="link-title">Center Weekly Report</span>
                     </a>
                 </li>
                 <li class="nav-item {{ active_class(['commission']) }}">

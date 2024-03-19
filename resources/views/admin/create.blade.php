@@ -34,7 +34,7 @@
                             @if (Session::get('role') == 'classic' || Session::get('role') == 'subadmin' || Session::get('role') == 'executive' || Session::get('role') == 'premium' || Session::get('role') == 'Admin' || Session::get('role') == 'agent')
                                 <a href="{{ url('/agents/add_player') }}" class="btn btn-success"><i
                                         class="fa fa-plus"></i>
-                                    Add Player</a>
+                                    Add Center</a>
                             @endif
                         @else
                             @if (Session::get('role') == 'Admin' || Session::get('role') == 'subadmin')
@@ -55,7 +55,7 @@
                             @if (Session::get('role') == 'classic' || Session::get('role') == 'subadmin' || Session::get('role') == 'executive' || Session::get('role') == 'premium' || Session::get('role') == 'Admin')
                                 <a href="{{ url('/Franchise/add_player') }}" class="btn btn-success"><i
                                         class="fa fa-plus"></i>
-                                    Add Player</a>
+                                    Add Center</a>
                             @endif
                         @endif
                     </div>
@@ -81,7 +81,7 @@
                     @elseif(Request::segment(2) == 'add_agent')
                         <h6>Add Agent</h6>
                     @elseif(Request::segment(2) == 'add_player')
-                        <h6>Add Player</h6>
+                        <h6>Add Center</h6>
                     @endif
                 </div>
                 <div class="card-body">

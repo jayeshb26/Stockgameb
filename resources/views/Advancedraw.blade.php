@@ -153,7 +153,7 @@
     <div class="col-md-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h6 class="card-title">Advance Draw Player History</h6>
+                <h6 class="card-title">Advance Draw Center History</h6>
                 {{-- <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p> --}}
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -214,7 +214,7 @@
                                                                 <tr>
                                                                     <td><strong>Id</strong></td>
                                                                     <td>{{$value['_id']}}</td>
-                                                                    <td><strong>Player</strong></td>
+                                                                    <td><strong>Center</strong></td>
                                                                     <td>{{$value['userName']}}</td>
                                                                 </tr>
                                                                 <tr>
@@ -294,7 +294,7 @@
                                                         <pre>".'fvhfbvfhvbfhvbfh';
                                                                         //   $app = array("bana"=>array("1"=>2),"app","gerp");
                                                                         // echo in_array("bana",$app);
-                                                                        
+
                                                                         // die;
                                                                     @endphp
                                                                     <h2>Bet Details</h2>
@@ -303,8 +303,8 @@
                                                                         <tr>
                                                                         <th>Bet Position</th>
                                                                         </tr>
-                                                                        @for($k=1;$k<=10;$k++) 
-                                                                        <tr><td class="text-center">{{chr(64+$k)}} {{$no}}-{{$no+99}}</td></tr>    
+                                                                        @for($k=1;$k<=10;$k++)
+                                                                        <tr><td class="text-center">{{chr(64+$k)}} {{$no}}-{{$no+99}}</td></tr>
                                                                         <tr>
                                                                             <td>
                                                                             <table style="border:2px solid #4f7dda;" class="text-center">
@@ -312,7 +312,7 @@
                                                                                 @for($i=1;$i<=5;$i++)
                                                                                     <tr class="text-center">
                                                                                     @for($j=1000;$j<=1019;$j++)
-                                                                                        @php 
+                                                                                        @php
                                                                                             // echo $no;
                                                                                             $check = substr($no,-2);
                                                                                             // $check1 = substr($no,-1);
@@ -351,7 +351,7 @@
                                                                                                 <td style="padding:0.2rem 0.2rem;line-height: 1rem;vertical-align: unset;"><span style="font-size:14px;">{{$no++}}</span><br>
                                                                                                 <span style="border:1px solid #fff;padding:2px 9px;color:#000;background:#D9DDFF;">00</span></td><!--46A4FF-->
                                                                                             @endif
-                                                                                            
+
                                                                                         @endif
                                                                                     @endfor
                                                                                     </tr>

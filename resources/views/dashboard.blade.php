@@ -102,7 +102,7 @@
                                     <div class="card-body">
                                         <div class=" row">
                                             <div class="col-md-8">
-                                                <h6 class="text-white mb-2">Players</h6>
+                                                <h6 class="text-white mb-2">Centers</h6>
                                                 <div>
                                                     <h3 class="text-white">{{ $data['players'] }}</h3>
                                                 </div>
@@ -137,6 +137,9 @@
                         </div>
                     @endif
                 @endif
+                @if(Session::get('role') != 'player')
+
+
                 <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-danger">
                         <a href="{{ url('/blockedPlayers') }}">
@@ -175,7 +178,7 @@
                             <div class="card-body">
                                 <div class=" row">
                                     <div class="col-md-8">
-                                        <h6 class="text-white mb-2">Player History</h6>
+                                        <h6 class="text-white mb-2">Centers History</h6>
                                     </div>
                                     <div class="col-md-4 mt-1">
                                         <h4 class="text-white text-right mr-3"><i class="fa fa-dashboard"></i></h4>
@@ -187,7 +190,7 @@
                 </div>
                 <div class="col-md-2 grid-margin stretch-card">
                     <div class="card bg-success">
-                        @php 
+                        @php
                         $turnUrl = '';
                             if (Session::get('role') == 'Admin'){
                                 $turnUrl = url('/Tnover?role=franchise&type=7&from=' . date('Y-m-d') . '&to=' . date('Y-m-d'));
@@ -195,7 +198,7 @@
                                 $turnUrl = url('/Tnover?role=' . Session::get('role') . '&type=7&from=' . date('Y-m-d') . '&to=' . date('Y-m-d'));
                             }
                         @endphp
-                        
+
                         <a href="{{$turnUrl}}">
                             <div class="card-body">
                                 <div class=" row">
@@ -242,6 +245,7 @@
                         </a>
                     </div>
                 </div>
+                @endif
                 @if (Session::get('role') == 'Admin')
                     @if (Session::get('is_f') == 'true')
                         <div class="col-xl-12 grid-margin stretch-card">
@@ -302,7 +306,7 @@
             type: "doughnut",
             data: {
                 // labels: ["Premiums", "Executives", "Classics", "Players"],
-                labels: ["Distributers", "Agents", "Players"],//"Premiums" has been removed
+                labels: ["Distributers", "Agents", "Centers"],//"Premiums" has been removed
                 datasets: [{
                     label: "Population (millions)",
                     backgroundColor: ["#7ee5e5", "#f77eb9", "#4d8af0", "#ffc107"],
@@ -313,7 +317,7 @@
         new Chart($("#chartjsDoughnut1"), {
             type: "doughnut",
             data: {
-                labels: ["Agents", "Premiums", "Executives", "Classics", "Players"],
+                labels: ["Agents", "Premiums", "Executives", "Classics", "Centers"],
                 datasets: [{
                     label: "Population (millions)",
                     backgroundColor: ["#7ee5e5", "#f77eb9", "#4d8af0", "#ffc107"],
