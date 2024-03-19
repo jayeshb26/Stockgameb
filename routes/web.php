@@ -4,6 +4,7 @@ use App\Http\Controllers\MarketController;
 use App\Http\Controllers\PlayerReportController;
 use App\Http\Controllers\playerWeeklyController;
 use App\Http\Controllers\retailerController;
+use App\Http\Controllers\FrontController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -186,4 +187,7 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::get('/markets/{id}/edit', [MarketController::class, 'edit'])->name('markets.edit');
     Route::put('/markets/{id}', [MarketController::class, 'update'])->name('markets.update');
     Route::delete('/markets/{id}', [MarketController::class, 'destroy'])->name('markets.destroy');
+
+    Route::get('/front-data', [FrontController::class, 'index'])->name('front-data');
+
 });
