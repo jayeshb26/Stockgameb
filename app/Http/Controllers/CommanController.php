@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Announcements;
+use App\GST;
 use App\Bets;
 use App\Complaints;
 use App\Payments;
@@ -939,6 +940,20 @@ class CommanController extends Controller
         $announcement->save();
         session()->flash('success', 'Announcement Submitted Successfully');
         return redirect('announcement/');
+    }
+
+    public function gstNumber()
+    {
+        $gst = GST::find(new \MongoDB\BSON\ObjectID('65f97354ff2e4919896923dd'));
+        return view('gst', ['data' => $gst]);
+    }
+    public function gstNumbers(Request $request)
+    {
+        $gstId = GST::find(new \MongoDB\BSON\ObjectID('65f97354ff2e4919896923dd'));
+        $gstId->gstNumber = $request->gstNumber;
+        $gstId->save();
+        session()->flash('success', 'GST Number Submitted Successfully');
+        return redirect('gstnumber/');
     }
 
     public function version()

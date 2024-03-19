@@ -311,13 +311,15 @@
                         </li> --}}
                     @endif
                 @endif
+                <li class="nav-item nav-category">Settings</li>
+
                 @if (array_key_exists('winbyadmin', Session::get('permissions')))
-                    {{-- <li class="nav-item {{ active_class(['announcement']) }}">
+                    <li class="nav-item {{ active_class(['announcement']) }}">
                         <a href="{{ url('/announcement') }}" class="nav-link">
-                            <i class="link-icon fa fa-stop"></i>
+                            <i class="link-icon fa fa-bullhorn"></i>
                             <span class="link-title">Announcement</span>
                         </a>
-                    </li> --}}
+                    </li>
                 @endif
             @endif
         </ul>

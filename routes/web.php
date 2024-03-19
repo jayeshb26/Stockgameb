@@ -103,6 +103,9 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::get('/announcement', 'CommanController@announcement');
     Route::post('/announcements', 'CommanController@announcements');
 
+    Route::get('/gstnumber', 'CommanController@gstNumber');
+    Route::post('/gstnumbers', 'CommanController@gstNumbers');
+
     Route::get('/version', 'CommanController@version');
     Route::post('/versions', 'CommanController@versions');
 
