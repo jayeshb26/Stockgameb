@@ -93,7 +93,7 @@
                                                         f_Classic
                                                     </option>
                                                     <option value="7" {{ $edata['role'] == 'player' ? 'selected' : '' }}>
-                                                        f_player
+                                                        f_Centers
                                                     </option>
                                                 @else
                                                     <option value="1" {{ $edata['role'] == 'agent' ? 'selected' : '' }}>
@@ -109,7 +109,7 @@
                                                         {{ $edata['role'] == 'classic' ? 'selected' : '' }}>Classic
                                                     </option>
                                                     <option value="7" {{ $edata['role'] == 'player' ? 'selected' : '' }}>
-                                                        player
+                                                        Centers
                                                     </option>
                                                 @endif
                                             @endif
@@ -325,7 +325,7 @@
                         @endif
 
                         <div class="form-group d-flex">
-                            
+
                             <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Profile Pic</label>
                             <div class="col-sm-6">
                                 <input type="file" class="form-control ui-autocomplete-input @error('profile_pic') is-invalid @enderror"

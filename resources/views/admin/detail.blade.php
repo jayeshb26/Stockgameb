@@ -26,7 +26,7 @@
                                     @elseif($data['role']=="classic")
                                         Classic
                                     @elseif($data['role']=="player")
-                                        Player
+                                        Centers
                                     @endif
                                     Details
                                 </h6>
@@ -103,7 +103,7 @@
                         @elseif($data['role']=="executive")
                             Classic
                         @elseif($data['role']=="classic")
-                            Player
+                        Centers
                         @endif
                         Details
                     </h6>

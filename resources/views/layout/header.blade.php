@@ -44,7 +44,7 @@
             </li>
             <li class="nav-item dropdown nav-notifications">
                 <a class="nav-link dropdown-toggle m-2" href="{{ url('/blockedPlayers') }}" id="notificationDropdown">
-                    <i class="fa fa-users mr-1"></i>Blocked Players
+                    <i class="fa fa-users mr-1"></i>Blocked Centers
                 </a>
             </li>
             <li class="nav-item dropdown nav-notifications">
