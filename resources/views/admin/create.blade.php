@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
-                <div class="card-body d-flex justify-content-between">
+                <div class="card-body d-flex justify-content-between" style="border: 2px solid #0b7c3c; border-radius:2px">
                     <div>
                         @if (Request::segment(1) == 'agents')
                             @if (Session::get('role') == 'Admin' || Session::get('role') == 'subadmin')
@@ -71,7 +71,7 @@
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header" style="border-bottom: 1px solid #0b7c3c">
                     @if (Request::segment(2) == 'add_agent')
                         <h6>Add Agent</h6>
                     @elseif (Request::segment(2) == 'add_premium')
@@ -278,7 +278,7 @@
                                     @enderror
                                 </div>
                             </div>
-                        
+
                         <input type="hidden" name="is_franchise" id="is_franchise"
                             value="{{ Request::segment(1) == 'Franchise' ? 'true' : 'false' }}" />
                         <div class="form-group d-flex" id="perissions">

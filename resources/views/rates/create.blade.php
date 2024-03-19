@@ -78,11 +78,11 @@
                             </div>
                         </div>
                         <div class="form-group d-flex">
-                            <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Type</label>
+                            <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Bucket</label>
                             <div class="col-sm-6">
                                 {{-- @dd($rate['type']) --}}
                                 <select name="type" id="typeId" >
-                                        <option value="" disabled selected>Selecte Type</option>
+                                        <option value="" disabled selected>Selecte Bucket Filter</option>
                                         <option value="{{ Old('type') ?? "B1" }}">B1</option>
                                         <option value="{{ Old('type') ?? "B3" }}">B3</option>
                                         <option value="{{ Old('type') ?? "B5" }}">B5</option>

@@ -30,19 +30,19 @@
                     <div class="col-md-4">
                         <h6 class="card-title">Stocks</h6>
                     </div>
-                    <div class="col-md-2 row">
+                    <div class="col row flex-grow-0 ">
                         <a href="javascript:void(0);" class="btn btn-primary" id="active_stock_btn"
                             >Active</a>
-                    </div>
-                    <div class="col-md-2 row">
-                        <a href="javascript:void(0);" class="btn btn-secondary" id="inactive_stock_btn" style="left: -5%"
-                        >Inactive</a>
-                    </div>
-
-                    <select id='filterText' class='col-2 mr-1' onchange='filterText()'
-                       style="left: -50px;"
+                        </div>
+                        <div class="col row flex-grow-0">
+                            <a href="javascript:void(0);" class="btn btn-secondary" id="inactive_stock_btn"
+                            >Inactive</a>
+                        </div>
+                    <label for="Market" class="col row" style="text-align: center;flex-grow: 0.9;">Market Type </label>
+                    <select id='filterText' name="Market" class='col-2 mr-1 row' onchange='filterText()'
+                       style="left: -50px; color:black;"
                        >
-                        <option value="">Select Market</option>
+                        <option value="">Select Market Field</option>
                         @foreach ($markets as $value)
                         <option value="{{ $value }}">{{ $value }}</option>
                         @endforeach

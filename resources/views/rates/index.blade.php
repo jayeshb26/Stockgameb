@@ -52,7 +52,7 @@
                                 <tr>
                                     <th>Position</th>
                                     <th>Value</th>
-                                    <th>Type</th>
+                                    <th>Bucket</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
