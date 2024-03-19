@@ -25,9 +25,9 @@
                     @else
                         <form method="post" action="{{ url('/rates') }}">
                     @endisset
-                    
+
                         @csrf
-                        
+
                         @if (Session::has('error'))
                             <div class="alert alert-danger" role="alert">{{ Session::get('error') }}
                             </div>
@@ -46,8 +46,8 @@
                                     id="exampleposition" value="{{ Old('position')  }}" name="position" autocomplete="off"
                                     placeholder="Enter Position">
                                 @endisset
-                                
-                                
+
+
                                 @error('position')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -69,6 +69,31 @@
                                     id="examplevalue" value="{{ Old('value') }}" name="value" autocomplete="off"
                                     placeholder="Enter Value">
                                 @endisset
+
+                                @error('value')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label class="col-sm-2 offset-lg-1 text-right control-label mt-2">Type</label>
+                            <div class="col-sm-6">
+                                {{-- @dd($rate['type']) --}}
+                                <select name="type" id="typeId" >
+                                    @isset($rate)
+                                    <option value="" disabled selected>Selecte Type</option>
+                                    <option value="{{Old('type')?? $rate['type'] }}">B1</option>
+                                    <option value="{{Old('type')?? $rate['type'] }}">B3</option>
+                                    <option value="{{Old('type')?? $rate['type'] }}">B5</option>
+                                        @else
+                                        <option value="" disabled selected>Selecte Type</option>
+                                        <option value="{{ Old('type') ?? "B1" }}">B1</option>
+                                        <option value="{{ Old('type') ?? "B3" }}">B3</option>
+                                        <option value="{{ Old('type') ?? "B5" }}">B5</option>
+                                    @endisset
+                                </select>
 
                                 @error('value')
                                     <span class="invalid-feedback" role="alert">

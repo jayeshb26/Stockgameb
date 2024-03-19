@@ -21,38 +21,51 @@
     @elseif(Session::has('success'))
         <div class="alert alert-success" role="alert">{{ Session::get('success') }}</div>
     @endif
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
 
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-12 row">
+                    <div class="col-md-4">
+                        <h6 class="card-title">Stocks</h6>
+                    </div>
+                    <div class="col-md-2 row">
+                        <a href="javascript:void(0);" class="btn btn-primary" id="active_stock_btn"
+                            >Active</a>
+                    </div>
+                    <div class="col-md-2 row">
+                        <a href="javascript:void(0);" class="btn btn-secondary" id="inactive_stock_btn" style="left: -5%"
+                        >Inactive</a>
+                    </div>
+
+                    <select id='filterText' class='col-2 mr-1' onchange='filterText()'
+                       style="left: -50px;"
+                       >
+                        <option value="">Select Market</option>
+                        @foreach ($markets as $value)
+                        <option value="{{ $value }}">{{ $value }}</option>
+                        @endforeach
+                    </select>
+
+                    <div class="col-md-2 row ">
+                        <a href="{{ url('/stocks/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
+                            Add Stock
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
             <div class="card">
                 <div class="card-body">
 
-                    <div class="col-md-12 row">
-                        <div class="col-md-4">
-                            <h6 class="card-title">Stocks</h6>
-                        </div>
-                        <div class="col-md-2 row">
-                            <a href="javascript:void(0);" class="btn btn-primary" id="active_stock_btn"
-                                style="display: none">Active</a>
-                        </div>
-                        <div class="col-md-2  row">
-                            <a href="javascript:void(0);" class="btn btn-secondary" id="inactive_stock_btn"
-                                style="display: none">Inactive</a>
-                        </div>
-                        <div class="col-md-4 row text-right">
-                            <select id='filterText' class='col-md-3 mr-2' onchange='filterText()'>
-                                <option value="">Select Market</option>
-                                @foreach ($markets as $value)
-                                    <option value="{{ $value }}">{{ $value }}</option>
-                                @endforeach
-                            </select>
 
-                            <a href="{{ url('/stocks/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
-                                Add Stock
-                            </a>
-                        </div>
-
-                    </div>
 
                     {{--  <p class="card-description">Read the <a href="https://datatables.net/" target="_blank"> Official DataTables Documentation </a>for a full list of instructions and other options.</p>  --}}
                     <div class="table-responsive">
@@ -83,7 +96,7 @@
                                                 value="{{ $value['number'] }}">
                                         </td>
                                         <td class="">
-                                            {{ $value['number'] }}
+                                            {{ $value['number']+ 1 }}
                                         </td>
                                         <td>{{ $value['name'] }}</td>
                                         <td>{{ $value['symbol'] }}</td>

@@ -38,7 +38,7 @@
                                     <option value="{{ $value['userName'] }}">{{ $value['userName'] }}</option>
                                 @endforeach
                             </select> --}}
-                            
+
                             <a href="{{ url('/rates/create') }}" class="btn btn-success"><i class="fa fa-plus"></i>
                                 Add Rate
                             </a>
@@ -52,6 +52,7 @@
                                 <tr>
                                     <th>Position</th>
                                     <th>Value</th>
+                                    <th>Type</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -61,8 +62,9 @@
                                 @endphp
                                 @foreach ($data as $key => $value)
                                     <tr role="row" class="odd content">
-                                        <td>{{ $value['position'] }}</td>
-                                        <td>{{ $value['value'] }}</td>
+                                        <td>{{ $value['position'] ?? '' }}</td>
+                                        <td>{{ $value['value']?? '' }}</td>
+                                        <td>{{ $value['type'] ?? ''}}</td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="{{ url('rates/' . $value['_id'] . '/edit') }}" type="button"

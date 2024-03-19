@@ -40,12 +40,14 @@ class RatesController extends Controller
     {
         $request->validate([
             'position' => 'required|unique:rates,position',
-            'value' => 'required'
+            'value' => 'required',
+            'type' => 'required'
         ]);
 
         $rate = new Rate();
         $rate->position = $request->position;
         $rate->value =  $request->value;
+        $rate->type = $request->type;
         $rate->save();
         session()->flash('success', 'New rate created successfully....');
         return redirect('/rates');
@@ -60,6 +62,7 @@ class RatesController extends Controller
     public function edit($id)
     {
         $rate = Rate::findOrFail($id);
+
         return view('rates.create', ['rate' => $rate]);
     }
 
@@ -67,13 +70,16 @@ class RatesController extends Controller
     {
         $request->validate([
             'position' => 'required',
-            'value' => 'required'
+            'value' => 'required',
+            'type' => 'required'
         ]);
-        
+
         $update = Rate::where('_id', $id)->update([
             'position' => $request->position,
-            'value' => $request->value
+            'value' => $request->value,
+            'type' => $request->type,
         ]);
+
 
         session()->flash('success', 'Rates updated successfully....');
         return redirect('/rates');
