@@ -314,12 +314,21 @@
                 <li class="nav-item nav-category">Settings</li>
 
                 @if (array_key_exists('winbyadmin', Session::get('permissions')))
+                <li class="nav-item {{ active_class(['announcement']) }}">
+                    <a href="{{ url('/gstnumber') }}" class="nav-link">
+                        <i class="link-icon fa fa-bullhorn"></i>
+                        <span class="link-title">GST Number</span>
+                    </a>
+                </li>
+
+
                     <li class="nav-item {{ active_class(['announcement']) }}">
                         <a href="{{ url('/announcement') }}" class="nav-link">
                             <i class="link-icon fa fa-bullhorn"></i>
                             <span class="link-title">Announcement</span>
                         </a>
                     </li>
+
                 @endif
             @endif
         </ul>
