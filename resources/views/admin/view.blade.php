@@ -82,7 +82,12 @@
                                             <td>{{ $value['password'] }}</td>
                                         @endif
                                         <td>{{ number_format($value['creditPoint'], 2) }}</td>
-                                        <td>{{ date('d-m-Y h:i:s A', strtotime($value['createdAt'])) }}</td>
+                                        @if(isset($value['createdAt']))
+                                        <td>{{ formatMongoFullDate($value['createdAt']) }}</td>
+                                        @else
+                                        <td>{{ formatMongoFullDate($value['created_at']) }}</td>
+                                        @endif
+                                        {{-- <td>{{ date('d-m-Y h:i:s A', strtotime($value['createdAt'])) }}</td> --}}
                                         <td>
                                             <div class="btn-group">
                                                 <a href="{{ url('admin/' . $value['_id'] . '/edit') }}" type="button"
@@ -242,4 +247,6 @@
             })
         });
     </script>
+
+
 @endpush

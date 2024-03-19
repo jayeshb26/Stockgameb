@@ -87,3 +87,52 @@ function convert_number($number)
     }
     return $result;
 }
+if (!function_exists('formatMongoDate')) {
+    /**
+     * Convert MongoDB UTCDateTime to formatted date using Carbon.
+     *
+     * @param \MongoDB\BSON\UTCDateTime|null $utcDateTime
+     * @param string $format
+     * @return string|null
+     */
+    function formatMongoDate($utcDateTime, $format = 'Y-m-d')
+    {
+        if ($utcDateTime === null) {
+            return null;
+        }
+
+        $dateTime = $utcDateTime->toDateTime();
+
+        if ($dateTime === null) {
+            return null;
+        }
+
+        $carbonDate = \Carbon\Carbon::createFromTimestamp($dateTime->getTimestamp());
+        return $carbonDate->format($format);
+    }
+}
+
+if (!function_exists('formatMongoFullDate')) {
+    /**
+     * Convert MongoDB UTCDateTime to formatted date using Carbon.
+     *
+     * @param \MongoDB\BSON\UTCDateTime $utcDateTime
+     * @param string $format
+     * @return string
+     */
+    function formatMongoFullDate($utcDateTime, $format = 'd-m-Y H:i:s')
+    {
+        if ($utcDateTime === null) {
+            return null;
+        }
+
+        $dateTime = $utcDateTime->toDateTime();
+
+        if ($dateTime === null) {
+            return null;
+        }
+
+        $carbonDate = \Carbon\Carbon::createFromTimestamp($dateTime->getTimestamp());
+        return $carbonDate->format($format);
+    }
+}

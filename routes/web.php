@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\MarketController;
+use App\Http\Controllers\PlayerReportController;
+use App\Http\Controllers\playerWeeklyController;
 use App\Http\Controllers\retailerController;
 /*
 |--------------------------------------------------------------------------
@@ -167,6 +169,11 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::get('/success/{id}', 'AdminController@success');
     Route::get('/reject/{id}', 'AdminController@reject');
     Route::post('/change/stock/status', 'StocksController@changeStockStatus');
+    Route::get('playerReport', [PlayerReportController::class,'index'])->name('playerReport');
+    Route::get('playerwReport', [playerWeeklyController::class,'index'])->name('playerwReport');
+    Route::get('genrep/{id}', [PlayerReportController::class,'show'])->name('genrep.show');
+    Route::get('betsReport', [PlayerReportController::class,'Bets'])->name('betsReport');
+    Route::get('/commission', 'commissionController@index');
 
 
 

@@ -220,6 +220,26 @@
                         </a>
                     </li>
                 @endif
+                @if (Session::get('role') == 'Admin' || Session::get('role') == 'super_distributor' || Session::get('role') == 'distributor')
+                <li class="nav-item {{ active_class(['playerReport']) }}">
+                    <a href="{{ url('/playerReport') }}" class="nav-link">
+                        <i class="link-icon fa fa-pie-chart"></i>
+                        <span class="link-title">Players Report</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ active_class(['playerwReport']) }}">
+                    <a href="{{ url('/playerwReport') }}" class="nav-link">
+                        <i class="link-icon fa fa-pie-chart"></i>
+                        <span class="link-title">Players Weekly Report</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ active_class(['commission']) }}">
+                    <a href="{{ url('/commission') }}" class="nav-link">
+                        <i class="link-icon fa fa-money"></i>
+                        <span class="link-title">Commission Report</span>
+                    </a>
+                </li>
+                @endif
                 @if (Session::get('role') == 'Admin')
                     <li class="nav-item {{ active_class(['gameProfit']) }}">
                         <a href="{{ url('/gameProfit?type=7&from=' . date('Y-m-d') . '&to=' . date('Y-m-d')) }}"
