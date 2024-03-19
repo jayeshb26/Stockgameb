@@ -29,7 +29,7 @@
 
     <div class="row">
         <div class="col-md-12 grid-margin stretch-card">
-            <div class="card">
+            <div class="card" style="border: 2px solid #0b7c3c; border-radius:2px">
                 <div class="card-header d-flex justify-content-between">
                     <h6>Balance Transfer</h6>
 
@@ -78,7 +78,7 @@
 
     <div class="row">
         <div class="col-md-6 grid-margin stretch-card">
-            <div class="card">
+            <div class="card" style="border: 2px solid #0b7c3c; border-radius:2px">
                 <div class="card-body">
                     <h6 class="card-title">Pending Accepts</h6>
                     <div class="table-responsive">
@@ -114,8 +114,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 grid-margin stretch-card">
-            <div class="card">
+        <div class="col-md-6 grid-margin stretch-card" >
+            <div class="card" style="border: 2px solid #0b7c3c; border-radius:2px">
                 <div class="card-body">
                     <h6 class="card-title">Transfers Status</h6>
                     <div class="table-responsive">
