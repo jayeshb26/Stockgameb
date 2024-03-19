@@ -82,17 +82,10 @@
                             <div class="col-sm-6">
                                 {{-- @dd($rate['type']) --}}
                                 <select name="type" id="typeId" >
-                                    @isset($rate)
-                                    <option value="" disabled selected>Selecte Type</option>
-                                    <option value="{{Old('type')?? $rate['type'] }}">B1</option>
-                                    <option value="{{Old('type')?? $rate['type'] }}">B3</option>
-                                    <option value="{{Old('type')?? $rate['type'] }}">B5</option>
-                                        @else
                                         <option value="" disabled selected>Selecte Type</option>
                                         <option value="{{ Old('type') ?? "B1" }}">B1</option>
                                         <option value="{{ Old('type') ?? "B3" }}">B3</option>
                                         <option value="{{ Old('type') ?? "B5" }}">B5</option>
-                                    @endisset
                                 </select>
 
                                 @error('value')
