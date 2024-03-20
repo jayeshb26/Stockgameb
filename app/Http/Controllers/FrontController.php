@@ -20,7 +20,7 @@ class FrontController extends Controller
             // dd($selectedTime);
             // Log::info('Selected time: ' . $selectedTime);
         }
-
+        dd($selectedTime);
         $currentDateTime = Carbon::now();
 
         // Get the current time
@@ -51,7 +51,6 @@ class FrontController extends Controller
     public function saveSelectedTime(Request $request){
 
     $selectedTime = $request->input('time');
-        dd($selectedTime);
     return response()->json(['message' => 'Selected time received successfully', 'time' => $selectedTime]);
 
     }
