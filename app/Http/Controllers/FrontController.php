@@ -17,7 +17,7 @@ class FrontController extends Controller
     {
         if ($request->has('time')) {
             $selectedTime = $request->input('time');
-            dd($selectedTime);
+            // dd($selectedTime);
             Log::info('Selected time: ' . $selectedTime);
         }
 
