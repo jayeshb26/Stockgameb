@@ -189,5 +189,7 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::delete('/markets/{id}', [MarketController::class, 'destroy'])->name('markets.destroy');
 
     Route::get('/front-data', [FrontController::class, 'index'])->name('front-data');
+    Route::post('/save-selected-time', [FrontController::class, 'saveSelectedTime'])->name('save.selected.time');
+
 
 });

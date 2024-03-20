@@ -15,6 +15,12 @@ class FrontController extends Controller
      */
     public function index()
     {
+        if ($request->has('time')) {
+            $selectedTime = $request->input('time');
+            dd($selectedTime);
+            Log::info('Selected time: ' . $selectedTime);
+        }
+
         $currentDateTime = Carbon::now();
 
         // Get the current time
@@ -39,9 +45,18 @@ class FrontController extends Controller
                             ->paginate(50);
 
 
-dd($stocks);
-return response()->json();
+        dd($stocks);
+        return response()->json();
     }
+    public function saveSelectedTime(Request $request){
+
+    $selectedTime = $request->input('time');
+        dd($selectedTime);
+    return response()->json(['message' => 'Selected time received successfully', 'time' => $selectedTime]);
+
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
