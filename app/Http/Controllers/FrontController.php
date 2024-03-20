@@ -18,7 +18,7 @@ class FrontController extends Controller
         if ($request->has('time')) {
             $selectedTime = $request->input('time');
             // dd($selectedTime);
-            Log::info('Selected time: ' . $selectedTime);
+            // Log::info('Selected time: ' . $selectedTime);
         }
 
         $currentDateTime = Carbon::now();
