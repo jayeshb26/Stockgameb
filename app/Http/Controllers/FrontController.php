@@ -13,46 +13,65 @@ class FrontController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        if ($request->has('time')) {
-            $selectedTime = $request->input('time');
-            // dd($selectedTime);
-            // Log::info('Selected time: ' . $selectedTime);
-        }
-        dd($selectedTime);
         $currentDateTime = Carbon::now();
+        $currentTime = $currentDateTime->format('h:i:s');
+        $sevenDaysAgo = $currentDateTime->copy();
+        $yestDays = $currentDateTime->copy()->subDays(1);
+        $selectedTime = session('selectedTime');
 
-        // Get the current time
-        $currentTime = $currentDateTime->format('H:i:s');
+        $timeParts = explode("-", $selectedTime);
+        $current = trim($timeParts[0]);
+        $past = trim($timeParts[1]);
 
-        // Subtract 7 days from the current date and time
-        $sevenDaysAgo = $currentDateTime->subDays(7);
+        $currentDateTime = Carbon::createFromFormat('h:i A', $current);
+        $pastDateTime = Carbon::createFromFormat('h:i A', $past);
 
-        // Get the time 1 hour ago
-        $oneHourAgo = $currentDateTime->copy()->subHour();
+        $stocks = Winresults::where(function ($query) use ($currentDateTime, $pastDateTime, $sevenDaysAgo, $yestDays) {
+                $query->where('DrDate', $sevenDaysAgo->format('n-j-Y'))
+                    ->whereBetween('DrTime', ["",$pastDateTime->format('h:i:s A'), "",$currentDateTime->format('h:i:s A')]);
+            })
+            ->orWhere(function ($query) use ($currentDateTime, $pastDateTime, $sevenDaysAgo, $yestDays) {
+                $query->where('DrDate', $yestDays->format('n-j-Y'))
+                    ->whereBetween('DrTime', ["",$pastDateTime->format('h:i:s A'), "",$currentDateTime->format('h:i:s A')]);
+            })
+            ->orderBy('DrDate', 'desc')
+            ->orderBy('DrTime', 'desc')
+            ->get();
 
-        // Fetch data for the last 7 days and the last hour
-        $stocks = Winresults::where(function($query) use ($oneHourAgo, $currentDateTime) {
-                                $query->where(function($q) use ($oneHourAgo, $currentDateTime) {
-                                    $q->where('DrTime', '>=', $oneHourAgo->format('h:i:s'))
-                                      ->where('DrTime', '<=', $currentDateTime->format('h:i:s'));
-                                })
-                                ->orWhere('DrDate', '>=', $currentDateTime->subDays(7)->format('n-j-Y'));
-                            })
-                            ->orderBy('DrDate', 'asc')
-                            ->orderBy('DrTime', 'desc')
-                            ->paginate(50);
+$organizedData = [];
 
-
-        dd($stocks);
-        return response()->json();
+foreach ($stocks as $stock) {
+    $date = $stock->DrDate;
+    $time = $stock->DrTime;
+    // dd($date);
+    if (!isset($organizedData[$date])) {
+        $organizedData[$date] = [];
     }
+
+    // Get the hour part of the time
+
+    // If there's no entry for this hour, create an array for it
+    if (!isset($organizedData[$date][$time])) {
+        $organizedData[$date][$time] = [];
+    }
+
+    // Add the time entry to the corresponding hour array
+    $organizedData[$date][$time][] = $time;
+}
+
+
+            return response()->json($stocks);
+    }
+
     public function saveSelectedTime(Request $request){
 
-    $selectedTime = $request->input('time');
-    return response()->json(['message' => 'Selected time received successfully', 'time' => $selectedTime]);
+        $selectedTime = $request->input('time');
 
+        session(['selectedTime' => $selectedTime]);
+        return  response()->json(['message' => 'Selected time received successfully', 'time' => $selectedTime]);
+        // return $response;
     }
 
 
