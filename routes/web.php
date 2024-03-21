@@ -26,6 +26,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/front-data', [FrontController::class, 'index'])->name('front-data');
+Route::post('/save-selected-time', [FrontController::class, 'saveSelectedTime'])->name('save.selected.time');
+
+
 Route::post('/login_custom', 'Auth\LoginController@Login_custom');
 
 Route::group(['middleware' => 'CheckAuth'], function () {
@@ -188,8 +192,7 @@ Route::group(['middleware' => 'CheckAuth'], function () {
     Route::put('/markets/{id}', [MarketController::class, 'update'])->name('markets.update');
     Route::delete('/markets/{id}', [MarketController::class, 'destroy'])->name('markets.destroy');
 
-    Route::get('/front-data', [FrontController::class, 'index'])->name('front-data');
-    Route::post('/save-selected-time', [FrontController::class, 'saveSelectedTime'])->name('save.selected.time');
+
 
 
 });
