@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Winresults;
+use \DateTime;
 use Carbon\Carbon;
 
 class FrontController extends Controller
@@ -16,52 +17,52 @@ class FrontController extends Controller
     public function index(Request $request)
     {
         $currentDateTime = Carbon::now();
-        $currentTime = $currentDateTime->format('h:i:s');
-        $sevenDaysAgo = $currentDateTime->copy();
-        $yestDays = $currentDateTime->copy()->subDays(1);
-        $selectedTime = session('selectedTime');
+$currentTime = $currentDateTime->format('h:i:s');
+$sevenDaysAgo = $currentDateTime->copy()->subDays(7); // Adjusted to subtract 7 days instead of a single day
+$yestDays = $currentDateTime->copy()->subDay(1);
 
-        $timeParts = explode("-", $selectedTime);
-        $current = trim($timeParts[0]);
-        $past = trim($timeParts[1]);
+$selectedTime = session('selectedTime');
+$previousSelectedTime = session('previousSelectedTime');
 
-        $currentDateTime = Carbon::createFromFormat('h:i A', $current);
-        $pastDateTime = Carbon::createFromFormat('h:i A', $past);
+session(['previousSelectedTime' => $selectedTime]);
 
-        $stocks = Winresults::where(function ($query) use ($currentDateTime, $pastDateTime, $sevenDaysAgo, $yestDays) {
-                $query->where('DrDate', $sevenDaysAgo->format('n-j-Y'))
-                    ->whereBetween('DrTime', ["",$pastDateTime->format('h:i:s A'), "",$currentDateTime->format('h:i:s A')]);
-            })
-            ->orWhere(function ($query) use ($currentDateTime, $pastDateTime, $sevenDaysAgo, $yestDays) {
-                $query->where('DrDate', $yestDays->format('n-j-Y'))
-                    ->whereBetween('DrTime', ["",$pastDateTime->format('h:i:s A'), "",$currentDateTime->format('h:i:s A')]);
-            })
-            ->orderBy('DrDate', 'desc')
-            ->orderBy('DrTime', 'desc')
-            ->get();
+$timeParts = explode("-", $selectedTime);
+$startFormatted = ' '.trim($timeParts[0]);
+$endFormatted = ' '.trim($timeParts[1]);
 
-$organizedData = [];
+$stocks = Winresults::where(function ($query) use ($startFormatted, $endFormatted, $sevenDaysAgo, $yestDays) {
+    $query->where('DrDate', $sevenDaysAgo->format('n-j-Y'))
+        ->where('result', '!=', '');
+    if (isset($startFormatted)) {
 
-foreach ($stocks as $stock) {
-    $date = $stock->DrDate;
-    $time = $stock->DrTime;
-    // dd($date);
-    if (!isset($organizedData[$date])) {
-        $organizedData[$date] = [];
+        if ($startFormatted > $endFormatted) {
+
+            $query->whereBetween('DrTime', [$startFormatted, '23:59:59']);
+        } else {
+            $query->whereBetween('DrTime', [$startFormatted, $endFormatted]);
+        }
     }
+})
+->orWhere(function ($query) use ($startFormatted, $endFormatted, $sevenDaysAgo, $yestDays) {
+    $query->where('DrDate', $yestDays->format('n-j-Y'))
+        ->where('result', '!=', '');
+        if (isset($startFormatted)) {
 
-    // Get the hour part of the time
+            if ($startFormatted > $endFormatted) {
 
-    // If there's no entry for this hour, create an array for it
-    if (!isset($organizedData[$date][$time])) {
-        $organizedData[$date][$time] = [];
-    }
+                $query->whereBetween('DrTime', [$startFormatted, '23:59:59']);
+            } else {
+                $query->whereBetween('DrTime', [$startFormatted, $endFormatted]);
+            }
+        }
+})
+->get()->toArray();
 
-    // Add the time entry to the corresponding hour array
-    $organizedData[$date][$time][] = $time;
-}
 
 
+
+
+// dd($stocks);
             return response()->json($stocks);
     }
 
