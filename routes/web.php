@@ -28,6 +28,8 @@ Route::get('/', function () {
 
 Route::get('/front-data', [FrontController::class, 'index'])->name('front-data');
 Route::post('/save-selected-time', [FrontController::class, 'saveSelectedTime'])->name('save.selected.time');
+Route::get('/front-date', [FrontController::class, 'indexDate'])->name('front.date');
+Route::post('/save-selected-date', [FrontController::class, 'saveSelectedDate'])->name('save.selected.date');
 
 
 Route::post('/login_custom', 'Auth\LoginController@Login_custom');

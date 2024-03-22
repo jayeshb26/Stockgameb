@@ -17,62 +17,115 @@ class FrontController extends Controller
     public function index(Request $request)
     {
         $currentDateTime = Carbon::now();
-$currentTime = $currentDateTime->format('h:i:s');
-$sevenDaysAgo = $currentDateTime->copy()->subDays(7); // Adjusted to subtract 7 days instead of a single day
-$yestDays = $currentDateTime->copy()->subDay(1);
+        $currentTime = $currentDateTime->format('h:i:s');
+        $sevenDaysAgo = $currentDateTime->copy();
+        $yestDays = $currentDateTime->copy()->subDay(1);
 
-$selectedTime = session('selectedTime');
-$previousSelectedTime = session('previousSelectedTime');
+        $selectedTime = session('selectedTime');
+        $selectedDate = session('selectedDate');
+        $date = new DateTime($selectedDate);
+        $formattedDate = $date->format('n-j-Y');
+        $previousSelectedTime = session('previousSelectedTime');
 
-session(['previousSelectedTime' => $selectedTime]);
+        session(['previousSelectedTime' => $selectedTime]);
 
-$timeParts = explode("-", $selectedTime);
-$startFormatted = ' '.trim($timeParts[0]);
-$endFormatted = ' '.trim($timeParts[1]);
+        $timeParts = explode("-", $selectedTime);
 
-$stocks = Winresults::where(function ($query) use ($startFormatted, $endFormatted, $sevenDaysAgo, $yestDays) {
-    $query->where('DrDate', $sevenDaysAgo->format('n-j-Y'))
-        ->where('result', '!=', '');
-    if (isset($startFormatted)) {
+        // Trim the first part (start time)
+        $startFormatted = ' '.trim($timeParts[0]);
 
-        if ($startFormatted > $endFormatted) {
+        // Trim the second part (end time)
+        $endFormatted = ' '.trim($timeParts[1]);
 
-            $query->whereBetween('DrTime', [$startFormatted, '23:59:59']);
-        } else {
-            $query->whereBetween('DrTime', [$startFormatted, $endFormatted]);
-        }
-    }
-})
-->orWhere(function ($query) use ($startFormatted, $endFormatted, $sevenDaysAgo, $yestDays) {
-    $query->where('DrDate', $yestDays->format('n-j-Y'))
-        ->where('result', '!=', '');
-        if (isset($startFormatted)) {
+        $selectedDateTime = Carbon::parse($selectedDate);
+        $selectedStartDateTime = Carbon::parse($selectedDateTime->toDateString() . ' ' . $startFormatted);
+        $selectedEndDateTime = Carbon::parse($selectedDateTime->toDateString() . ' ' . $endFormatted);
 
-            if ($startFormatted > $endFormatted) {
 
-                $query->whereBetween('DrTime', [$startFormatted, '23:59:59']);
-            } else {
-                $query->whereBetween('DrTime', [$startFormatted, $endFormatted]);
-            }
-        }
-})
-->get()->toArray();
+        // dd($selectedStartDateTime,$selectedEndDateTime, [$startFormatted, $endFormatted]);
+
+        $stocks = Winresults::where(function($query) use ($selectedStartDateTime, $selectedEndDateTime) {
+            $query->where('createdAt', '>=', new Carbon($selectedEndDateTime));
+        })
+        ->whereNotNull('result') // Ensuring 'result' field is not null
+        ->orderBy('DrDate')
+        ->get()
+        ->toArray();
 
 
 
 
 
+        // Query Winresults entries based on date and time range
+        // $stocks = Winresults::where('DrDate', $formattedDate)
+        //     ->whereBetween('DrTime', [$combinedString])
+        //     ->orderBy('DrTime')
+        //     ->get()
+        //     ->toArray();
+
+        // dd($formattedDate,$startFormatted, $endFormatted);
 // dd($stocks);
-            return response()->json($stocks);
+                // $stocks = Winresults::where(function ($query) use ($startFormatted, $endFormatted, $sevenDaysAgo, $yestDays) {
+        //     $query->where('DrDate', $sevenDaysAgo->format('n-j-Y'))
+        //         ->where('result', '!=', '');
+        //     if (isset($startFormatted)) {
+
+        //         if ($startFormatted > $endFormatted) {
+
+        //             $query->whereBetween('DrTime', [$startFormatted, '23:59:59']);
+        //         } else {
+        //             $query->whereBetween('DrTime', [$startFormatted, $endFormatted]);
+        //         }
+        //     }
+        // })
+        // ->orWhere(function ($query) use ($startFormatted, $endFormatted, $sevenDaysAgo, $yestDays) {
+        //     $query->where('DrDate', $yestDays->format('n-j-Y'))
+        //         ->where('result', '!=', '');
+        //         if (isset($startFormatted)) {
+
+        //             if ($startFormatted > $endFormatted) {
+
+        //                 $query->whereBetween('DrTime', [$startFormatted, '23:59:59']);
+        //             } else {
+        //                 $query->whereBetween('DrTime', [$startFormatted, $endFormatted]);
+        //             }
+        //         }
+        // })
+        // ->get()->toArray();
+        return response()->json($stocks);
     }
 
     public function saveSelectedTime(Request $request){
-
         $selectedTime = $request->input('time');
+        $selectedDate = $request->input('date');
+        session(['selectedTime' => $selectedTime, 'selectedDate' => $selectedDate]);
+        return  response()->json(['message' => 'Selected time received successfully', 'time' => $selectedTime,  'date' => $selectedDate]);
+    }
 
-        session(['selectedTime' => $selectedTime]);
-        return  response()->json(['message' => 'Selected time received successfully', 'time' => $selectedTime]);
-        // return $response;
+    public function saveSelectedDate(Request $request){
+        $selectedDataDate = $request->input('Datadate');
+        session(['selectedDataDate' => $selectedDataDate]);
+        return response()->json(['message' => 'Selected Date received successfully', 'Datadate' => $selectedDataDate]);
+    }
+
+    public function indexDate(Request $request)
+    {
+        $selectedDataDate = session('selectedDataDate');
+
+
+        $stocks = Winresults::where(function($query) use ($selectedDataDate) {
+                $query->where('DrDate', '>=', $selectedDataDate)
+                    ->where('DrDate', '<=', $selectedDataDate);
+            })
+            ->whereNotNull('result') // Ensuring 'result' field is not null
+            ->orderBy('DrDate')
+            ->get()
+            ->toArray();
+
+
+        // dd($stocks);
+        return response()->json($stocks);
+
     }
 
 
@@ -143,3 +196,4 @@ $stocks = Winresults::where(function ($query) use ($startFormatted, $endFormatte
         //
     }
 }
+

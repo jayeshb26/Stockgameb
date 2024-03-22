@@ -20,5 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         'save-selected-time',
+        'save-selected-date',
     ];
 }
